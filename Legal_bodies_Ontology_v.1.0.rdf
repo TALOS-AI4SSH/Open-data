@@ -1,0 +1,2789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ontoterminology: Athenian-Legal-Bodies -->
+<!-- Author: Rachel Milio -->
+<!-- Creation date: August 6, 2024 -->
+<!-- Export date: August 28, 2024 time: 9:13:01 PM -->
+<!-- TEDI version: 3.7 -->
+<!-- http://ontoterminology.com/tedi -->
+<rdf:RDF xmlns="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0#"
+    xml:base="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:otv="http://www.ontologia.fr/OTB/otv#"
+    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:ontolex="http://www.w3.org/ns/lemon/ontolex#">
+
+	<!-- 
+	//////////////////////////////////////////////////////////
+	//
+	// SKOS
+	//
+	//////////////////////////////////////////////////////////
+	-->
+
+	<!--  SKOS Concept Scheme -->
+
+    <skos:ConceptScheme rdf:about="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0">
+        <dc:title>Athenian-Legal-Bodies</dc:title>
+        <dc:description>This is version 1.0 of a dataset created in the context  of a PhD thesis in "Semantic Annotation and Attic Oratory" that defines the primary legal bodies in Classical Athenian courts c. 419 BC to 323 BC. A legal body is defined as "an individual or group who either proceeds over or judges a legal proceeding". This work draws upon the corpus of Attic oratory and the Pseudo-Aristotelian Athenian constitution, as well as The Law of Ancient Athens by David D. Phillips.
+This dataset is authored by Rachel Milio (TALOS Ph.D. candidate, Department of Philology, University of Crete), under the supervision of Dr. Maria Papadopoulou (Department of Philology, University of Crete) and Prof. Christophe Roche (TALOS ERA Chair Professor, University of Crete).
+Acknowledgement: We gratefully acknowledge the generous funding of the European Commission under the ERA Chair Project TALOS AI for SSH (Grant agreement ID: 101087269).
+Contact: Rachel.Milio@outlook.com
+</dc:description>
+        <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-8-6</dc:issued>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-8-28</dc:modified>
+        <dc:creator>Rachel Milio</dc:creator>
+        <dc:publisher>University of Crete</dc:publisher>
+    </skos:ConceptScheme>
+
+	<!--  SKOS Concepts -->
+
+    <skos:Concept rdf:about="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Law courts</rdfs:label>
+        <skos:prefLabel xml:lang="en">Law courts</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+        <rdfs:label xml:lang="grc">δικαστήριον</rdfs:label>
+        <skos:prefLabel xml:lang="grc">δικαστήριον</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 21.221: "αὐτίκα δὴ μάλα, ἐπειδὰν ἀναστῇ τὸ δικαστήριον, εἷς ἕκαστος ὑμῶν"</skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Prytaneis</rdfs:label>
+        <skos:prefLabel xml:lang="en">Prytaneis</skos:prefLabel>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <rdfs:label xml:lang="en">Presidents</rdfs:label>
+        <skos:altLabel xml:lang="en">Presidents</skos:altLabel>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <rdfs:label xml:lang="grc">πρυτάνεις</rdfs:label>
+        <skos:prefLabel xml:lang="grc">πρυτάνεις</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <skos:example xml:lang="grc">Aeschin. 2.60: " προγράψαι τοὺς πρυτάνεις ἐκκλησίας δύο κατὰ τὸν νόμον, ἐν δὲ ταύταις βουλεύσασθαι περὶ τῆς εἰρήνης Ἀθηναίους"</skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <skos:topConceptOf rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Council</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council</skos:prefLabel>
+        <skos:definition xml:lang="en">A group who judges trials.</skos:definition>
+        <rdfs:label xml:lang="grc">Βουλὴ</rdfs:label>
+        <skos:prefLabel xml:lang="grc">Βουλὴ</skos:prefLabel>
+        <skos:definition xml:lang="grc">A group which judges legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 22.5: " νόμος ἐστί, φησίν, ἐὰν ἀξίως ἡ βουλὴ δοκῇ βουλεῦσαι δωρειᾶς, διδόναι τὸν δῆμον τὴν δωρειὰν αὐτῇ."</skos:example>
+        <skos:narrower rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <skos:narrower rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <skos:narrower rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <skos:narrower rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <skos:narrower rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <skos:narrower rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <skos:narrower rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Law-Givers</rdfs:label>
+        <skos:altLabel xml:lang="en">Law-Givers</skos:altLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+        <rdfs:label xml:lang="en">Thesmothetai</rdfs:label>
+        <skos:prefLabel xml:lang="en">Thesmothetai</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+        <rdfs:label xml:lang="grc">θεσμοθέται</rdfs:label>
+        <skos:prefLabel xml:lang="grc">θεσμοθέται</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</skos:definition>
+        <skos:example xml:lang="grc">Isoc. 20.2: " ἔπειτα τῶν μὲν ἄλλων ἐγκλημάτων αὐτῷ τῷ παθόντι μόνον ὁ δράσας ὑπόδικός ἐστιν: περὶ δὲ τῆς ὕβρεως, ὡς κοινοῦ τοῦ πράγματος ὄντος, ἔξεστι τῷ βουλομένῳ τῶν πολιτῶν γραψαμένῳ πρὸς τοὺς θεσμοθέτας εἰσελθεῖν εἰς ὑμᾶς."</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Eleven</rdfs:label>
+        <skos:prefLabel xml:lang="en">Eleven</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate held by 11 people, chosen by lot, serves a one year term, carries out arrests imprisonments and executions.</skos:definition>
+        <rdfs:label xml:lang="grc">οἱ ἕνδεκα‎</rdfs:label>
+        <skos:prefLabel xml:lang="grc">οἱ ἕνδεκα‎</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</skos:definition>
+        <skos:example xml:lang="grc">Isaeus 4.28: " οὗτος γάρ, ὅτ᾽ ἐπεδήμει ἐνθάδε, πρῶτον μὲν εἰς τὸ δεσμωτήριον ὡς κλέπτης ὢν ἐπ᾽ αὐτοφώρῳ ἀπήχθη, τότε δὲ ἀφεθεὶς μεθ᾽ ἑτέρων τινῶν ὑπὸ τῶν ἕνδεκα"</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Council of 500</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council of 500</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+        <rdfs:label xml:lang="grc">βουλὴ οἱ πεντακόσιοι</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βουλὴ οἱ πεντακόσιοι</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+        <skos:example xml:lang="grc">Aeschin. 3.2: "ἐβουλόμην μὲν οὖν, ὦ ἄνδρες Ἀθηναῖοι, καὶ τὴν βουλὴν τοὺς πεντακοσίους καὶ τὰς ἐκκλησίας ὑπὸ τῶν ἐφεστηκότων ὀρθῶς διοικεῖσθαι"</skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Basileus</rdfs:label>
+        <skos:prefLabel xml:lang="en">Basileus</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <rdfs:label xml:lang="en">King</rdfs:label>
+        <skos:altLabel xml:lang="en">King</skos:altLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">βασιλεὺς</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βασιλεὺς</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Lys. 6.4: " ἐὰν νυνὶ Ἀνδοκίδης ἀθῷος ἀπαλλαγῇ δι᾽ ὑμᾶς ἐκ τοῦδε τοῦ ἀγῶνος καὶ ἔλθῃ κληρωσόμενος τῶν ἐννέα ἀρχόντων καὶ λάχῃ βασιλεύς, ἄλλο τι ἢ ὑπὲρ ὑμῶν καὶ θυσίας θύσει καὶ εὐχὰς εὔξεται κατὰ τὰ πάτρια"</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <skos:topConceptOf rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Magistrate</rdfs:label>
+        <skos:prefLabel xml:lang="en">Magistrate</skos:prefLabel>
+        <rdfs:label xml:lang="grc">ἄρχων</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἄρχων</skos:prefLabel>
+        <skos:definition xml:lang="grc">An official who supervises legal proceedings.</skos:definition>
+        <skos:narrower rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <skos:narrower rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <skos:narrower rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <skos:narrower rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <skos:narrower rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <skos:narrower rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <skos:narrower rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Forty</rdfs:label>
+        <skos:prefLabel xml:lang="en">Forty</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+        <rdfs:label xml:lang="grc">τετταράκοντα</rdfs:label>
+        <skos:prefLabel xml:lang="grc">τετταράκοντα</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+        <skos:example xml:lang="grc">Isoc. 15.237: "ἐν γὰρ ταῖς σανίσι ταῖς ὑπὸ τῶν ἀρχόντων ἐκτιθεμέναις ἀναγκαῖόν ἐστιν, ἐν μὲν ταῖς ὑπὸ τῶν θεσμοθετῶν ἀμφοτέρους ἐνεῖναι, τούς τε τὴν πόλιν ἀδικοῦντας καὶ τοὺς συκοφαντοῦντας, ἐν δὲ ταῖς τῶν ἕνδεκα τούς τε κακουργοῦντας καὶ τοὺς τούτοις ἐφεστῶτας, ἐν δὲ ταῖς τῶν τετταράκοντα τούς τ᾽ ἐν τοῖς ἰδίοις πράγμασιν ἀδικοῦντας καὶ τοὺς μὴ δικαίως ἐγκαλοῦντας" </skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
+        <skos:prefLabel xml:lang="en">Assembly</skos:prefLabel>
+        <skos:definition xml:lang="en">Council deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐκκλησία</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐκκλησία</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 25.9:  καὶ τὰ μὲν ἄλλ᾽ ἐάσω: ἀλλ᾽ εἰς τὰς ἐκκλησίας ἀναβαίνουσιν, ἐν αἷς ὑμεῖς γνώμης ἀπόδειξιν, οὐ πονηρίας τοῖς λέγουσι προτίθετε, τόλμαν καὶ κραυγὴν καὶ ψευδεῖς αἰτίας καὶ συκοφαντίαν καὶ ἀναισχυντίαν καὶ πάντα τὰ τοιαῦτα συνεσκευασμένοι, ὧν οὐκ ἂν εὕροι τις ἐναντιώτερα τῷ βουλεύεσθαι, νομίζω δ᾽ οὐδ᾽ ἂν αἰσχίω."</skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Council of the Areopagus</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council of the Areopagus</skos:prefLabel>
+        <skos:definition xml:lang="en">Council becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+        <rdfs:label xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 18.133: "καὶ εἰ μὴ ἡ βουλὴ ἡ ἐξ Ἀρείου πάγου τὸ πρᾶγμ᾽ αἰσθομένη καὶ τὴν ὑμετέραν ἄγνοιαν ἐν οὐ δέοντι συμβεβηκυῖαν ἰδοῦσα ἐπεζήτησε τὸν ἄνθρωπον καὶ συλλαβοῦσ᾽ ἐπανήγαγεν ὡς ὑμᾶς, ἐξήρπαστ᾽ ἂν ὁ τοιοῦτος καὶ τὸ δίκην δοῦναι διαδὺς ἐξεπέπεμπτ᾽ ἂν ὑπὸ τοῦ σεμνολόγου τουτουί:." </skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Generals</rdfs:label>
+        <skos:prefLabel xml:lang="en">Generals</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+        <rdfs:label xml:lang="grc">στρατηγοί</rdfs:label>
+        <skos:prefLabel xml:lang="grc">στρατηγοί</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 4.25: " τὰς προφάσεις ἀφελεῖν καὶ τοῦ στρατηγοῦ καὶ τῶν στρατιωτῶν, μισθὸν πορίσαντας καὶ στρατιώτας οἰκείους ὥσπερ ἐπόπτας τῶν στρατηγουμένων παρακαταστήσαντας." </skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Archons</rdfs:label>
+        <skos:prefLabel xml:lang="en">Archons</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+        <rdfs:label xml:lang="grc">ἄρχοντες</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἄρχοντες</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 23.28: "εἰσφέρειν δ᾽ ἐς τοὺς ἄρχοντας, ὧν ἕκαστοι δικασταί εἰσι, τῷ βουλομένῳ. τὴν δ᾽ ἡλιαίαν διαγιγνώσκειν."</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Eponymous Archon</rdfs:label>
+        <skos:prefLabel xml:lang="en">Eponymous Archon</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐπώνυμος ἄρχων</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐπώνυμος ἄρχων</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 21.9: "ἐν δὲ ταύτῃ ἐπειδὰν χρηματίσωσιν οἱ πρόεδροι περὶ ὧν διῴκηκεν ὁ ἄρχων, χρηματίζειν καὶ περὶ ὧν ἄν τις ἠδικηκὼς ᾖ περὶ τὴν ἑορτὴν ἢ παρανενομηκώς"</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Polemarch</rdfs:label>
+        <skos:prefLabel xml:lang="en">Polemarch</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">πολέμαρχος</rdfs:label>
+        <skos:prefLabel xml:lang="grc">πολέμαρχος</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 59.40: "ἀφαιρουμένου δὲ τοῦ Στεφάνου κατὰ τὸν νόμον εἰς ἐλευθερίαν, κατηγγύησεν αὐτὴν πρὸς τῷ πολεμάρχῳ."</skos:example>
+        <skos:broader rdf:resource="#Official"/>
+    </skos:Concept>
+
+    <skos:Concept rdf:about="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases">
+        <skos:inScheme rdf:resource="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0"/>
+        <rdfs:label xml:lang="en">Ephetai</rdfs:label>
+        <skos:prefLabel xml:lang="en">Ephetai</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐφέται</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐφέται</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 23.37: "ἐὰν δέ τις τὸν ἀνδροφόνον κτείνῃ ἢ αἴτιος ᾖ φόνου, ἀπεχόμενον ἀγορᾶς ἐφορίας καὶ ἄθλων καὶ ἱερῶν Ἀμφικτυονικῶν, ὥσπερ τὸν Ἀθηναῖον κτείναντα, ἐν τοῖς αὐτοῖς ἐνέχεσθαι, διαγιγνώσκειν δὲ τοὺς ἐφέτας."</skos:example>
+        <skos:broader rdf:resource="#Group"/>
+    </skos:Concept>
+
+	<!-- 
+	//////////////////////////////////////////////////////////
+	//
+	// OWL
+	//
+	//////////////////////////////////////////////////////////
+	-->
+
+	<!--  OWL Ontology -->
+
+    <owl:Ontology rdf:about="http://www.ontologia.fr/OTB/Legal_proceedings_Ontology_v.1.0">
+        <dc:title>Athenian-Legal-Bodies</dc:title>
+        <dc:description>This is version 1.0 of a dataset created in the context  of a PhD thesis in "Semantic Annotation and Attic Oratory" that defines the primary legal bodies in Classical Athenian courts c. 419 BC to 323 BC. A legal body is defined as "an individual or group who either proceeds over or judges a legal proceeding". This work draws upon the corpus of Attic oratory and the Pseudo-Aristotelian Athenian constitution, as well as The Law of Ancient Athens by David D. Phillips.
+This dataset is authored by Rachel Milio (TALOS Ph.D. candidate, Department of Philology, University of Crete), under the supervision of Dr. Maria Papadopoulou (Department of Philology, University of Crete) and Prof. Christophe Roche (TALOS ERA Chair Professor, University of Crete).
+Acknowledgement: We gratefully acknowledge the generous funding of the European Commission under the ERA Chair Project TALOS AI for SSH (Grant agreement ID: 101087269).
+Contact: Rachel.Milio@outlook.com
+</dc:description>
+        <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-8-6</dc:issued>
+        <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-8-28</dc:modified>
+        <dc:creator>Rachel Milio</dc:creator>
+        <dc:publisher>University of Crete</dc:publisher>
+    </owl:Ontology>
+
+	<!--  OWL Object Properties -->
+
+	<!--  OWL Data Properties -->
+
+	<!--  OWL Classes -->
+
+    <owl:Class rdf:about="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings">
+        <rdfs:label xml:lang="en">Law courts</rdfs:label>
+        <skos:prefLabel xml:lang="en">Law courts</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+        <rdfs:label xml:lang="grc">δικαστήριον</rdfs:label>
+        <skos:prefLabel xml:lang="grc">δικαστήριον</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 21.221: "αὐτίκα δὴ μάλα, ἐπειδὰν ἀναστῇ τὸ δικαστήριον, εἷς ἕκαστος ὑμῶν"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#has_a_size_that_varies_based_on_case"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#judge_the_majority_of_legal_proceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly">
+        <rdfs:label xml:lang="en">Prytaneis</rdfs:label>
+        <skos:prefLabel xml:lang="en">Prytaneis</skos:prefLabel>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <rdfs:label xml:lang="en">Presidents</rdfs:label>
+        <skos:altLabel xml:lang="en">Presidents</skos:altLabel>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <rdfs:label xml:lang="grc">πρυτάνεις</rdfs:label>
+        <skos:prefLabel xml:lang="grc">πρυτάνεις</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <skos:example xml:lang="grc">Aeschin. 2.60: " προγράψαι τοὺς πρυτάνεις ἐκκλησίας δύο κατὰ τὸν νόμον, ἐν δὲ ταύταις βουλεύσασθαι περὶ τῆς εἰρήνης Ἀθηναίους"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#has_50_members"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_for_one_tenth_of_a_year"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#made_up_of_council_members_in_an_order_determined_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#convenes_the_Council_and_Assembly"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group">
+        <rdfs:label xml:lang="en">Council</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council</skos:prefLabel>
+        <skos:definition xml:lang="en">A group who judges trials.</skos:definition>
+        <rdfs:label xml:lang="grc">Βουλὴ</rdfs:label>
+        <skos:prefLabel xml:lang="grc">Βουλὴ</skos:prefLabel>
+        <skos:definition xml:lang="grc">A group which judges legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 22.5: " νόμος ἐστί, φησίν, ἐὰν ἀξίως ἡ βουλὴ δοκῇ βουλεῦσαι δωρειᾶς, διδόναι τὸν δῆμον τὴν δωρειὰν αὐτῇ."</skos:example>
+        <owl:disjointWith rdf:resource="#Official"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#judges_legal_proceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies">
+        <rdfs:label xml:lang="en">Law-Givers</rdfs:label>
+        <skos:altLabel xml:lang="en">Law-Givers</skos:altLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+        <rdfs:label xml:lang="en">Thesmothetai</rdfs:label>
+        <skos:prefLabel xml:lang="en">Thesmothetai</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+        <rdfs:label xml:lang="grc">θεσμοθέται</rdfs:label>
+        <skos:prefLabel xml:lang="grc">θεσμοθέται</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</skos:definition>
+        <skos:example xml:lang="grc">Isoc. 20.2: " ἔπειτα τῶν μὲν ἄλλων ἐγκλημάτων αὐτῷ τῷ παθόντι μόνον ὁ δράσας ὑπόδικός ἐστιν: περὶ δὲ τῆς ὕβρεως, ὡς κοινοῦ τοῦ πράγματος ὄντος, ἔξεστι τῷ βουλομένῳ τῶν πολιτῶν γραψαμένῳ πρὸς τοὺς θεσμοθέτας εἰσελθεῖν εἰς ὑμᾶς."</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_6_people"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions">
+        <rdfs:label xml:lang="en">Eleven</rdfs:label>
+        <skos:prefLabel xml:lang="en">Eleven</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate held by 11 people, chosen by lot, serves a one year term, carries out arrests imprisonments and executions.</skos:definition>
+        <rdfs:label xml:lang="grc">οἱ ἕνδεκα‎</rdfs:label>
+        <skos:prefLabel xml:lang="grc">οἱ ἕνδεκα‎</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</skos:definition>
+        <skos:example xml:lang="grc">Isaeus 4.28: " οὗτος γάρ, ὅτ᾽ ἐπεδήμει ἐνθάδε, πρῶτον μὲν εἰς τὸ δεσμωτήριον ὡς κλέπτης ὢν ἐπ᾽ αὐτοφώρῳ ἀπήχθη, τότε δὲ ἀφεθεὶς μεθ᾽ ἑτέρων τινῶν ὑπὸ τῶν ἕνδεκα"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_11_people"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_arrests_imprisonments_and_executions"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates">
+        <rdfs:label xml:lang="en">Council of 500</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council of 500</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+        <rdfs:label xml:lang="grc">βουλὴ οἱ πεντακόσιοι</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βουλὴ οἱ πεντακόσιοι</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+        <skos:example xml:lang="grc">Aeschin. 3.2: "ἐβουλόμην μὲν οὖν, ὦ ἄνδρες Ἀθηναῖοι, καὶ τὴν βουλὴν τοὺς πεντακοσίους καὶ τὰς ἐκκλησίας ὑπὸ τῶν ἐφεστηκότων ὀρθῶς διοικεῖσθαι"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#has_500_members"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits">
+        <rdfs:label xml:lang="en">Basileus</rdfs:label>
+        <skos:prefLabel xml:lang="en">Basileus</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <rdfs:label xml:lang="en">King</rdfs:label>
+        <skos:altLabel xml:lang="en">King</skos:altLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">βασιλεὺς</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βασιλεὺς</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Lys. 6.4: " ἐὰν νυνὶ Ἀνδοκίδης ἀθῷος ἀπαλλαγῇ δι᾽ ὑμᾶς ἐκ τοῦδε τοῦ ἀγῶνος καὶ ἔλθῃ κληρωσόμενος τῶν ἐννέα ἀρχόντων καὶ λάχῃ βασιλεύς, ἄλλο τι ἢ ὑπὲρ ὑμῶν καὶ θυσίας θύσει καὶ εὐχὰς εὔξεται κατὰ τὰ πάτρια"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_one_person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official">
+        <rdfs:label xml:lang="en">Magistrate</rdfs:label>
+        <skos:prefLabel xml:lang="en">Magistrate</skos:prefLabel>
+        <rdfs:label xml:lang="grc">ἄρχων</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἄρχων</skos:prefLabel>
+        <skos:definition xml:lang="grc">An official who supervises legal proceedings.</skos:definition>
+        <owl:disjointWith rdf:resource="#Group"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_legal_proceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas">
+        <rdfs:label xml:lang="en">Forty</rdfs:label>
+        <skos:prefLabel xml:lang="en">Forty</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+        <rdfs:label xml:lang="grc">τετταράκοντα</rdfs:label>
+        <skos:prefLabel xml:lang="grc">τετταράκοντα</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+        <skos:example xml:lang="grc">Isoc. 15.237: "ἐν γὰρ ταῖς σανίσι ταῖς ὑπὸ τῶν ἀρχόντων ἐκτιθεμέναις ἀναγκαῖόν ἐστιν, ἐν μὲν ταῖς ὑπὸ τῶν θεσμοθετῶν ἀμφοτέρους ἐνεῖναι, τούς τε τὴν πόλιν ἀδικοῦντας καὶ τοὺς συκοφαντοῦντας, ἐν δὲ ταῖς τῶν ἕνδεκα τούς τε κακουργοῦντας καὶ τοὺς τούτοις ἐφεστῶτας, ἐν δὲ ταῖς τῶν τετταράκοντα τούς τ᾽ ἐν τοῖς ἰδίοις πράγμασιν ἀδικοῦντας καὶ τοὺς μὴ δικαίως ἐγκαλοῦντας" </skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#has_40_members"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#judges_private_lawsuits_over_up_to_10_drachmas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length">
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
+        <skos:prefLabel xml:lang="en">Assembly</skos:prefLabel>
+        <skos:definition xml:lang="en">Council deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐκκλησία</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐκκλησία</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 25.9:  καὶ τὰ μὲν ἄλλ᾽ ἐάσω: ἀλλ᾽ εἰς τὰς ἐκκλησίας ἀναβαίνουσιν, ἐν αἷς ὑμεῖς γνώμης ἀπόδειξιν, οὐ πονηρίας τοῖς λέγουσι προτίθετε, τόλμαν καὶ κραυγὴν καὶ ψευδεῖς αἰτίας καὶ συκοφαντίαν καὶ ἀναισχυντίαν καὶ πάντα τὰ τοιαῦτα συνεσκευασμένοι, ὧν οὐκ ἂν εὕροι τις ἐναντιώτερα τῷ βουλεύεσθαι, νομίζω δ᾽ οὐδ᾽ ἂν αἰσχίω."</skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#deliberates_over_political_issues"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#made_up_of_all_adult_male_citizens"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#no_formal_selection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#no_term_length"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons">
+        <rdfs:label xml:lang="en">Council of the Areopagus</rdfs:label>
+        <skos:prefLabel xml:lang="en">Council of the Areopagus</skos:prefLabel>
+        <skos:definition xml:lang="en">Council becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+        <rdfs:label xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</rdfs:label>
+        <skos:prefLabel xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 18.133: "καὶ εἰ μὴ ἡ βουλὴ ἡ ἐξ Ἀρείου πάγου τὸ πρᾶγμ᾽ αἰσθομένη καὶ τὴν ὑμετέραν ἄγνοιαν ἐν οὐ δέοντι συμβεβηκυῖαν ἰδοῦσα ἐπεζήτησε τὸν ἄνθρωπον καὶ συλλαβοῦσ᾽ ἐπανήγαγεν ὡς ὑμᾶς, ἐξήρπαστ᾽ ἂν ὁ τοιοῦτος καὶ τὸ δίκην δοῦναι διαδὺς ἐξεπέπεμπτ᾽ ἂν ὑπὸ τοῦ σεμνολόγου τουτουί:." </skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#becomes_a_member_after_archonship"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_for_the_remainder_of_life"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#made_up_of_all_former_archons"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings">
+        <rdfs:label xml:lang="en">Generals</rdfs:label>
+        <skos:prefLabel xml:lang="en">Generals</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+        <rdfs:label xml:lang="grc">στρατηγοί</rdfs:label>
+        <skos:prefLabel xml:lang="grc">στρατηγοί</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 4.25: " τὰς προφάσεις ἀφελεῖν καὶ τοῦ στρατηγοῦ καὶ τῶν στρατιωτῶν, μισθὸν πορίσαντας καὶ στρατιώτας οἰκείους ὥσπερ ἐπόπτας τῶν στρατηγουμένων παρακαταστήσαντας." </skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#elected_from_each_tribe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_10_people"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_military_related_legal_proceedings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term">
+        <rdfs:label xml:lang="en">Archons</rdfs:label>
+        <skos:prefLabel xml:lang="en">Archons</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+        <rdfs:label xml:lang="grc">ἄρχοντες</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἄρχοντες</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 23.28: "εἰσφέρειν δ᾽ ἐς τοὺς ἄρχοντας, ὧν ἕκαστοι δικασταί εἰσι, τῷ βουλομένῳ. τὴν δ᾽ ἡλιαίαν διαγιγνώσκειν."</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_10_people"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#hold_preliminary_hearings_and_assign_cases"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens">
+        <rdfs:label xml:lang="en">Eponymous Archon</rdfs:label>
+        <skos:prefLabel xml:lang="en">Eponymous Archon</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐπώνυμος ἄρχων</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐπώνυμος ἄρχων</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 21.9: "ἐν δὲ ταύτῃ ἐπειδὰν χρηματίσωσιν οἱ πρόεδροι περὶ ὧν διῴκηκεν ὁ ἄρχων, χρηματίζειν καὶ περὶ ὧν ἄν τις ἠδικηκὼς ᾖ περὶ τὴν ἑορτὴν ἢ παρανενομηκώς"</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_family_lawsuits_for_citizens"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_one_person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics">
+        <rdfs:label xml:lang="en">Polemarch</rdfs:label>
+        <skos:prefLabel xml:lang="en">Polemarch</skos:prefLabel>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+        <rdfs:label xml:lang="grc">πολέμαρχος</rdfs:label>
+        <skos:prefLabel xml:lang="grc">πολέμαρχος</skos:prefLabel>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 59.40: "ἀφαιρουμένου δὲ τοῦ Στεφάνου κατὰ τὸν νόμον εἰς ἐλευθερίαν, κατηγγύησεν αὐτὴν πρὸς τῷ πολεμάρχῳ."</skos:example>
+        <rdfs:subClassOf rdf:resource="#Official"/>
+        <owl:disjointWith rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <owl:disjointWith rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <owl:disjointWith rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#supervises_private_actions_and_family_law_for_metics"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#held_by_one_person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases">
+        <rdfs:label xml:lang="en">Ephetai</rdfs:label>
+        <skos:prefLabel xml:lang="en">Ephetai</skos:prefLabel>
+        <skos:definition xml:lang="en">Council chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+        <rdfs:label xml:lang="grc">ἐφέται</rdfs:label>
+        <skos:prefLabel xml:lang="grc">ἐφέται</skos:prefLabel>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+        <skos:example xml:lang="grc">Dem. 23.37: "ἐὰν δέ τις τὸν ἀνδροφόνον κτείνῃ ἢ αἴτιος ᾖ φόνου, ἀπεχόμενον ἀγορᾶς ἐφορίας καὶ ἄθλων καὶ ἱερῶν Ἀμφικτυονικῶν, ὥσπερ τὸν Ἀθηναῖον κτείναντα, ἐν τοῖς αὐτοῖς ἐνέχεσθαι, διαγιγνώσκειν δὲ τοὺς ἐφέτας."</skos:example>
+        <rdfs:subClassOf rdf:resource="#Group"/>
+        <owl:disjointWith rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <owl:disjointWith rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <owl:disjointWith rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <owl:disjointWith rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#chosen_by_lot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#has_51_members"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#serves_a_one_year_term"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#ownDifference"/>
+                <owl:hasValue rdf:resource="#judges_unintentional_and_justifiable_homicide_cases"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+	<!--  OWL Individuals -->
+
+	<!-- 
+	//////////////////////////////////////////////////////////
+	//
+	// OntoLex-Lemon
+	//
+	//////////////////////////////////////////////////////////
+	-->
+
+    <ontolex:LexicalEntry rdf:about="#Polemarch_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Polemarch_en">
+                <ontolex:writtenRep xml:lang="en">Polemarch</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Polemarch_en">
+                <ontolex:isEvokedBy rdf:resource="#Polemarch_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Law-Givers_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Law-Givers_en">
+                <ontolex:writtenRep xml:lang="en">Law-Givers</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Law-Givers_en">
+                <ontolex:isEvokedBy rdf:resource="#Law-Givers_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Eponymous_Archon_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Eponymous_Archon_en">
+                <ontolex:writtenRep xml:lang="en">Eponymous Archon</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Eponymous_Archon_en">
+                <ontolex:isEvokedBy rdf:resource="#Eponymous_Archon_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Presidents_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Presidents_en">
+                <ontolex:writtenRep xml:lang="en">Presidents</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Presidents_en">
+                <ontolex:isEvokedBy rdf:resource="#Presidents_en"/>
+                <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Assembly_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Assembly_en">
+                <ontolex:writtenRep xml:lang="en">Assembly</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Assembly_en">
+                <ontolex:isEvokedBy rdf:resource="#Assembly_en"/>
+                <skos:definition xml:lang="en">Council deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#King_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_King_en">
+                <ontolex:writtenRep xml:lang="en">King</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_King_en">
+                <ontolex:isEvokedBy rdf:resource="#King_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Eleven_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Eleven_en">
+                <ontolex:writtenRep xml:lang="en">Eleven</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Eleven_en">
+                <ontolex:isEvokedBy rdf:resource="#Eleven_en"/>
+                <skos:definition xml:lang="en">Magistrate held by 11 people, chosen by lot, serves a one year term, carries out arrests imprisonments and executions.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Thesmothetai_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Thesmothetai_en">
+                <ontolex:writtenRep xml:lang="en">Thesmothetai</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Thesmothetai_en">
+                <ontolex:isEvokedBy rdf:resource="#Thesmothetai_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Law_courts_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Law_courts_en">
+                <ontolex:writtenRep xml:lang="en">Law courts</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Law_courts_en">
+                <ontolex:isEvokedBy rdf:resource="#Law_courts_en"/>
+                <skos:definition xml:lang="en">Council chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Prytaneis_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Prytaneis_en">
+                <ontolex:writtenRep xml:lang="en">Prytaneis</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Prytaneis_en">
+                <ontolex:isEvokedBy rdf:resource="#Prytaneis_en"/>
+                <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Archons_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Archons_en">
+                <ontolex:writtenRep xml:lang="en">Archons</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Archons_en">
+                <ontolex:isEvokedBy rdf:resource="#Archons_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Council_of_500_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Council_of_500_en">
+                <ontolex:writtenRep xml:lang="en">Council of 500</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Council_of_500_en">
+                <ontolex:isEvokedBy rdf:resource="#Council_of_500_en"/>
+                <skos:definition xml:lang="en">Council chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Ephetai_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Ephetai_en">
+                <ontolex:writtenRep xml:lang="en">Ephetai</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Ephetai_en">
+                <ontolex:isEvokedBy rdf:resource="#Ephetai_en"/>
+                <skos:definition xml:lang="en">Council chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Forty_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Forty_en">
+                <ontolex:writtenRep xml:lang="en">Forty</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Forty_en">
+                <ontolex:isEvokedBy rdf:resource="#Forty_en"/>
+                <skos:definition xml:lang="en">Council chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Generals_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Generals_en">
+                <ontolex:writtenRep xml:lang="en">Generals</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Generals_en">
+                <ontolex:isEvokedBy rdf:resource="#Generals_en"/>
+                <skos:definition xml:lang="en">Magistrate elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Basileus_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Basileus_en">
+                <ontolex:writtenRep xml:lang="en">Basileus</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Basileus_en">
+                <ontolex:isEvokedBy rdf:resource="#Basileus_en"/>
+                <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Council_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Council_en">
+                <ontolex:writtenRep xml:lang="en">Council</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Council_en">
+                <ontolex:isEvokedBy rdf:resource="#Council_en"/>
+                <skos:definition xml:lang="en">A group who judges trials.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Magistrate_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Magistrate_en">
+                <ontolex:writtenRep xml:lang="en">Magistrate</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Magistrate_en">
+                <ontolex:isEvokedBy rdf:resource="#Magistrate_en"/>
+                <skos:definition xml:lang="en"></skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Council_of_the_Areopagus_en">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Council_of_the_Areopagus_en">
+                <ontolex:writtenRep xml:lang="en">Council of the Areopagus</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Council_of_the_Areopagus_en">
+                <ontolex:isEvokedBy rdf:resource="#Council_of_the_Areopagus_en"/>
+                <skos:definition xml:lang="en">Council becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#οἱ_ἕνδεκα‎_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_οἱ_ἕνδεκα‎_grc">
+                <ontolex:writtenRep xml:lang="grc">οἱ ἕνδεκα‎</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_οἱ_ἕνδεκα‎_grc">
+                <ontolex:isEvokedBy rdf:resource="#οἱ_ἕνδεκα‎_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#ἐκκλησία_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_ἐκκλησία_grc">
+                <ontolex:writtenRep xml:lang="grc">ἐκκλησία</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_ἐκκλησία_grc">
+                <ontolex:isEvokedBy rdf:resource="#ἐκκλησία_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#θεσμοθέται_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_θεσμοθέται_grc">
+                <ontolex:writtenRep xml:lang="grc">θεσμοθέται</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_θεσμοθέται_grc">
+                <ontolex:isEvokedBy rdf:resource="#θεσμοθέται_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#βασιλεὺς_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_βασιλεὺς_grc">
+                <ontolex:writtenRep xml:lang="grc">βασιλεὺς</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_βασιλεὺς_grc">
+                <ontolex:isEvokedBy rdf:resource="#βασιλεὺς_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#πρυτάνεις_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_πρυτάνεις_grc">
+                <ontolex:writtenRep xml:lang="grc">πρυτάνεις</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_πρυτάνεις_grc">
+                <ontolex:isEvokedBy rdf:resource="#πρυτάνεις_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#δικαστήριον_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_δικαστήριον_grc">
+                <ontolex:writtenRep xml:lang="grc">δικαστήριον</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_δικαστήριον_grc">
+                <ontolex:isEvokedBy rdf:resource="#δικαστήριον_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#ἐπώνυμος_ἄρχων_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_ἐπώνυμος_ἄρχων_grc">
+                <ontolex:writtenRep xml:lang="grc">ἐπώνυμος ἄρχων</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_ἐπώνυμος_ἄρχων_grc">
+                <ontolex:isEvokedBy rdf:resource="#ἐπώνυμος_ἄρχων_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#στρατηγοί_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_στρατηγοί_grc">
+                <ontolex:writtenRep xml:lang="grc">στρατηγοί</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_στρατηγοί_grc">
+                <ontolex:isEvokedBy rdf:resource="#στρατηγοί_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#ἄρχοντες_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_ἄρχοντες_grc">
+                <ontolex:writtenRep xml:lang="grc">ἄρχοντες</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_ἄρχοντες_grc">
+                <ontolex:isEvokedBy rdf:resource="#ἄρχοντες_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#ἐφέται_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_ἐφέται_grc">
+                <ontolex:writtenRep xml:lang="grc">ἐφέται</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_ἐφέται_grc">
+                <ontolex:isEvokedBy rdf:resource="#ἐφέται_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#τετταράκοντα_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_τετταράκοντα_grc">
+                <ontolex:writtenRep xml:lang="grc">τετταράκοντα</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_τετταράκοντα_grc">
+                <ontolex:isEvokedBy rdf:resource="#τετταράκοντα_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#Βουλὴ_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_Βουλὴ_grc">
+                <ontolex:writtenRep xml:lang="grc">Βουλὴ</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_Βουλὴ_grc">
+                <ontolex:isEvokedBy rdf:resource="#Βουλὴ_grc"/>
+                <skos:definition xml:lang="grc">A group which judges legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#πολέμαρχος_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_πολέμαρχος_grc">
+                <ontolex:writtenRep xml:lang="grc">πολέμαρχος</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_πολέμαρχος_grc">
+                <ontolex:isEvokedBy rdf:resource="#πολέμαρχος_grc"/>
+                <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#βουλὴ ἐξ Ἀρείου πάγου_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_βουλὴ ἐξ Ἀρείου πάγου_grc">
+                <ontolex:writtenRep xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_βουλὴ ἐξ Ἀρείου πάγου_grc">
+                <ontolex:isEvokedBy rdf:resource="#βουλὴ ἐξ Ἀρείου πάγου_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#βουλὴ_οἱ_πεντακόσιοι_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_βουλὴ_οἱ_πεντακόσιοι_grc">
+                <ontolex:writtenRep xml:lang="grc">βουλὴ οἱ πεντακόσιοι</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_βουλὴ_οἱ_πεντακόσιοι_grc">
+                <ontolex:isEvokedBy rdf:resource="#βουλὴ_οἱ_πεντακόσιοι_grc"/>
+                <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+    </ontolex:LexicalEntry>
+
+    <ontolex:LexicalEntry rdf:about="#ἄρχων_grc">
+        <ontolex:lexicalForm>
+            <ontolex:Form rdf:about="#form_ἄρχων_grc">
+                <ontolex:writtenRep xml:lang="grc">ἄρχων</ontolex:writtenRep>
+            </ontolex:Form>
+        </ontolex:lexicalForm>
+        <ontolex:evokes>
+            <ontolex:LexicalConcept rdf:about="#lexical_concept_ἄρχων_grc">
+                <ontolex:isEvokedBy rdf:resource="#ἄρχων_grc"/>
+                <skos:definition xml:lang="grc">An official who supervises legal proceedings.</skos:definition>
+            </ontolex:LexicalConcept>
+        </ontolex:evokes>
+        <ontolex:denotes rdf:resource="#Official"/>
+    </ontolex:LexicalEntry>
+
+
+<!-- *********************************************** -->
+<!-- ONTOTERMINOLOGY VOCABULARY (OTV) -->
+<!-- http://ontoterminology.com/ -->
+<!-- *********************************************** -->
+
+<!-- ***********************************************
+                     OTV CLASSES
+     *********************************************** -->
+
+<!-- Conceptual dimension -->
+
+<!-- CTT concepts are represented as OWL classes
+     and as instances of the OTVConcept  class -->
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#OTVCore">
+        <rdfs:label>OTVCore</rdfs:label>      
+        <rdfs:comment>The Generic Concept of OTV Concepts</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Concept">
+        <rdfs:label>Concept</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>     
+        <rdfs:comment>The class of OTV Concept</rdfs:comment>
+        <rdfs:comment>Les concepts sont des instances de la classe Concept</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis">
+        <rdfs:label>AxisOfAnalysis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>     
+        <rdfs:comment>The class of OTV AxesOfAnalysis</rdfs:comment>
+        <rdfs:comment>Les axes d analyse sont des instances de la classe AxesOfAnalysis</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Difference">
+        <rdfs:label>Difference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>    
+        <rdfs:comment>The class of OTV Differences</rdfs:comment>
+       <rdfs:comment>Les différence sont des instances de la classe Difference</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Relation">
+        <rdfs:label>Relation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>    
+        <rdfs:comment>The class of OTV Relations</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Attribute">
+        <rdfs:label>Attribute</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>    
+        <rdfs:comment>The class of OTV Attributes</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Object">
+        <rdfs:label>Object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>
+        <rdfs:comment>The class of OTV Objects</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<!-- Linguistic dimension -->
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#Term">
+ 	      <rdfs:label>Term</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>
+        <rdfs:comment>The class of OTV Terms</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.ontologia.fr/OTB/otv#ProperName">
+        <rdfs:label>ProperName</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>
+        <rdfs:comment>The class of OTV ProperName</rdfs:comment>
+        <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Relation"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+        <owl:disjointWith rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+</owl:Class>
+
+<!-- ***********************************************
+                     OTV OBJECT PROPERTIES
+     *********************************************** -->
+
+<!-- Conceptual dimension -->
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#isA">
+    <rdfs:label>isA</rdfs:label> 
+    <rdfs:comment>Generic relationship between 2 concepts</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#ownDifference">
+  <rdfs:label>ownDifference</rdfs:label>
+  <rdfs:comment>Link a concept to one of its specific differences</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#inheritedDifference">
+  <rdfs:label>inheritedDifference</rdfs:label>
+  <rdfs:comment>Link a concept to one of its inherited differences</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#difference">
+  <rdfs:label>difference</rdfs:label>
+  <rdfs:comment>Link a concept to one of its differences either inherited or specific</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#belongsToAxis">
+  <rdfs:label>belongsToAxis</rdfs:label>
+  <rdfs:comment>Indicate the axis of analysis to which the difference belongs</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#containsDifference">
+  <rdfs:label>containsDifference</rdfs:label>
+  <rdfs:comment>Indicate the differences which belongs to the axis of analysis</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#AxisOfAnalysis"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#attribute">
+  <rdfs:label>attribute</rdfs:label>
+  <rdfs:comment>Link a concept to one of its attributes either inherited or specific</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Attribute"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#instanceOf">
+    <rdfs:label>instanceOf</rdfs:label> 
+    <rdfs:comment>instance relationship</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+  <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+<!-- Relations between the 2 dimensions -->
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#denotedByTerm">
+    <rdfs:label>denotedByTerm</rdfs:label> 
+    <rdfs:comment>Link a concept to a term which denotes it</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+  <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#denotedConcept">
+    <rdfs:label>denotedConcept</rdfs:label> 
+    <rdfs:comment>Property whose value is the OTV concept denoted by the term: &apos;a term is a verbal designation of a concept&apos; (ISO 1087)</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#denotedByProperName">
+    <rdfs:label>denotedByProperName</rdfs:label>
+    <rdfs:comment>The denotedByPrperName property links an individual (object) to a proper name which denotes it</rdfs:comment>
+ 	<rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+ 	<rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://www.ontologia.fr/OTB/otv#denotedObject">
+   	<rdfs:label>denotedObject</rdfs:label>
+    <rdfs:comment>Property whose value is the OTV object denoted by the proper name</rdfs:comment>
+ 	<rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+ 	<rdfs:range rdf:resource="http://www.ontologia.fr/OTB/otv#Object"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:ObjectProperty>
+
+
+<!-- ***********************************************
+                      OTV ANNOTATION PROPERTIES
+       *********************************************** -->
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#conceptName">
+    <rdfs:label>conceptName</rdfs:label> 
+    <rdfs:comment>Name of the concept</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Concept"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#termName">
+    <rdfs:label>termName</rdfs:label> <!-- équivalent à rdfs:label -->
+    <rdfs:comment>String representing the term</rdfs:comment>
+ 	  <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+ 	  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#properName">
+ 	  <rdfs:label>properName</rdfs:label>
+    <rdfs:comment>String representing the proper name</rdfs:comment>
+ 	  <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#ProperName"/>
+ 	  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#language">
+ 	  <rdfs:label>language</rdfs:label>
+    <rdfs:comment>Property that denotes the language of the term</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.ontologia.fr/OTB/otv#Term"/>
+          <rdf:Description rdf:about="http://www.ontologia.fr/OTB/otv#ProperName"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+ 	  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#termStatus">
+	 <rdfs:label>termStatus</rdfs:label>
+    <rdfs:comment>Property that indicates the status of the term</rdfs:comment>
+ 	  <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+ 	  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#termDefinition">
+   <rdfs:label>termDefinition</rdfs:label>
+    <rdfs:comment>Defintion of the term in natural language</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#context">
+   <rdfs:label>context</rdfs:label>
+    <rdfs:comment>Context associated to the term</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#note">
+   <rdfs:label>note</rdfs:label>
+    <rdfs:comment>Note associated to the term</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#partOfSpeech">
+   <rdfs:label>partOfSpeech</rdfs:label>
+    <rdfs:comment>Part of Speech of the term</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#gender">
+   <rdfs:label>gender</rdfs:label>
+    <rdfs:comment>Gender of the term</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#Term"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#beginDate">
+    <rdfs:label>beginDate</rdfs:label>
+   	<rdfs:comment>Property that indicates the begin date of of an axis of analysis, concept, term, object</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.ontologia.fr/OTB/otv#endDate">
+	 <rdfs:label>endDate</rdfs:label>
+ 	  <rdfs:comment>Property that indicates the end date of of an axis of analysis, concept, term, object</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologia.fr/OTB/otv#OTVCore"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+   	<rdfs:isDefinedBy>http://www.ontologia.fr/OTB/otv.rdf</rdfs:isDefinedBy>
+</owl:AnnotationProperty>
+
+
+	<!-- 
+	//////////////////////////////////////////////////////////
+	//
+	// OTV
+	//
+	//////////////////////////////////////////////////////////
+	-->
+
+<!-- ONTOTERMINOLOGY
+
+	Ontoterminology: Athenian-Legal-Bodies
+	Author: Rachel Milio
+	Creation date: August 6, 2024
+	Export date: August 28, 2024 time: 9:13:02 PM
+	Generated by Tedi version: 3.7
+	http://ontoterminology.com/tedi -->
+
+	<!--  OTV Axes of Analysis and Differences -->
+
+    <!-- Axis of Analysis: Legal Jurisdiction -->
+
+    <otv:AxisOfAnalysis rdf:about="#Legal_Jurisdiction">
+        <rdfs:label>Legal Jurisdiction</rdfs:label>
+        <otv:containsDifference rdf:resource="#convenes_the_Council_and_Assembly"/>
+        <otv:containsDifference rdf:resource="#deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <otv:containsDifference rdf:resource="#deliberates_over_political_issues"/>
+        <otv:containsDifference rdf:resource="#hold_preliminary_hearings_and_assign_cases"/>
+        <otv:containsDifference rdf:resource="#judge_the_majority_of_legal_proceedings"/>
+        <otv:containsDifference rdf:resource="#judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <otv:containsDifference rdf:resource="#judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees"/>
+        <otv:containsDifference rdf:resource="#judges_unintentional_and_justifiable_homicide_cases"/>
+        <otv:containsDifference rdf:resource="#supervises_arrests_imprisonments_and_executions"/>
+        <otv:containsDifference rdf:resource="#supervises_family_lawsuits_for_citizens"/>
+        <otv:containsDifference rdf:resource="#supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:containsDifference rdf:resource="#supervises_military_related_legal_proceedings"/>
+        <otv:containsDifference rdf:resource="#supervises_private_actions_and_family_law_for_metics"/>
+        <otv:containsDifference rdf:resource="#supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+    </otv:AxisOfAnalysis>
+
+    <otv:Difference rdf:about="#convenes_the_Council_and_Assembly">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>convenes the Council and Assembly</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>deliberates over agenda for Assembly and examines appointed magistrates</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#deliberates_over_political_issues">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>deliberates over political issues</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#hold_preliminary_hearings_and_assign_cases">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>hold preliminary hearings and assign cases</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#judge_the_majority_of_legal_proceedings">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>judge the majority of legal proceedings</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#judges_private_lawsuits_over_up_to_10_drachmas">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>judges private lawsuits over up to 10 drachmas</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>judges suits for intentional homicide intentional wounding and destruction of sacred olive trees</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#judges_unintentional_and_justifiable_homicide_cases">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>judges unintentional and justifiable homicide cases</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_arrests_imprisonments_and_executions">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises arrests imprisonments and executions</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_family_lawsuits_for_citizens">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises family lawsuits for citizens</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_military_related_legal_proceedings">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises military related legal proceedings</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_private_actions_and_family_law_for_metics">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises private actions and family law for metics</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises religious suits such as impiety indictments and homicide suits</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_Jurisdiction"/>
+    </otv:Difference>
+
+    <!-- Axis of Analysis: Term length -->
+
+    <otv:AxisOfAnalysis rdf:about="#Term_length">
+        <rdfs:label>Term length</rdfs:label>
+        <otv:containsDifference rdf:resource="#no_term_length"/>
+        <otv:containsDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:containsDifference rdf:resource="#serves_for_one_tenth_of_a_year"/>
+        <otv:containsDifference rdf:resource="#serves_for_the_remainder_of_life"/>
+    </otv:AxisOfAnalysis>
+
+    <otv:Difference rdf:about="#no_term_length">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>no term length</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Term_length"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#serves_a_one_year_term">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>serves a one year term</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Term_length"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#serves_for_one_tenth_of_a_year">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>serves for one tenth of a year</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Term_length"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#serves_for_the_remainder_of_life">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>serves for the remainder of life</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Term_length"/>
+    </otv:Difference>
+
+    <!-- Axis of Analysis: Size -->
+
+    <otv:AxisOfAnalysis rdf:about="#Size">
+        <rdfs:label>Size</rdfs:label>
+        <otv:containsDifference rdf:resource="#has_40_members"/>
+        <otv:containsDifference rdf:resource="#has_50_members"/>
+        <otv:containsDifference rdf:resource="#has_500_members"/>
+        <otv:containsDifference rdf:resource="#has_51_members"/>
+        <otv:containsDifference rdf:resource="#has_a_size_that_varies_based_on_case"/>
+        <otv:containsDifference rdf:resource="#held_by_10_people"/>
+        <otv:containsDifference rdf:resource="#held_by_11_people"/>
+        <otv:containsDifference rdf:resource="#held_by_6_people"/>
+        <otv:containsDifference rdf:resource="#held_by_one_person"/>
+        <otv:containsDifference rdf:resource="#made_up_of_all_adult_male_citizens"/>
+        <otv:containsDifference rdf:resource="#made_up_of_all_former_archons"/>
+    </otv:AxisOfAnalysis>
+
+    <otv:Difference rdf:about="#has_40_members">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>has 40 members</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#has_50_members">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>has 50 members</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#has_500_members">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>has 500 members</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#has_51_members">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>has 51 members</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#has_a_size_that_varies_based_on_case">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>has a size that varies based on case</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#held_by_10_people">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>held by 10 people</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#held_by_11_people">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>held by 11 people</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#held_by_6_people">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>held by 6 people</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#held_by_one_person">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>held by one person</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#made_up_of_all_adult_male_citizens">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>made up of all adult male citizens</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#made_up_of_all_former_archons">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>made up of all former archons</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Size"/>
+    </otv:Difference>
+
+    <!-- Axis of Analysis: Selection -->
+
+    <otv:AxisOfAnalysis rdf:about="#Selection">
+        <rdfs:label>Selection</rdfs:label>
+        <otv:containsDifference rdf:resource="#becomes_a_member_after_archonship"/>
+        <otv:containsDifference rdf:resource="#chosen_by_lot"/>
+        <otv:containsDifference rdf:resource="#elected_from_each_tribe"/>
+        <otv:containsDifference rdf:resource="#made_up_of_council_members_in_an_order_determined_by_lot"/>
+        <otv:containsDifference rdf:resource="#no_formal_selection"/>
+    </otv:AxisOfAnalysis>
+
+    <otv:Difference rdf:about="#becomes_a_member_after_archonship">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>becomes a member after archonship</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Selection"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#chosen_by_lot">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>chosen by lot</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Selection"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#elected_from_each_tribe">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>elected from each tribe</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Selection"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#made_up_of_council_members_in_an_order_determined_by_lot">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>made up of council members in an order determined by lot</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Selection"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#no_formal_selection">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>no formal selection</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Selection"/>
+    </otv:Difference>
+
+    <!-- Axis of Analysis: Legal role -->
+
+    <otv:AxisOfAnalysis rdf:about="#Legal_role">
+        <rdfs:label>Legal role</rdfs:label>
+        <otv:containsDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:containsDifference rdf:resource="#supervises_legal_proceedings"/>
+    </otv:AxisOfAnalysis>
+
+    <otv:Difference rdf:about="#judges_legal_proceedings">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>judges legal proceedings</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_role"/>
+    </otv:Difference>
+
+    <otv:Difference rdf:about="#supervises_legal_proceedings">
+        <rdf:type rdf:resource="http://www.ontologia.fr/OTB/otv#Difference"/>
+        <rdfs:label>supervises legal proceedings</rdfs:label>
+        <otv:belongsToAxis rdf:resource="#Legal_role"/>
+    </otv:Difference>
+
+	<!--  OTV Relations -->
+
+    <otv:Relation rdf:about="#hasFunction"/>
+    <otv:Relation rdf:about="#hasPart"/>
+    <otv:Relation rdf:about="#isRelatedTo"/>
+	<!--  OTV Attributes -->
+
+	<!--  OTV Concepts -->
+
+    <otv:Concept rdf:about="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings">
+        <otv:conceptName>&lt;Group chosen by lot has a size that varies based on case serves a one year term judge the majority of legal proceedings&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#has_a_size_that_varies_based_on_case"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#judge_the_majority_of_legal_proceedings"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#judge_the_majority_of_legal_proceedings"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#has_a_size_that_varies_based_on_case"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Law_courts_en"/>
+        <otv:denotedByTerm rdf:resource="#δικαστήριον_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly">
+        <otv:conceptName>&lt;Group has 50 members serves for one tenth of a year made up of council members in an order determined by lot convenes the Council and Assembly&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#has_50_members"/>
+        <otv:ownDifference rdf:resource="#serves_for_one_tenth_of_a_year"/>
+        <otv:ownDifference rdf:resource="#made_up_of_council_members_in_an_order_determined_by_lot"/>
+        <otv:ownDifference rdf:resource="#convenes_the_Council_and_Assembly"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#convenes_the_Council_and_Assembly"/>
+        <otv:difference rdf:resource="#made_up_of_council_members_in_an_order_determined_by_lot"/>
+        <otv:difference rdf:resource="#serves_for_one_tenth_of_a_year"/>
+        <otv:difference rdf:resource="#has_50_members"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Prytaneis_en"/>
+        <otv:denotedByTerm rdf:resource="#Presidents_en"/>
+        <otv:denotedByTerm rdf:resource="#πρυτάνεις_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group">
+        <otv:conceptName>&lt;Group&gt;</otv:conceptName>
+        <otv:ownDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Council_en"/>
+        <otv:denotedByTerm rdf:resource="#Βουλὴ_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies">
+        <otv:conceptName>&lt;Official chosen by lot held by 6 people serves a one year term supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#held_by_6_people"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#held_by_6_people"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Law-Givers_en"/>
+        <otv:denotedByTerm rdf:resource="#Thesmothetai_en"/>
+        <otv:denotedByTerm rdf:resource="#θεσμοθέται_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions">
+        <otv:conceptName>&lt;Official held by 11 people chosen by lot serves a one year term supervises arrests imprisonments and executions&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#held_by_11_people"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_arrests_imprisonments_and_executions"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#supervises_arrests_imprisonments_and_executions"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#held_by_11_people"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Eleven_en"/>
+        <otv:denotedByTerm rdf:resource="#οἱ_ἕνδεκα‎_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates">
+        <otv:conceptName>&lt;Group chosen by lot has 500 members serves a one year term deliberates over agenda for Assembly and examines appointed magistrates&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#has_500_members"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#has_500_members"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Council_of_500_en"/>
+        <otv:denotedByTerm rdf:resource="#βουλὴ_οἱ_πεντακόσιοι_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits">
+        <otv:conceptName>&lt;Official chosen by lot serves a one year term supervises religious suits such as impiety indictments and homicide suits&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <otv:ownDifference rdf:resource="#held_by_one_person"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#held_by_one_person"/>
+        <otv:difference rdf:resource="#supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Basileus_en"/>
+        <otv:denotedByTerm rdf:resource="#King_en"/>
+        <otv:denotedByTerm rdf:resource="#βασιλεὺς_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official">
+        <otv:conceptName>&lt;Official&gt;</otv:conceptName>
+        <otv:ownDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Magistrate_en"/>
+        <otv:denotedByTerm rdf:resource="#ἄρχων_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas">
+        <otv:conceptName>&lt;Group chosen by lot has 40 members serves a one year term judges private lawsuits over up to 10 drachmas&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#has_40_members"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#has_40_members"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Forty_en"/>
+        <otv:denotedByTerm rdf:resource="#τετταράκοντα_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length">
+        <otv:conceptName>&lt;Group deliberates over political issues made up of all adult male citizens no formal selection no term length&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#deliberates_over_political_issues"/>
+        <otv:ownDifference rdf:resource="#made_up_of_all_adult_male_citizens"/>
+        <otv:ownDifference rdf:resource="#no_formal_selection"/>
+        <otv:ownDifference rdf:resource="#no_term_length"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#no_term_length"/>
+        <otv:difference rdf:resource="#no_formal_selection"/>
+        <otv:difference rdf:resource="#made_up_of_all_adult_male_citizens"/>
+        <otv:difference rdf:resource="#deliberates_over_political_issues"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Assembly_en"/>
+        <otv:denotedByTerm rdf:resource="#ἐκκλησία_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons">
+        <otv:conceptName>&lt;Group becomes a member after archonship serves for the remainder of life judges suits for intentional homicide intentional wounding and destruction of sacred olive trees made up of all former archons&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#becomes_a_member_after_archonship"/>
+        <otv:ownDifference rdf:resource="#serves_for_the_remainder_of_life"/>
+        <otv:ownDifference rdf:resource="#judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees"/>
+        <otv:ownDifference rdf:resource="#made_up_of_all_former_archons"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#made_up_of_all_former_archons"/>
+        <otv:difference rdf:resource="#judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees"/>
+        <otv:difference rdf:resource="#serves_for_the_remainder_of_life"/>
+        <otv:difference rdf:resource="#becomes_a_member_after_archonship"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Council_of_the_Areopagus_en"/>
+        <otv:denotedByTerm rdf:resource="#βουλὴ ἐξ Ἀρείου πάγου_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings">
+        <otv:conceptName>&lt;Official elected from each tribe held by 10 people serves a one year term supervises military related legal proceedings&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#elected_from_each_tribe"/>
+        <otv:ownDifference rdf:resource="#held_by_10_people"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_military_related_legal_proceedings"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#supervises_military_related_legal_proceedings"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#held_by_10_people"/>
+        <otv:difference rdf:resource="#elected_from_each_tribe"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Generals_en"/>
+        <otv:denotedByTerm rdf:resource="#στρατηγοί_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term">
+        <otv:conceptName>&lt;Official chosen by lot held by 10 people serves a one year term&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#held_by_10_people"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#hold_preliminary_hearings_and_assign_cases"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#hold_preliminary_hearings_and_assign_cases"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#held_by_10_people"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Archons_en"/>
+        <otv:denotedByTerm rdf:resource="#ἄρχοντες_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens">
+        <otv:conceptName>&lt;Official chosen by lot serves a one year term supervises family lawsuits for citizens&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_family_lawsuits_for_citizens"/>
+        <otv:ownDifference rdf:resource="#held_by_one_person"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#held_by_one_person"/>
+        <otv:difference rdf:resource="#supervises_family_lawsuits_for_citizens"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Eponymous_Archon_en"/>
+        <otv:denotedByTerm rdf:resource="#ἐπώνυμος_ἄρχων_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics">
+        <otv:conceptName>&lt;Official chosen by lot serves a one year term supervises private actions and family law for metics&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Official"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#supervises_private_actions_and_family_law_for_metics"/>
+        <otv:ownDifference rdf:resource="#held_by_one_person"/>
+        <otv:inheritedDifference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:difference rdf:resource="#held_by_one_person"/>
+        <otv:difference rdf:resource="#supervises_private_actions_and_family_law_for_metics"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#supervises_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Polemarch_en"/>
+        <otv:denotedByTerm rdf:resource="#πολέμαρχος_grc"/>
+    </otv:Concept>
+
+    <otv:Concept rdf:about="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases">
+        <otv:conceptName>&lt;Group chosen by lot has 51 members serves a one year term judges unintentional and justifiable homicide cases&gt;</otv:conceptName>
+        <otv:isA rdf:resource="#Group"/>
+        <otv:ownDifference rdf:resource="#chosen_by_lot"/>
+        <otv:ownDifference rdf:resource="#has_51_members"/>
+        <otv:ownDifference rdf:resource="#serves_a_one_year_term"/>
+        <otv:ownDifference rdf:resource="#judges_unintentional_and_justifiable_homicide_cases"/>
+        <otv:inheritedDifference rdf:resource="#judges_legal_proceedings"/>
+        <otv:difference rdf:resource="#judges_unintentional_and_justifiable_homicide_cases"/>
+        <otv:difference rdf:resource="#serves_a_one_year_term"/>
+        <otv:difference rdf:resource="#has_51_members"/>
+        <otv:difference rdf:resource="#chosen_by_lot"/>
+        <otv:difference rdf:resource="#judges_legal_proceedings"/>
+        <otv:denotedByTerm rdf:resource="#Ephetai_en"/>
+        <otv:denotedByTerm rdf:resource="#ἐφέται_grc"/>
+    </otv:Concept>
+
+	<!--  OTV Terms -->
+
+    <otv:Term rdf:about="#Polemarch_en">
+        <rdfs:label xml:lang="en">Polemarch</rdfs:label>
+        <otv:termName>Polemarch</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Law-Givers_en">
+        <rdfs:label xml:lang="en">Law-Givers</rdfs:label>
+        <otv:termName>Law-Givers</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:termStatus>alternative</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Eponymous_Archon_en">
+        <rdfs:label xml:lang="en">Eponymous Archon</rdfs:label>
+        <otv:termName>Eponymous Archon</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Presidents_en">
+        <rdfs:label xml:lang="en">Presidents</rdfs:label>
+        <otv:termName>Presidents</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <otv:termStatus>alternative</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Assembly_en">
+        <rdfs:label xml:lang="en">Assembly</rdfs:label>
+        <otv:termName>Assembly</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#King_en">
+        <rdfs:label xml:lang="en">King</rdfs:label>
+        <otv:termName>King</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <otv:termStatus>alternative</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Eleven_en">
+        <rdfs:label xml:lang="en">Eleven</rdfs:label>
+        <otv:termName>Eleven</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate held by 11 people, chosen by lot, serves a one year term, carries out arrests imprisonments and executions.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate held by 11 people, chosen by lot, serves a one year term, carries out arrests imprisonments and executions.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Thesmothetai_en">
+        <rdfs:label xml:lang="en">Thesmothetai</rdfs:label>
+        <otv:termName>Thesmothetai</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Law_courts_en">
+        <rdfs:label xml:lang="en">Law courts</rdfs:label>
+        <otv:termName>Law courts</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Prytaneis_en">
+        <rdfs:label xml:lang="en">Prytaneis</rdfs:label>
+        <otv:termName>Prytaneis</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Archons_en">
+        <rdfs:label xml:lang="en">Archons</rdfs:label>
+        <otv:termName>Archons</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Council_of_500_en">
+        <rdfs:label xml:lang="en">Council of 500</rdfs:label>
+        <otv:termName>Council of 500</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Ephetai_en">
+        <rdfs:label xml:lang="en">Ephetai</rdfs:label>
+        <otv:termName>Ephetai</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Forty_en">
+        <rdfs:label xml:lang="en">Forty</rdfs:label>
+        <otv:termName>Forty</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Generals_en">
+        <rdfs:label xml:lang="en">Generals</rdfs:label>
+        <otv:termName>Generals</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Basileus_en">
+        <rdfs:label xml:lang="en">Basileus</rdfs:label>
+        <otv:termName>Basileus</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="en">Magistrate chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Council_en">
+        <rdfs:label xml:lang="en">Council</rdfs:label>
+        <otv:termName>Council</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>A group who judges trials.</otv:termDefinition>
+        <skos:definition xml:lang="en">A group who judges trials.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Magistrate_en">
+        <rdfs:label xml:lang="en">Magistrate</rdfs:label>
+        <otv:termName>Magistrate</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Official"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Council_of_the_Areopagus_en">
+        <rdfs:label xml:lang="en">Council of the Areopagus</rdfs:label>
+        <otv:termName>Council of the Areopagus</otv:termName>
+        <otv:language>en</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Council becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</otv:termDefinition>
+        <skos:definition xml:lang="en">Council becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+    </otv:Term>
+
+    <otv:Term rdf:about="#οἱ_ἕνδεκα‎_grc">
+        <rdfs:label xml:lang="grc">οἱ ἕνδεκα‎</rdfs:label>
+        <otv:termName>οἱ ἕνδεκα‎</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_held_by_11_people_chosen_by_lot_serves_a_one_year_term_supervises_arrests_imprisonments_and_executions"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</skos:definition>
+        <otv:context xml:lang="grc">Isaeus 4.28: " οὗτος γάρ, ὅτ᾽ ἐπεδήμει ἐνθάδε, πρῶτον μὲν εἰς τὸ δεσμωτήριον ὡς κλέπτης ὢν ἐπ᾽ αὐτοφώρῳ ἀπήχθη, τότε δὲ ἀφεθεὶς μεθ᾽ ἑτέρων τινῶν ὑπὸ τῶν ἕνδεκα"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#ἐκκλησία_grc">
+        <rdfs:label xml:lang="grc">ἐκκλησία</rdfs:label>
+        <otv:termName>ἐκκλησία</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_deliberates_over_political_issues_made_up_of_all_adult_male_citizens_no_formal_selection_no_term_length"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 25.9:  καὶ τὰ μὲν ἄλλ᾽ ἐάσω: ἀλλ᾽ εἰς τὰς ἐκκλησίας ἀναβαίνουσιν, ἐν αἷς ὑμεῖς γνώμης ἀπόδειξιν, οὐ πονηρίας τοῖς λέγουσι προτίθετε, τόλμαν καὶ κραυγὴν καὶ ψευδεῖς αἰτίας καὶ συκοφαντίαν καὶ ἀναισχυντίαν καὶ πάντα τὰ τοιαῦτα συνεσκευασμένοι, ὧν οὐκ ἂν εὕροι τις ἐναντιώτερα τῷ βουλεύεσθαι, νομίζω δ᾽ οὐδ᾽ ἂν αἰσχίω."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#θεσμοθέται_grc">
+        <rdfs:label xml:lang="grc">θεσμοθέται</rdfs:label>
+        <otv:termName>θεσμοθέται</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_held_by_6_people_serves_a_one_year_term_supervises_lawsuits_against_other_officials_such_as_impeachments_indictments_for_illegal_proposals_and_scrutinies"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</skos:definition>
+        <otv:context xml:lang="grc">Isoc. 20.2: " ἔπειτα τῶν μὲν ἄλλων ἐγκλημάτων αὐτῷ τῷ παθόντι μόνον ὁ δράσας ὑπόδικός ἐστιν: περὶ δὲ τῆς ὕβρεως, ὡς κοινοῦ τοῦ πράγματος ὄντος, ἔξεστι τῷ βουλομένῳ τῶν πολιτῶν γραψαμένῳ πρὸς τοὺς θεσμοθέτας εἰσελθεῖν εἰς ὑμᾶς."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#βασιλεὺς_grc">
+        <rdfs:label xml:lang="grc">βασιλεὺς</rdfs:label>
+        <otv:termName>βασιλεὺς</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_religious_suits_such_as_impiety_indictments_and_homicide_suits"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</skos:definition>
+        <otv:context xml:lang="grc">Lys. 6.4: " ἐὰν νυνὶ Ἀνδοκίδης ἀθῷος ἀπαλλαγῇ δι᾽ ὑμᾶς ἐκ τοῦδε τοῦ ἀγῶνος καὶ ἔλθῃ κληρωσόμενος τῶν ἐννέα ἀρχόντων καὶ λάχῃ βασιλεύς, ἄλλο τι ἢ ὑπὲρ ὑμῶν καὶ θυσίας θύσει καὶ εὐχὰς εὔξεται κατὰ τὰ πάτρια"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#πρυτάνεις_grc">
+        <rdfs:label xml:lang="grc">πρυτάνεις</rdfs:label>
+        <otv:termName>πρυτάνεις</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_has_50_members_serves_for_one_tenth_of_a_year_made_up_of_council_members_in_an_order_determined_by_lot_convenes_the_Council_and_Assembly"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</skos:definition>
+        <otv:context xml:lang="grc">Aeschin. 2.60: " προγράψαι τοὺς πρυτάνεις ἐκκλησίας δύο κατὰ τὸν νόμον, ἐν δὲ ταύταις βουλεύσασθαι περὶ τῆς εἰρήνης Ἀθηναίους"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#δικαστήριον_grc">
+        <rdfs:label xml:lang="grc">δικαστήριον</rdfs:label>
+        <otv:termName>δικαστήριον</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_a_size_that_varies_based_on_case_serves_a_one_year_term_judge_the_majority_of_legal_proceedings"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 21.221: "αὐτίκα δὴ μάλα, ἐπειδὰν ἀναστῇ τὸ δικαστήριον, εἷς ἕκαστος ὑμῶν"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#ἐπώνυμος_ἄρχων_grc">
+        <rdfs:label xml:lang="grc">ἐπώνυμος ἄρχων</rdfs:label>
+        <otv:termName>ἐπώνυμος ἄρχων</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_family_lawsuits_for_citizens"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 21.9: "ἐν δὲ ταύτῃ ἐπειδὰν χρηματίσωσιν οἱ πρόεδροι περὶ ὧν διῴκηκεν ὁ ἄρχων, χρηματίζειν καὶ περὶ ὧν ἄν τις ἠδικηκὼς ᾖ περὶ τὴν ἑορτὴν ἢ παρανενομηκώς"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#στρατηγοί_grc">
+        <rdfs:label xml:lang="grc">στρατηγοί</rdfs:label>
+        <otv:termName>στρατηγοί</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_elected_from_each_tribe_held_by_10_people_serves_a_one_year_term_supervises_military_related_legal_proceedings"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 4.25: " τὰς προφάσεις ἀφελεῖν καὶ τοῦ στρατηγοῦ καὶ τῶν στρατιωτῶν, μισθὸν πορίσαντας καὶ στρατιώτας οἰκείους ὥσπερ ἐπόπτας τῶν στρατηγουμένων παρακαταστήσαντας." </otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#ἄρχοντες_grc">
+        <rdfs:label xml:lang="grc">ἄρχοντες</rdfs:label>
+        <otv:termName>ἄρχοντες</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_held_by_10_people_serves_a_one_year_term"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 23.28: "εἰσφέρειν δ᾽ ἐς τοὺς ἄρχοντας, ὧν ἕκαστοι δικασταί εἰσι, τῷ βουλομένῳ. τὴν δ᾽ ἡλιαίαν διαγιγνώσκειν."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#ἐφέται_grc">
+        <rdfs:label xml:lang="grc">ἐφέται</rdfs:label>
+        <otv:termName>ἐφέται</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_51_members_serves_a_one_year_term_judges_unintentional_and_justifiable_homicide_cases"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 23.37: "ἐὰν δέ τις τὸν ἀνδροφόνον κτείνῃ ἢ αἴτιος ᾖ φόνου, ἀπεχόμενον ἀγορᾶς ἐφορίας καὶ ἄθλων καὶ ἱερῶν Ἀμφικτυονικῶν, ὥσπερ τὸν Ἀθηναῖον κτείναντα, ἐν τοῖς αὐτοῖς ἐνέχεσθαι, διαγιγνώσκειν δὲ τοὺς ἐφέτας."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#τετταράκοντα_grc">
+        <rdfs:label xml:lang="grc">τετταράκοντα</rdfs:label>
+        <otv:termName>τετταράκοντα</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_40_members_serves_a_one_year_term_judges_private_lawsuits_over_up_to_10_drachmas"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</skos:definition>
+        <otv:context xml:lang="grc">Isoc. 15.237: "ἐν γὰρ ταῖς σανίσι ταῖς ὑπὸ τῶν ἀρχόντων ἐκτιθεμέναις ἀναγκαῖόν ἐστιν, ἐν μὲν ταῖς ὑπὸ τῶν θεσμοθετῶν ἀμφοτέρους ἐνεῖναι, τούς τε τὴν πόλιν ἀδικοῦντας καὶ τοὺς συκοφαντοῦντας, ἐν δὲ ταῖς τῶν ἕνδεκα τούς τε κακουργοῦντας καὶ τοὺς τούτοις ἐφεστῶτας, ἐν δὲ ταῖς τῶν τετταράκοντα τούς τ᾽ ἐν τοῖς ἰδίοις πράγμασιν ἀδικοῦντας καὶ τοὺς μὴ δικαίως ἐγκαλοῦντας" </otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#Βουλὴ_grc">
+        <rdfs:label xml:lang="grc">Βουλὴ</rdfs:label>
+        <otv:termName>Βουλὴ</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>A group which judges legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="grc">A group which judges legal proceedings.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 22.5: " νόμος ἐστί, φησίν, ἐὰν ἀξίως ἡ βουλὴ δοκῇ βουλεῦσαι δωρειᾶς, διδόναι τὸν δῆμον τὴν δωρειὰν αὐτῇ."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#πολέμαρχος_grc">
+        <rdfs:label xml:lang="grc">πολέμαρχος</rdfs:label>
+        <otv:termName>πολέμαρχος</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official_chosen_by_lot_serves_a_one_year_term_supervises_private_actions_and_family_law_for_metics"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</otv:termDefinition>
+        <skos:definition xml:lang="grc">ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 59.40: "ἀφαιρουμένου δὲ τοῦ Στεφάνου κατὰ τὸν νόμον εἰς ἐλευθερίαν, κατηγγύησεν αὐτὴν πρὸς τῷ πολεμάρχῳ."</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#βουλὴ ἐξ Ἀρείου πάγου_grc">
+        <rdfs:label xml:lang="grc">βουλὴ ἐξ Ἀρείου πάγου</rdfs:label>
+        <otv:termName>βουλὴ ἐξ Ἀρείου πάγου</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_becomes_a_member_after_archonship_serves_for_the_remainder_of_life_judges_suits_for_intentional_homicide_intentional_wounding_and_destruction_of_sacred_olive_trees_made_up_of_all_former_archons"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</skos:definition>
+        <otv:context xml:lang="grc">Dem. 18.133: "καὶ εἰ μὴ ἡ βουλὴ ἡ ἐξ Ἀρείου πάγου τὸ πρᾶγμ᾽ αἰσθομένη καὶ τὴν ὑμετέραν ἄγνοιαν ἐν οὐ δέοντι συμβεβηκυῖαν ἰδοῦσα ἐπεζήτησε τὸν ἄνθρωπον καὶ συλλαβοῦσ᾽ ἐπανήγαγεν ὡς ὑμᾶς, ἐξήρπαστ᾽ ἂν ὁ τοιοῦτος καὶ τὸ δίκην δοῦναι διαδὺς ἐξεπέπεμπτ᾽ ἂν ὑπὸ τοῦ σεμνολόγου τουτουί:." </otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#βουλὴ_οἱ_πεντακόσιοι_grc">
+        <rdfs:label xml:lang="grc">βουλὴ οἱ πεντακόσιοι</rdfs:label>
+        <otv:termName>βουλὴ οἱ πεντακόσιοι</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Group_chosen_by_lot_has_500_members_serves_a_one_year_term_deliberates_over_agenda_for_Assembly_and_examines_appointed_magistrates"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</otv:termDefinition>
+        <skos:definition xml:lang="grc">Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</skos:definition>
+        <otv:context xml:lang="grc">Aeschin. 3.2: "ἐβουλόμην μὲν οὖν, ὦ ἄνδρες Ἀθηναῖοι, καὶ τὴν βουλὴν τοὺς πεντακοσίους καὶ τὰς ἐκκλησίας ὑπὸ τῶν ἐφεστηκότων ὀρθῶς διοικεῖσθαι"</otv:context>
+    </otv:Term>
+
+    <otv:Term rdf:about="#ἄρχων_grc">
+        <rdfs:label xml:lang="grc">ἄρχων</rdfs:label>
+        <otv:termName>ἄρχων</otv:termName>
+        <otv:language>grc</otv:language>
+        <otv:denotedConcept rdf:resource="#Official"/>
+        <otv:termStatus>preferred</otv:termStatus>
+        <otv:partOfSpeech>none</otv:partOfSpeech>
+        <otv:gender>none</otv:gender>
+        <otv:termDefinition>An official who supervises legal proceedings.</otv:termDefinition>
+        <skos:definition xml:lang="grc">An official who supervises legal proceedings.</skos:definition>
+    </otv:Term>
+
+	<!--  OTV Proper Names -->
+
+	<!--  OTV Individuals -->
+
+</rdf:RDF>
