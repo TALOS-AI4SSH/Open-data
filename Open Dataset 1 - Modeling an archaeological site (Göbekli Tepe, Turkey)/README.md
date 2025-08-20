@@ -7,7 +7,6 @@ Antonia Lourentzaki<sup>1,\*</sup>, Maria Papadopoulou<sup>2</sup>, Christophe R
 <sup>3</sup> TALOS ERA Chair Professor, University of Crete, Greece<br/>
 <sup>\*</sup> Correspondence: [tonialouren@gmail.com](mailto:tonialouren@gmail.com)*  
 
-
 Contributions and feedback are highly encouraged.  
 Please send suggestions to **[tonialouren@gmail.com](mailto:tonialouren@gmail.com)**.
 
@@ -16,8 +15,6 @@ Please send suggestions to **[tonialouren@gmail.com](mailto:tonialouren@gmail.co
 **Version 1.0 of an ontoterminology** (i.e. “a terminology whose conceptual system is a formal ontology” — Roche 2007) that defines and represents the archaeological finds of **T-Pillars in Göbekli Tepe, SE Turkey (ca. 10,000–8,300 BCE)** in a machine-tractable way.
 
 ---
-
-
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13370343.svg)](https://doi.org/10.5281/zenodo.13370343)  
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
@@ -78,4 +75,4 @@ This dataset was built with **Tedi ontoTerminology Editor**, a software platform
 ## Citation
 
 If you use this dataset, please cite:  
-> Lourentzaki, A., Papadopoulou, M., & Roche, C. (2024). *Modeling an Archaeological Site – Göbekli Tepe v.1.0* (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13370343
+> Lourentzaki, A., Papadopoulou, M., & Roche, C. (2024). *Modeling an Archaeological Site – Göbekli Tepe v.1.0* (1.0) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.13370343](https://doi.org/10.5281/zenodo.13370343)

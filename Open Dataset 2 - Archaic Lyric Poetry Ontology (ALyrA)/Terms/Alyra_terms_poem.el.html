@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "ALyrA_ontoterminology" (el)</div>
+<div class="title2">Category: "αρχαϊκό λυρικό ποίημα"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 25, 2024 - Time: 10:20:20 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">αρχαϊκό λυρικό ποίημα</option>
+                <option value="1">αρχαϊκό λυρικό ποίημα μόνο στην ιωνική διάλεκτο</option>
+                <option value="2">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό</option>
+                <option value="3">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό ή από έναν μόνο ερμηνευτή</option>
+                <option value="4">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό μη συγκεκριμένου τύπου</option>
+                <option value="5">γνωμική ελεγεία</option>
+                <option value="6">διθύραμβος</option>
+                <option value="7">εγκώμιο</option>
+                <option value="8">ελεγεία</option>
+                <option value="9">επιθαλάμιο</option>
+                <option value="10">επίνικος</option>
+                <option value="11">ερωτική ελεγεία</option>
+                <option value="12">θρήνος</option>
+                <option value="13">ίαμβος</option>
+                <option value="14">μέλος</option>
+                <option value="15">μονωδία</option>
+                <option value="16">παιάνας</option>
+                <option value="17">παρθένειο</option>
+                <option value="18">πολεμική ελεγεία</option>
+                <option value="19">πολιτική ελεγεία</option>
+                <option value="20">προσόδιο</option>
+                <option value="21">υμέναιος</option>
+                <option value="22">ύμνος</option>
+                <option value="23">υπόρχημα</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">αρχαϊκό λυρικό ποίημα</div>    <div class="definitionNL"><b>Definition</b>: "Η Λυρική ποίηση ξεκίνησε ως θεσμός της αρχαίας Ελλάδας, ταξινομημένος σε σχέση με άλλες κατηγορίες ποίησης κατά την εποχή της κλασικής αρχαιότητας: τα δραματικά (γραμμένα σε στίχους) και τα επικά ποιήματα. Η λυρική ποίηση ήταν πολύ πιο σύντομη, ενώ διακρινόταν επίσης από την εστίασή της στην ψυχική κατάσταση του ποιητή και σε προσωπικά θέματα και όχι στο αφηγηματικό τόξο" (Ακαδημία Αμερικανών Ποιητών). Έτσι, ένα αρχαϊκό λυρικό ποίημα είναι ένα τέτοιο ποίημα που γράφτηκε από τον 7ο-αρχές του 5ου αιώνα π.Χ.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Academy of American Poets. Lyric Poetry. Poets.Org. Retrieved 13 May 2024, from https://poets.org/glossary/lyric-poetry</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: archaic lyric poem (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">αρχαϊκό λυρικό ποίημα μόνο στην ιωνική διάλεκτο</div>    <div class="definitionNL"><b>Definition</b>: Αρχαϊκό λυρικό ποίημα μόνο στην ιωνική διάλεκτο.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: archaic lyric poem only in ionic dialect (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό</div>    <div class="definitionNL"><b>Definition</b>: Μέλος που εκτελείται από Χορό.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: archaic lyric poem in ionic or in doric or in aeolic dialect performed by a chorus (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>choral_ibycus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>choral_stesichorus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό ή από έναν μόνο ερμηνευτή</div>    <div class="definitionNL"><b>Definition</b>: Μέλος που εκτελείται από χορό ή από έναν μόνο ερμηνευτή.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: archaic lyric poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό μη συγκεκριμένου τύπου</div>    <div class="definitionNL"><b>Definition</b>: Αρχαϊκό λυρικό ποίημα σε ιωνική ή δωρική ή αιολική διάλεκτο που εκτελείται από χορό μη συγκεκριμένου τύπου.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: archaic lyric poem in ionic or doric or aeolic dialect performed by a chorus of no particular type (none)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus performed by a non-specific type of chorus&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/, /performed by a non-specific type of chorus/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">γνωμική ελεγεία</div>    <div class="definitionNL"><b>Definition</b>: Ελεγεία με γνωμικό, συμβουλευτικό, βιοσοφικό περιεχόμενο. Γνωστοί ποιητές γνωστών γνωμικών ελεγειών είναι ο Φωκυλίδης και ο Θεογένης.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: gnomic elegy (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet with gnomic content&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in elegiac couplet/, /with specific content/, /with gnomic content/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gnomic_elegies_phocylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gnomic_elegies_theognis</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">διθύραμβος</div>    <div class="definitionNL"><b>Definition</b>: Λατρευτικοί ύμνοι του Διονύσου. Ο Βακχυλίδης, ο Πίνδαρος και ο Σιμωνίδης είναι γνωστό ότι συνέθεσαν διθύραμβους.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: dithyramb (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to dionysus&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to a god/, /dedicated to dionysus/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to a god&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dithyrambs_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dithyrambs_pindarus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dithyrambs_simonides</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">εγκώμιο</div>    <div class="definitionNL"><b>Definition</b>: Λυρικό τραγούδι επαίνου για ανθρώπους στη διάρκεια της ζωής τους. Ο Πίνδαρος, ο Βακχυλίδης και ο Ίβυκος είναι σημαντικές μορφές της σύνθεσης του εγκωμίου.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: enkomion (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to living&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to mortal/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enkomion_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enkomion_ibycus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enkomion_pindarus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ελεγεία</div>    <div class="definitionNL"><b>Definition</b>: Οι ελεγείες είναι ποιήματα γραμμένα σε ελεγειακά δίστιχα, με τον πρώτο στίχο σε εξάμετρο και τον δεύτερο σε πεντάμετρο. Αρχικά, χρησιμοποιήθηκαν για θρήνους (αλλά αργότερα είχαν ένα ευρύ φάσμα θεμάτων) και πιθανόν προέρχονται από τις ανατολίτικες θρηνητικές πρακτικές. Μπορεί να είναι μικρές σε έκταση (όσο ένα απλό κουπλέ) ή μεγαλύτερες.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.iii. Ελεγείες. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_024.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: elegy (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in elegiac couplet/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>elegies_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>elegies_archilochus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>elegies_simonides</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">επιθαλάμιο</div>    <div class="definitionNL"><b>Definition</b>: Το Επιθαλάμιο είναι ένα τραγούδι αφιερωμένο σε ένα γαμήλιο ζευγάρι που τραγουδιέται στη γαμήλια κατοικία. Η Σαπφώ είναι γνωστή για τα επιθαλάμιά της.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Hymenaeus. (n.d.). Retrieved 13 May 2024, from https://www.hellenicaworld.com/Greece/Mythology/en/Hymenaeus.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: epithalamion (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to wedding couple&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to mortal/, /dedicated to wedding couple/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to living&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epithalamia_sappho</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">επίνικος</div>    <div class="definitionNL"><b>Definition</b>: Λυρικό τραγούδι αφιερωμένο σε νικητή αθλητικών αγώνων. Ο Πίνδαρος, ο Βακχυλίδης και ο Ίβυκος είναι αυτοί που συνέθεσαν επινίκια τραγούδια.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: epinikion (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to winners in athletic events&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to mortal/, /dedicated to winners in athletic events/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to living&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epinikoi_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epinikoi_pindarus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epinikoi_simonides</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ερωτική ελεγεία</div>    <div class="definitionNL"><b>Definition</b>: Ελεγεία με ερωτικό χαρακτήρα. Διάσημος ποιητής που συνέθεσε ερωτικές ελεγείες είναι ο Μίμνερμος.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: erotic elegy (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet with erotic content&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in elegiac couplet/, /with specific content/, /with erotic content/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>erotic_elegies_mimnermus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">θρήνος</div>    <div class="definitionNL"><b>Definition</b>: Λυρικό τραγούδι αφιερωμένο σε έναν νεκρό άνθρωπο. Ο Ανακρέων, ο Πίνδαρος και ο Σιμωνίδης είναι διάσημοι για τέτοιες συνθέσεις τους.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: threnos (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to dead&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to mortal/, /dedicated to a dead being/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to living&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>threnoi_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>threnoi_pindarus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>threnoi_simonides</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ίαμβος</div>    <div class="definitionNL"><b>Definition</b>: Αρχικά συνδεόμενος με τον Διόνυσο, ο ίαμβος μπορεί να έχει προελληνική προέλευση ως ποιητική μορφή. Συνήθως συντίθεται σε ιαμβικό τρίμετρο ή τροχαϊκό τετράμετρο, η ιωνική εκδοχή του συχνά υιοθετεί την πρωτοπρόσωπη σκοπιά, αν και τα συμφραζόμενα μπορεί να ποικίλλουν.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Elegy and Iambus. (n.d.). Archaic Period - Culture. Retrieved 13 May 2024, from https://www.ime.gr/chronos/04/en/culture/221lit_lyric_elegy_iambus.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: iamb (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in iambic or trochaic metre&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in iambic or trochaic metre/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iambs_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iambs_ananius</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iambs_archilochus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iambs_hipponax</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iambs_semonides</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">μέλος</div>    <div class="definitionNL"><b>Definition</b>: Το Μέλος είναι το υπερώνυμο των αρχαϊκών λυρικών ποιημάτων, τα οποία ήταν γραμμένα σε ιωνική (εκτός από τον ίαμβο και την ελεγεία), αιολική και δωρική διάλεκτο.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: melos (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">μονωδία</div>    <div class="definitionNL"><b>Definition</b>: Οι μονωδίες χαρακτηρίζονται από σόλο ερμηνείες, όπου ο ποιητής ταυτίζεται με τον τραγουδιστή και εκφράζει προσωπικές σκέψεις και συναισθήματα, καθώς προσφέρουν μια άμεση και ελεύθερη έκφραση της προσωπικότητας. Για παράδειγμα, στις σαπφικές ωδές, η ποιήτρια δίνει προτεραιότητα στη δική της φωνή έναντι των άλλων.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.ii. Μονωδίες. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_021.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: monody (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a single performer&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a single performer/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 7</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>erotic_odes_alcaeus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>erotic_odes_alcman</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>erotic_odes_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>erotic_odes_sappho</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sympotic_odes_alcaeus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sympotic_odes_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>warlike_odes_alcaeus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">παιάνας</div>    <div class="definitionNL"><b>Definition</b>: Λυρικό τραγούδι αφιερωμένο στον αρχαίο Έλληνα θεό Απόλλωνα. Ο Αλκμάνας, ο Πίνδαρος και ο Βακχυλίδης είναι διάσημοι συνθέτες παιάνων.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: paean (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to apollo&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to a god/, /dedicated to apollo/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to a god&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paeans_alcman</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paeans_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paeans_pindarus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">παρθένειο</div>    <div class="definitionNL"><b>Definition</b>: Ένα λυρικό τραγούδι που ερμηνεύεται από μια χορωδία νεανίδων. Ο Αλκμάνας, ο Πίνδαρος και ο Βακχυλίδης φημίζονται για τη σύνθεση των Παρθενείων.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Lyric Genres. (n.d.). Retrieved 13 May 2024, from https://www.reed.edu/humanities/110Tech/lyricDefinitions.html#Hyporcheme</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: partheneion (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus performed by a maidens chorus&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/, /performed by a maidens chorus/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>partheneia_alcman</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>partheneia_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>partheneia_pindarus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">πολεμική ελεγεία</div>    <div class="definitionNL"><b>Definition</b>: Ελεγεία με πολεμικό χαρακτήρα. Ο Τυρταίος και ο Καλλίνικος είναι διάσημοι ποιητές τέτοιων ελεγειών.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: war elegy (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet with war content&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in elegiac couplet/, /with specific content/, /with war content/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>war_elegies_tyrtaeus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>war_elegy_callinus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">πολιτική ελεγεία</div>    <div class="definitionNL"><b>Definition</b>: Ελεγεία με πολιτικό χαρακτήρα. Ο Τυρταίος και ο Καλλίνικος είναι διάσημοι ποιητές τέτοιων ελεγειών.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: political elegy (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet with political content&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /only in ionic dialect/, /in elegiac couplet/, /with specific content/, /with political content/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem only in ionic dialect in elegiac couplet&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>political_elegies_solon</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">προσόδιο</div>    <div class="definitionNL"><b>Definition</b>: Ένα λυρικό τραγούδι που ερμηνεύεται στο δρόμο προς το ιερό από μια χορωδία. Ο Αλκμάν, ο Βακχυλίδης και ο Πίνδαρος είναι διάσημοι συνθέτες προσοδίων.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: prosodion (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus on the way to an altar&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/, /performed by a non-specific type of chorus/, /on the way to an altar/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus performed by a non-specific type of chorus&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>prosodia_alcman</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>prosodia_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>prosodia_pindarus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">υμέναιος</div>    <div class="definitionNL"><b>Definition</b>: Ένα λυρικό τραγούδι που εκτελείται κατά τη διάρκεια της πομπής της νύφης προς το σπίτι του γαμπρού. Η Σαπφώ είναι διάσημη για τους υμεναίους της.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: hymenaios (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus during bride procession&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/, /performed by a non-specific type of chorus/, /during bride procession/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus performed by a non-specific type of chorus&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymenaios_sappho</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ύμνος</div>    <div class="definitionNL"><b>Definition</b>: Λυρικό τραγούδι αφιερωμένο στους θεούς. Πολλοί ποιητές έχουν συνθέσει ύμνους, όπως ο Αλκαίος, ο Τέρπανδρος, η Σαπφώ, ο Αλκμάνας κ.ά.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Lyric Genres. (n.d.). Retrieved 13 May 2024, from https://www.reed.edu/humanities/110Tech/lyricDefinitions.html#Hyporcheme</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: hymn (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer dedicated to a god&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus or by a single performer/, /dedicated to a god/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus or by a single performer&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_alcaeus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_alcman</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_anacreon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_archilochus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_sappho</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hymns_terpander</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">υπόρχημα</div>    <div class="definitionNL"><b>Definition</b>: Ένα λυρικό τραγούδι που συνοδεύεται από μιμητικές κινήσεις. Ο Βακχυλίδης και ο Πίνδαρος φημίζονται για τη σύνθεση υπορχημάτων.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Source</b>: Κακριδής, Φάνης. (2012). 2.4.Β.i. Χορική ποίηση. In Αρχαία Ελληνική Γραμματολογία. Κέντρο Εκπαιδευτικής Έρευνας &amp; Ινστιτούτο Νεοελληνικών Σπουδών. Retrieved 2 May 2024 from https://www.greek-language.gr/digitalResources/ancient_greek/history/grammatologia/page_020.html</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: hyporcheme (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus with imitation expressions&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /archaic lyric poem/, /in ionic or in doric or in aeolic dialect/, /performed by a chorus/, /performed by a non-specific type of chorus/, /with specific content/, /with imitation content/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Archaic Lyric Poem in ionic or in doric or in aeolic dialect performed by a chorus performed by a non-specific type of chorus&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isWrittenBy</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hyporcheme_bacchylides</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hyporchemes_pindarus</strong></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

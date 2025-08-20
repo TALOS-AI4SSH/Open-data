@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bott5m: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 90%;
+            margin-bottom: 2px;
+        }
+        .attributeIndividual{
+            color:black;
+            margin-left: 10px;
+            font-size: 90%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Proper Name Dictionary on "Philosophers" (el)</div>
+<div class="title2">Category: "περίοδος"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:22:21 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">1ος αιώνας μ.Χ.</option>
+                <option value="1">1ος αιώνας π.Χ.</option>
+                <option value="2">2ος αιώνας μ.Χ.</option>
+                <option value="3">2ος αιώνας π.Χ.</option>
+                <option value="4">3ος αιώνας μ.Χ.</option>
+                <option value="5">3ος αιώνας π.Χ.</option>
+                <option value="6">4ος αιώνας μ.Χ.</option>
+                <option value="7">4ος αιώνας π.Χ.</option>
+                <option value="8">5ος αιώνας π.Χ.</option>
+                <option value="9">6ος αιώνας π.Χ.</option>
+                <option value="10">7ος αιώνας π.Χ.</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">1ος αιώνας μ.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 1 μ.Χ. έως το 99 μ.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 1st century CE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 1st_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;1&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;99&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αθηνόδωρος o Κανανίτης, Καρνείος ο Μεγαρεύς, Χαιρήμων ο Αλεξανδρεύς, Απολλώνιος ο Τυανέας, Δάμις (μαθητής του Απολλωνίου Τυανέως), Δάρδανος ο Αθηναίος, Δημήτριος από το Σούνιο, Δημώναξ ο Κύπριος, Αγαθόβουλος ο Αλεξανδρεύς, Δημήτριος ο Κυνικός, Διογένης ο Οινοανδεύς, Διονύσιος ο Αλεξανδρεύς, Διονύσιος ο Μιλήσιος, Διονύσιος ο Ρόδιος, Επίκτητος, Εύδημος από την Πέργαμο, Ευφράτης ο Στωικός, Γλαύκων, Αγίας, Ηλιόδωρος (Στωικός), Ηλιόδωρος (Επικούρειος), Ισαγόρας ο Θεσσαλός, Λεσβόναξ, Μενέφυλος, Μοδεράτος από τα Γάδειρα, Νικόμαχος από τα Γέρασα, Ονόσανδρος, Φίλων ο Αλεξανδρεύς, Πλούταρχος ο Χαιρωνεύς, Στράβων από την Αμάσεια, Θέων ο Σμυρναίος</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">1ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 99 π.Χ. έως το 1 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 1st century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 1st_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-99&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-1&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αινησίδημος ο Κνώσιος, Λούκιος Κορνήλιος Αλέξανδρος, Αισχίνης ο Νεαπολίτης, Αναξίλαος ο Λαρισαίος, Ανδρόνικος ο Ρόδιος, Αντίοχος ο Ασκαλωνίτης, Αντίπατρος ο Τύριος, Απελλικών ο Τήιος, Απολλώνιος ο Τύριος, Αρίστων ο Αλεξανδρινός, Άριστος ο Ασκαλωνίτης, Άρειος Δίδυμος, Ασκληπιόδοτος Τακτικός, Ασπάσιος, Αθήναιος από τη Σελεύκεια, Αθηνόδωρος o Κανανίτης, Αθηνόδωρος Κορδυλίων, Βόηθος από τη Σιδώνα- Περιπατητικός, Κάτιος Ίνσουβρος, Χαρμάδας, Κράτιππος ο Μυτιληναίος, Δαμοκλής ο Μεσσήνιος, Δημήτριος (Περιπατητικός), Δημήτριος ο Λάκων, Δημήτριος από τη Βιθυνία, Δημήτριος ο Βυζάντιος, Δερκυλλίδης, Δίκαιος ο Ταρσεύς, Διόδοτος ο Στωικός, Διόδοτος από τη Σιδώνα, Διογένης ο Οινοανδεύς, Δίων ο Αλεξανδρεύς, Ευκλείδης ο Νικομηδείας, Ευκρατίδης ο Ρόδιος, Εύδωρος ο Αλεξανδρεύς, Εκάτων ο Ρόδιος, Ηλιόδωρος από τη Μαλλό, Ηράκλειτος από την Τύρο, Ηρόδοτος από τη Νικομήδεια, Ίππαρχος ο Σολεύς, Ειρηναίος ο Μιλήσιος, Ιάσων ο Αθηναίος, Ιάσων ο Νυσαεύς, Λεσβόναξ, Λυσίμαχος (ακόλουθος του Αντιόχου), Μελέαγρος o Γαδαρεύς, Μενεκράτης, Μητρόδωρος ο Λαμψακηνός, Μητρόδωρος της Στρατονικείας, Μνασέας ο Τύριος, Μνήσαρχος ο Αθηναίος, Πάτρων ο Επικούρειος, Φαίδρος ο Επικούρειος, Φαινίας, Φίλων ο Αλεξανδρεύς, Φίλων ο Λαρισαίος, Φιλόδημος ο Γαδαρεύς, Ποσειδώνιος ο Απαμεύς, Ποτάμων ο Αλεξανδρεύς, Σαρπηδόνας, Στρατοκλής ο Ρόδιος, Στράβων από την Αμάσεια, Ξέναρχος από τη Σελεύκεια, Ζήνων ο Σιδώνιος</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">2ος αιώνας μ.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 100 μ.Χ. έως το 199 μ.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 2nd century CE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 2nd_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;100&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;199&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αριστοτέλης ο Μυτιληναίος, Αρτεμίδωρος Εφέσιος, Βασιλείδης, Καρποκράτης, Κλήμης ο Αλεξανδρεύς, Κρόνιος, Κυνούλκος, Δάμις (Επικούρειος), Δαμόφιλος από τη Βιθυνία, Δημήτριος από το Σούνιο, Δημώναξ ο Κύπριος, Αγαθόβουλος ο Αλεξανδρεύς, Δίων ο Ηρακλεώτης, Διονύσιος ο Μιλήσιος, Επίκτητος, Ευφράτης ο Στωικός, Κλαύδιος Γαληνός, Γλαύκων, Αγίας, Αρποκρατίων ο Αργείος, Αττικός, Ηλιόδωρος (Επικούρειος), Ηρακλείδης Αυρήλιος, Ερμίνος, Ιεροκλής, Ονοράτος, Ισαγόρας ο Θεσσαλός, Λέπιδος, Μάξιμος ο Τύριος, Μενέφυλος, Νικόμαχος από τα Γέρασα, Νικόστρατος ο Αθηναίος, Νουμήνιος από την Απαμεία, Οινόμαος ο Γαδαρηνός, Ωριγένης από την Αλεξάνδρεια, Πανκράτης, Πανταίνος, Περεγρίνος Πρωτεύς, Φιλίσκος, Λούκιος Φλάβιος Φιλόστρατος, Πλούταρχος ο Χαιρωνεύς, Σέξτος ο Εμπειρικός, Σέξτος o Χαιρωνεύς, Θεαγένης από την Πάτρα, Αμμώνιος Σακκάς</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">2ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 100 π.Χ. έως το 199 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 2nd century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 2nd_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-199&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-100&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αγαθοκλής από την Τύρο, Αλβούκιος Τίτος, Λούκιος Κορνήλιος Αλέξανδρος, Αλέξανδρος ο Αφροδισιεύς, Αισχίνης ο Νεαπολίτης, Ανδροκύδης (Πυθαγόρειος), Αντίοχος ο Ασκαλωνίτης, Αντίπατρος ο Ταρσεύς, Απελλικών ο Τήιος, Απολλόδωρος ο Επικούρειος, Απολλόδωρος από τη Σελεύκεια, Αρχέδημος ο Ταρσεύς, Αριστόβουλος ο Αλεξανδρεύς, Αριστοκρέων, Αρίστων ο Αλεξανδρινός, Αρίστων ο Κείος, Αριστοφάνης ο Βυζάντιος, Αθηνόδωρος Κορδυλίων, Βίτων ο Σολεύς, Βόηθος από τον Μαραθώνα, Βοηθός από την Πάρο, Βοηθός από τη Σιδώνα- Στωικός, Καρνεάδης ο Κυρηναίος, Χαρμάδας, Χρύσερμος ο Αλεξανδρεύς, Κλειτόμαχος ο Καρχηδόνιος, Κράτης ο Αθηναίος, Κράτης o Μαλλώτης, Κράτης ο Ταρσεύς, Κριτόλαος από τη Φασηλίδα, Δαμοκλής ο Μεσσήνιος, Δάμων ο Κυρηναίος, Δαμοφάνης, Δάρδανος ο Αθηναίος, Δημήτριος ο Λάκων, Δημήτρης ο Αλεξανδρεύς (Πλατωνιστής), Δημήτριος από τη Βιθυνία, Δημήτριος από τη Φώκαια, Δερκυλλίδης, Δίκαιος ο Ταρσεύς, Διόδωρος ο Αλεξανδρεύς, Διόδωρος από την Τύρο, Διογένης από τη Νικομήδεια, Διογένης από τη Σελεύκεια, Διογένης ο Ταρσεύς, Διονύσιος (Πλατωνιστής), Διονύσιος ο Κολοφώνιος, Διονύσιος ο Κυρηναίος, Εύβουλος (2ο π.Χ.), Ευκρατίδης ο Ρόδιος, Εύδρομος, Ευπείθης από την Πάφο, Εύανδρος ο Αθηναίος, Γόργος ο Σπαρτιάτης, Άγνων από την Ταρσό, Εκάτων ο Ρόδιος, Ηράκλειτος από την Τύρο, Ερμίνος, Ηρόδικος, Ειρηναίος ο Μιλήσιος, Ιάσων ο Αθηναίος, Ιάσων ο Πάριος, Μάρκος Αυρήλιος, Μελάνθιος ο Ρόδιος, Μελέαγρος o Γαδαρεύς, Μενεκράτης, Μέντωρ από τη Βιθυνία, Μητρόδωρος από την Απάμεια, Μητρόδωρος της Στρατονικείας, Μνησαγόρας, Μνασέας ο Τύριος, Μνήσαρχος ο Αθηναίος, Νέαρχος ο Ταραντίνος, Νέστωρ από την Ταρσό, Νίκανδρος από τη Βιθυνία, Νικόστρατος από την Αλεξάνδρεια, Πάμφιλος από τη Μαγνησία, Παναίτιος ο Ρόδιος, Παράμονος από την Ταρσό, Φαίδρος ο Επικούρειος, Φίλων ο Λαρισαίος, Φιλωνίδης, Φορμίων ο Εφέσιος, Πλάτων ο Ρόδιος, Ποσειδώνιος ο Απαμεύς, Πτολεμαίος ο Κυρηναίος, Σαρπηδόνας, Σωσιγένης, Σωτίων ο Αλεξανδρεύς, Στρατοκλής ο Ρόδιος, Στράτιππος, Ταυρίσκος, Τηλεκλής από τη Φώκαια, Ζήνων ο Αλεξανδρεύς, Ζήνων ο Σιδώνιος, Ζήνων ο Ταρσεύς, Ζηνόδοτος ο Στωικός</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">3ος αιώνας μ.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 200 μ.Χ. έως το 299 μ.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 3rd century CE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 3rd_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;200&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;299&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Κλήμης ο Αλεξανδρεύς, Κυνούλκος, Δημήτριος ο Αλεξανδρεύς, Δημήτριος ο Αλεξανδρεύς (Κυνικός), Εύβουλος (3ο μ.Χ), Ευαγόρας, Αρποκρατίων ο Αργείος, Ηλιόδωρος ο Αλεξανδρεύς, Ιέριος, Ύλλος ο Σολεύς, Ιάμβλιχος ο Χαλκιδεύς, Μάξιμος από τη Νίκαια, Μέδιος, Νικαγόρας, Ωριγένης από την Αλεξάνδρεια, Λούκιος Φλάβιος Φιλόστρατος, Πλωτίνος, Πορφύριος, Πτολεμαίος, Σέξτος ο Εμπειρικός, Θεόδωρος ο Ασιναίος, Αμμώνιος Σακκάς</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">3ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 200 π.Χ. έως το 299 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 3rd century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 3rd_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-299&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-200&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αιγίμιος από την Ηλεία, Αινησίας από τη Μεγαλόπολη, Αλεξίνος ο Ηλείος, Αλέξανδρος ο Αφροδισιεύς, Αννίκερις ο Κυρηναίος, Αρκεσίλαος από την Πιτάνη, Αριστοκρέων, Αρίστων ο Κείος, Αρίστων ο Χίος, Αριστοφάνης ο Βυζάντιος, Αριστοτέλης ο Κυρηναίος, Αριστοτέλης ο Διαλεκτικός, Ασκληπιάδης ο Φλάσιος, Αθηνόδωρος ο Σολεύς, Βατίς από τη Λάμψακο, Βίων ο Βορυσθενίτης, Βώλος Δημόκριτος, Καλλιφών, Καρνεάδης ο Κυρηναίος, Καρνείσκος, Κερκιδάς ο Μεγαλοπολίτης, Χαμαιλέων ο Ηρακλεώτης, Χρεμωνίδης ο Αθηναίος, Χρύσιππος ο Σολεύς, Κλεάνθης ο Άσσιος, Κλέαρχος ο Σολεύς, Κωλώτης ο Λαμψακηνός, Κράντωρ ο Σολεύς, Κράτης ο Θηβαίος, Κτησίβιος, Δάμιππος, Δείναρχος ο Κορίνθιος, Δεινίας, Δημάρατος, Δημητρία, Δημήτριος από τη Φώκαια, Δημοφάνης, Δημοσθένης ο Μεγαλοπολίτης, Δημότιμος, Διοκλής, Διόδωρος (Επικούρειος), Διόδωρος (Στωικός), Διόδωρος Κρόνος, Διογένης Βαβυλώνιος, Διονύσιος ο Ηρακλεώτης, Έκδημος, Εχεκλής ο Εφέσιος, Επικράτης ο Ηρακλεώτης, Επίκουρος, Επιτιμίδης ο Κυρηναίος, Ερυμνεύς, Εύδαμος, Εύδρομος, Ευμένης από την Άσπενδο, Εύφαντος από την Όλυνθο, Ευρύλοχος, Ευξίθεος, Γοργύλος, Εκαταίος ο Αβδηρίτης, Ηδεία, Ηγησίας ο Πεισιθάνατος, Ηρακλείδης (3ο μ.Χ.), Ήριλλος ο Χαλκηδών, Ερμαγόρας, Έρμαρχος ο Μυτιληναίος, Έρμιππος ο Σμυρναίος, Ιερώνυμος ο Ρόδιος, Εστιαίος ο Μιλήσιος, Ιππαρχία η Μαρώνεια, Ίππαρχος (μαθητής του Θεοφράστου), Ιπποκλείδης, Ιπποθαλής ο Αθηναίος, Ιδομενεύς ο Λαμψακηνός, Λακύδης ο Κυρηναίος, Λεόντιον, Λεόντιος ο Κυρηναίος, Λεόντιος από τη Λάμψακο, Λύκων από την Τρωάδα, Λυσίμαχος (μαθητής του Θεόφραστου), Μαμμάριον, Μενέδημος από την Ερέτρια, Μενέδημος ο Κυνικός, Μενέστρατος, Μένιππος ο Γαδαρεύς, Μητροκλής από τη Μαρώνεια, Μητρόδωρος ο Λαμψακηνός (Επικούρειος), Μνησιγένης, Μοσχίων ο Μαλλώτης, Μύρμηξ, Νέαρχος ο Ταραντίνος, Νίκιππος, Νοητός, Νύμφις, Ολύμπιχος, Ωρίων, Παιώνιος, Πανάρετος, Πασέας ο Κυρηναίος, Πασικλής ο Θηβαίος, Περσαίος ο Κιτιεύς, Φίλων ο Αθηναίος, Φίλων ο Διαλεκτικός, Φιλωνίδης ο Θηβαίος, Φορμίων ο Εφέσιος, Φρασίδημος, Πολέμων ο Αθηναίος, Πoλύαινoς o Λαμψακηνός, Πολύστρατος ο Επικούρειος, Πολύστρατος ο Αθηναίος, Πραξιφάνης, Πτολεμαίος ο μέλας, Πύρρων ο Ηλείος, Πύρρων ο Φλιάσιος, Πυθοκλής, Πυθόδωρος (3ος αι. π.Χ), Σιμίας ο Συρακούσιος, Σφαίρος ο Βορυσθενίτης, Στίλπων ο Μεγαρεύς, Στράτων o Λαμψακηνός, Τηλεκλής από τη Φώκαια, Τέλης ο Μεγαρεύς, Θεόδωρος ο Κυρηναίος, Θεόμβροτος, Θεόφραστος, Τίμων ο Φλιάσιος, Ζήνων ο Κιτιεύς, Ζήνων ο Ταρσεύς, Ζωίλος από την Αμφίπολη, Κλείταρχος</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">4ος αιώνας μ.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 300 μ.Χ. έως το 399 μ.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 4th century CE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 4th_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;300&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;399&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Δημήτριος ο Αλεξανδρεύς, Δημήτριος ο Αλεξανδρεύς (Κυνικός), Ευαγόρας, Ιέριος, Ιάμβλιχος ο Χαλκιδεύς, Μάξιμος από τη Νίκαια, Νικαγόρας, Πατέριος, Πτολεμαίος, Θεόδωρος ο Ασιναίος</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">4ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 300 π.Χ. έως το 399 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 4th century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 4th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-399&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-300&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αδείμαντος του Κολλυτού, Άδραστος των Φιλίππων, Αιγίμιος από την Ηλεία, Αινησίας από τη Μεγαλόπολη, Αισάρα από τη Λουκανία, Αισχίνης ο Σφήττιος, Άλκιππος ο Ερέσιος, Αλεξίνος ο Ηλείος, Ανάξαρχος ο Αβδηρίτης, Αγχίπυλος ο Ηλείος, Ανδροσθένης από την Αίγινα, Αννίκερις ο Κυρηναίος, Αντίπατρος ο Κυρηναίος, Αντισθένης, Απολλόδωρος ο Φαληρεύς, Απολλώνιος Κρόνος, Αρκεσίλαος από την Πιτάνη, Αρχύτας ο Ταραντίνος, Αρέσας από τη Λουκανία, Αρήτη η Κυρηναία, Αριγνώτη η Κροτωνιάτισσα, Αρίστιππος ο Μητροδίδακτος, Αρίστιππος ο Κυρηναίος, Αρίστων ο Χίος, Αριστοτέλης, Αριστοτέλης ο Κυρηναίος, Αριστόξενος ο Ταραντίνος, Ασκληπιάδης ο Φλάσιος, Αξιοθέα η Φλειάσια, Βατίς από τη Λάμψακο, Βίων ο Βορυσθενίτης, Καλλίας ο Αλωπεκεύς, Καρνείσκος, Κέβης ο Θηβαίος, Χαίρων ο Πελληνεύς, Χαμαιλέων ο Ηρακλεώτης, Κλεάνθης ο Άσσιος, Κλέαρχος ο Ηρακλεώτης, Κλέαρχος ο Σολεύς, Κλεινίας από τις Σκαμβωνίδες, Κλεινίας ο Ταραντίνος, Κλεινόμαχος από τους Θουρείους, Κωλώτης ο Λαμψακηνός, Κορίσκος Σκήψιος, Έραστος Σκήψιος, Κράντωρ ο Σολεύς, Κράτης ο Θηβαίος, Κρατύλος (φιλόσοφος), Κτησίβιος, Κτέσιππος από την Παιανία, Δάμας, Δάμων ο Συρακούσιος, Δείναρχος ο Κορίνθιος, Δημάρατος, Δημητρία, Δημήτριος από την Αμφίπολη, Δημήτριος ο Φαληρεύς, Δημόκριτος, Δημότιμος, Δήλιος ο Εφέσιος, Δικαίαρχος ο Μεσσήνιος, Διοκλείδης (Μεγαρικός φιλόσοφος), Διοκλής, Διοκλής ο Φλιάσιος, Διόδωρος Κρόνος, Διόδωρος ο Ασπένδιος, Διογένης Βαβυλώνιος, Διογένης ο Σινωπεύς, Δίων ο Συρακούσιος, Διονύσιος ο Χαλκηδόνιος, Διονύσιος ο Ηρακλεώτης, Εχεκλής ο Εφέσιος, Κλεομένης, Εχεκράτης ο Φλειάσιος, Εχεκράτεια η Φλιάσια, Έκφαντος, Επιχαρίδης ο Ταραντίνος, Επίκουρος, Επιγέτης, Επιτιμίδης ο Κυρηναίος, Ευβουλίδης ο Μιλήσιος, Ευκαίριος, Ευκλείδης ο Μεγαρεύς, Εύδημος ο Ρόδιος, Εύδοξος ο Κνίδιος, Ευμένης από την Άσπενδο, Εύφαντος από την Όλυνθο, Ευρύλοχος, Εύρυτος ο Ταραντίνος, Ευξίθεος, Ευαίων o Λαμψακηνός, Γαρτύδας ο Κροτωνιάτης, Γλαύκων από τον Κολλυτό, Γοργίας ο Λεοντίνος, Εκαταίος ο Αβδηρίτης, Ηδεία, Ηγησίας ο Πεισιθάνατος, Ηγησίας ο Σινωπεύς, Ηρακλεόδωρος (4ος π.Χ.), Ηρακλείδης ο Αίνιος, Έρμαρχος ο Μυτιληναίος, Ερμόδωρος, Εστιαίος από την Πέρινθο, Εστιαίος ο Ταραντίνος, Ικέτης, Ιππαρχία η Μαρώνεια, Ίππαρχος (μαθητής του Θεοφράστου), Ίππαρχος ο Σταγειρίτης, Ιπποκλείδης, Ιπποθαλής ο Αθηναίος, Υπερίδης ο Αθηναίος, Ιχθύας, Ιδομενεύς ο Λαμψακηνός, Ισοκράτης, Λαμίσκος o Ταραντίνος, Λασθένεια, Λέων ο Βυζάντιος, Λεωνίδης, Λεόντιον, Λεόντιος από τη Λάμψακο, Λυκόφρων, Λυσίμαχος (μαθητής του Θεόφραστου), Μαμμάριον, Μέγιλλος, Μέναιχμος, Μενεκράτης ο Ελεάτης, Μενέδημος από την Ερέτρια, Μενέδημος από την Πύρρα, Μενέλαος, Μενέστρατος, Μενέξενος, Μενοικέας, Μητροκλής από τη Μαρώνεια, Μητρόδωρος από τη Χίο, Μητρόδωρος ο Λαμψακηνός (Επικούρειος), Μύρμηξ, Ναυσιφάνης ο Τήιος, Νέσσος ο Χίος, Νίκιππος, Οκελλώ η Λευκανή, Όκελλος ο Λευκανός, Όκκιλος ο Λευκανός, Ολυμπιάδης, Ονησίκριτος από την Αστυπάλαια, Ωρίων, Παιώνιος, Πάμφιλος, Πασικλής ο Ρόδιος, Πασικλής ο Θηβαίος, Φαίδων o Hλείος, Φαινίας o Eρέσιος, Φίλιππος Oπούντιος, Φιλίσκος Αιγινήτης, Φιλίστιος, Φίλων ο Αθηναίος, Φίλων ο Διαλεκτικός, Φιλωνίδης ο Θηβαίος, Φρασίδημος, Πλάτων, Πλείστανος ο Ηλείος, Πολέμαρχος, Πολέμων ο Αθηναίος, Πoλύαινoς o Λαμψακηνός, Ποσειδώνιος ο Αλεξανδρεύς, Πραξιφάνης, Πύρρων ο Ηλείος, Πυθοκλής, Σιμίας ο Συρακούσιος, Σιμίας ο Θηβαίος, Σπεύσιππος, Στίλπων ο Μεγαρεύς, Στράτων o Λαμψακηνός, Θεαίτητος, Θεάγης του δήμου Αναγυρούντος, Θεόδωρος ο Κυρηναίος (αναφέρεται από τον Πλάτωνα), Θεόδωρος ο Κυρηναίος, Θεόμβροτος, Θεόφραστος, Θράσυλλος ο Κυνικός, Θρασύμαχος ο Κορίνθιος, Τιμόλαος o Κυζικηνός, Τίμων ο Φλιάσιος, Ξενοκράτης ο Χαλκηδόνιος, Ζήνων ο Κιτιεύς, Ζωίλος από την Αμφίπολη, Βούθηρος ο Κυζικηνός, Κλείταρχος, Τιμύχα η Λακεδαιμονία</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">5ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 400 π.Χ. έως το 499 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 5th century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 5th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-499&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-400&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Ακμονίδας ο Ταραντίνος, Ακουσιλάδας ο Ταραντίνος, Αδείμαντος του Κολλυτού, Αινέας ο Μεταποντίνος, Αισάρα από τη Λουκανία, Αισχίνης ο Σφήττιος, Αλκμαίων ο Κροτωνιάτης, Αναξαγόρας ο Κλαζομενεύς, Αντισθένης, Απολλόδωρος ο Φαληρεύς, Αρχέλαος ο Αθηναίος, Αρχύτας ο Ταραντίνος, Αρέσας από τη Λουκανία, Αριγνώτη η Κροτωνιάτισσα, Αρισταίος ο Δαμοφώντος, Αρίστιππος ο Κυρηναίος, Βροντίνος ο Μεταποντίνος, Καλλίας ο Αλωπεκεύς, Καλλικλής ο Αχαρνεύς, Κέβης ο Θηβαίος, Χαιρεφών, Χαρμάδας, Χαρώνδας, Κλεινίας από τις Σκαμβωνίδες, Κλεινίας ο Ταραντίνος, Κρατύλος (φιλόσοφος), Κριτίας (φιλόσοφος), Κρίτων από τον δήμο Αλωπεκίδος, Κτέσιππος από την Παιανία, Κύλων, Δάμων ο Κυρηναίος, Δείναρχος ο Πάριος, Δεινοκράτης ο Ταραντίνος, Δημόκριτος, Δεξίθεος ο Πάριος, Διαγόρας από τη Μήλο, Δικαίαρχος ο Ταραντίνος, Διοκλής ο Μάγνης, Διοκλής ο Φλιάσιος, Διογένης ο Απολλωνιάτης, Διοτίμα η Μαντινική, Κλεομένης, Εχεκράτης ο Φλειάσιος, Εχεκράτεια η Φλιάσια, Εχεκράτης ο Ταραντίνος, Έκφαντος, Εμπεδοκλής ο Ακραγαντινός, Επιγέτης, Επίφρων ο Μεταποντίνος, Έρατος ο Κροτωνιάτης, Ευκλείδης ο Μεγαρεύς, Εύδοξος ο Κνίδιος, Ευρύφαμος από τις Συρακούσες, Εύρυτος ο Ταραντίνος, Ευθύδημος ο Χίος, Ευαίων o Λαμψακηνός, Γαρτύδας ο Κροτωνιάτης, Γλαύκων από τον Κολλυτό, Γλυκίνος ο Μεταποντίνος, Γοργίας ο Λεοντίνος, Γύττιος ο Λοκρός, Αβροτέλεια, Αβροτέλης, Εκαταίος ο Μιλήσιος, Ηράκλειτος ο Εφέσιος, Ερμογένης από τον δήμο Αλωπεκής, Εστιαίος ο Ταραντίνος, Ικέτης, Ιππαρχίδης από το Ρήγιο, Ίππασος ο Μεταποντίνος, Ιππίας ο Ηλείος, Ιππόδαμος ο Μιλήσιος, Ιππομέδων από το Άργος, Ίππων, Ιπποσθένης ο Κροτωνιάτης, Ιππόστρατος ο Κροτωνιάτης, Ίκκος ο Ταραντίνος, Ιχθύας, Ίων ο Χίος, Λακράτης ο Μεταποντίνος, Λάκριτος ο Μεταποντίνος, Λακύδας ο Μεταποντίνος, Λαφάων ο Μεταποντίνος, Λεύκιππος, Λυκόφρων, Μέγιλλος, Μεγιστίας ο Μεταποντίνος, Μέλισσος ο Σάμιος, Μενέξενος, Μένων ο Κροτωνιάτης, Μέτων ο Πάριος, Μητρόδωρος, Μίλων ο Κροτωνιάτης, Μιμνόμαχος ο Ταραντίνος, Μνήμαρχος, Μνησίβουλος από το Ρήγιο, Νέσσος ο Χίος, &apos;onatas&apos; Παρμενίδης ο Ελεάτης, Παρμίσκος ο Μεταποντίνος, Φαίδων o Hλείος, Φάντων, Φιλόλαος ο Κροτωνιάτης, Πλάτων, Πρόδικος ο Κείος, Πρωταγόρας ο Αβδηρίτης, Πυθόδωρος (5ος αι. π.Χ.), Σιμίας ο Θηβαίος, Σωκράτης, Σπεύσιππος, Τελαύγης ο Σάμιος, Θεαίτητος, Θεάγης του δήμου Αναγυρούντος, Θεόδωρος ο Κυρηναίος (αναφέρεται από τον Πλάτωνα), Θρασύμαχος ο Χαλκηδόνιος, Τίμαιος ο Λοκρός, Ξενιάδης ο Κορίνθιος, Ξενοφάνης ο Κολοφώνιος, Ζήνων ο Ελεάτης, Αγέλας ο Κροτωνιάτης, Αγήσαρχος ο Μεταποντίνος, Αγησίδαμος ο Μεταποντίνος, Αγέας ο Κροτωνιάτης, Αγύλος ο Κροτωνιάτης, Αιήτιος ο Πάριος, Αίγων ο Κροτωνιάτης, Αλκίας ο Μεταποντίνος, Αλκίμαχος ο Πάριος, Αλώπεκος ο Μεταποντίνος, Άνθης ο Καρχηδόνιος, Αντιμέδων ο Κροτωνιάτης, Αρκέας ο Ταραντίνος, Αρχέμαχος ο Ταραντίνος, Άρχιππος ο Σάμιος, Άρχιππος ο Ταραντίνος, Αρέσανδρος ο Λευκανός, Αριστάγγελος ο Κυρηναίος, Αριστέας ο Μεταποντίνος, Αριστείδης ο Ρηγίνος, Αρίστιππος ο Ταραντίνος, Αριστοκλείδας ο Ταραντίνος, Αριστοκράτης ο Ρηγίνος, Αριστομένης ο Μεταποντίνος, Αστέας ο Ταραντίνος, Αστύλος ο Μεταποντίνος, Αυτοχαρίδας ο Λάκων, Βούθος ο Κροτωνιάτης, Βρύας ο Κροτωνιάτης, Βρύας ο Ταραντίνος, Δύμας ο Κροτωνιάτης, Αίμων ο Κροτωνιάτης, Σύλλος ο Κροτωνιάτης, Κλεόφρων ο Κροτωνιάτης, Κλεοσθένης ο Κροτωνιάτης, Δαμοκλής ο Κροτωνιάτης, Εύανδρος ο Κροτωνιάτης, Λεόφρων ο Κροτωνιάτης, Μυλλίας ο Κροτωνιάτης, Ιταναίος ο Κροτωνιάτης, Επίσυλος ο Κροτωνιάτης, Ρόδιππος ο Κροτωνιάτης, Τίμαιος ο Κροτωνιάτης, Φυκιάδας ο Κροτωνιάτης, Αντιμένης ο Μεταποντίνος, Χειλάς ο Μεταποντίνος, Δαμάρμενος ο Μεταποντίνος, Δαμοτάγης ο Μεταποντίνος, Ειρίσκος ο Μεταποντίνος, Εύφημος ο Μεταποντίνος, Εύανδρος ο Μεταποντίνος, Ευρύφημος ο Μεταποντίνος, Εύρυτος ο Μεταποντίνος, Ανίοχος ο Μεταποντίνος, Λεωκύδης ο Μεταποντίνος, Λέων ο Μεταποντίνος, Μελήσιας ο Μεταποντίνος, Ορεστάδας ο Μεταποντίνος, Προκλής ο Μεταποντίνος, Ξενοφάντης ο Μεταποντίνος, Ξενοκάδης ο Μεταποντίνος, Πύρρων ο Μεταποντίνος, Ρηξίβιος ο Μεταποντίνος, Θρασυμήδης ο Μεταποντίνος, Θρασέας ο Μεταποντίνος, Θεόδωρος ο Ταραντίνος, Λύκων ο Ταραντίνος, Πολέμαρχος ο Ταραντίνος, Καινίας ο Ταραντίνος, Κλέων ο Ταραντίνος, Ευρυμέδων ο Ταραντίνος, Κλειναγόρας ο Ταραντίνος, Ζώπυρος ο Ταραντίνος, Εύθυνος ο Ταραντίνος, Φιλωνίδης ο Ταραντίνος, Φροντίδας ο Ταραντίνος, Λύσις ο Ταραντίνος, Λυσίβιος ο Ταραντίνος, Πακτίων ο Ταραντίνος, Πεισικράτης ο Ταραντίνος, Κλεάρατος ο Ταραντίνος, Λεοντεύς ο Ταραντίνος, Φρύνιχος ο Ταραντίνος, Σιμιχίας ο Ταραντίνος, Πεισίρροδος ο Ταραντίνος, Έλανδρος ο Ταραντίνος, Δικάς ο Ταραντίνος, Καροφαντίδας ο Ταραντίνος, Φίλτυς από τον Κρότωνα, Κρατησίκλεια η Λάκαινα, Θεανώ</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">6ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 500 π.Χ. έως το 599 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 6th century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 6th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-599&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-500&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Άβαρις ο Υπερβόρειος, Αλκμαίων ο Κροτωνιάτης, Ανάχαρσις ο Σκύθης, Αναξίμανδρος ο Μιλήσιος, Αναξιμένης ο Μιλήσιος, Αρισταίος ο Δαμοφώντος, Βροντίνος ο Μεταποντίνος, Καλλιφών ο Κροτωνιάτης, Χαρώνδας, Χείλων ο Λακεδαιμόνιος, Κύλων, Δείναρχος ο Πάριος, Ευρύφαμος από τις Συρακούσες, Εκαταίος ο Μιλήσιος, Ηράκλειτος ο Εφέσιος, Ίππασος ο Μεταποντίνος, Ίκκος ο Ταραντίνος, Ιχθύας, Μένων ο Κροτωνιάτης, Μέτων ο Πάριος, Μίλων ο Κροτωνιάτης, Παρμίσκος ο Μεταποντίνος, Φερεκύδης ο Σύριος, Πυθαγόρας ο Σάμιος, Τελαύγης ο Σάμιος, Θαλής ο Μιλήσιος, Ξενιάδης ο Κορίνθιος, Ξενοφάνης ο Κολοφώνιος, Χειλωνίς, Θεανώ</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">7ος αιώνας π.Χ.</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">αρχαία ελληνική περίοδος</font></div>    <div class="textMediumMargin"><b>Comment</b>: Η χρονική περίοδος από το 600 π.Χ. έως το 699 π.Χ.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: 7th century BCE</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 7th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-699&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-600&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Αναξίμανδρος ο Μιλήσιος, Δίος, Θαλής ο Μιλήσιος</div></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

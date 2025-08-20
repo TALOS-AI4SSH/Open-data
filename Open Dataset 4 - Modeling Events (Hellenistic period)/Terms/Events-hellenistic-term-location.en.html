@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "EventOntoHellenistic" (en)</div>
+<div class="title2">Category: "location"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 25, 2024 - Time: 11:41:12 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">city</option>
+                <option value="1">inland </option>
+                <option value="2">island</option>
+                <option value="3">land</option>
+                <option value="4">location</option>
+                <option value="5">sea </option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">city</div>    <div class="definitionNL"><b>Definition</b>: A large and permanent human settlement.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: πόλη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;City&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/, /land/, /city/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location land&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 18</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexandria of egypt</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Plan_of_Alexandria_c_30_BC_Otto_Puchstein_1890s_EN.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/f5/Plan_of_Alexandria_c_30_BC_Otto_Puchstein_1890s_EN.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/f5/Plan_of_Alexandria_c_30_BC_Otto_Puchstein_1890s_EN.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antioch of syria</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Antiochia_su_Oronte.PNG" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/19/Antiochia_su_Oronte.PNG" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/19/Antiochia_su_Oronte.PNG</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pergamon</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Pergamon188BCE.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/b/be/Pergamon188BCE.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/b/be/Pergamon188BCE.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>athens</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Map_athenian_empire_431_BC-no.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/2/25/Map_athenian_empire_431_BC-no.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/2/25/Map_athenian_empire_431_BC-no.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sparta</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Menelaion.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/9/9e/Menelaion.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/9/9e/Menelaion.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>carthage</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Carthage_National_Museum_representation_of_city.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/12/Tunisia_adm_location_map.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/12/Tunisia_adm_location_map.svg</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a2/Carthage_National_Museum_representation_of_city.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a2/Carthage_National_Museum_representation_of_city.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>rome</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Rome_skyline_panorama.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/0/0b/Rome_skyline_panorama.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/0/0b/Rome_skyline_panorama.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>messene</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Messeneasklepeion.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/1d/Messeneasklepeion.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/1d/Messeneasklepeion.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>corinth</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Reconstruction_of_ancient_Corinthos.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/4/4a/Isthmus_of_Corinth.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/4/4a/Isthmus_of_Corinth.svg</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/8/89/Reconstruction_of_ancient_Corinthos.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/8/89/Reconstruction_of_ancient_Corinthos.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cyrene</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cyrene8.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cyrene8.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/3/3c/Cyrene8.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>artaxata</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cabira</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pharsalus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sellasia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>tigranocerta</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Location_of_Tigranocerta_within_the_Kingdom_Armenia.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/2/24/Location_of_Tigranocerta_within_the_Kingdom_Armenia.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/2/24/Location_of_Tigranocerta_within_the_Kingdom_Armenia.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>zela</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>corcyra</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epidamnos</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Durr%C3%ABs_amphitheater_%28Albania%29.JPG" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Durr%C3%ABs_amphitheater_%28Albania%29.JPG" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/2/2e/Durr%C3%ABs_amphitheater_%28Albania%29.JPG</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">inland </div>    <div class="definitionNL"><b>Definition</b>: The interior part of a country, continent, or region, located away from the coast or border. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: ενδοχώρα (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Inland Location&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/, /land/, /inland /</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location land&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 15</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bithynia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Roman_Empire_-_Bythinia_et_Pontus_%28125_AD%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/ce/Roman_Empire_-_Bythinia_et_Pontus_%28125_AD%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/ce/Roman_Empire_-_Bythinia_et_Pontus_%28125_AD%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cilicia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Roman_Empire_-_Cilicia_%28125_AD%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/8/85/Roman_Empire_-_Cilicia_%28125_AD%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/8/85/Roman_Empire_-_Cilicia_%28125_AD%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cappadocia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Cappadocian_Landscape_%286332468919%29.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/0/09/Roman_Empire_-_Cappadocia_%28125_AD%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/0/09/Roman_Empire_-_Cappadocia_%28125_AD%29.svg</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/4/4f/Cappadocian_Landscape_%286332468919%29.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/4/4f/Cappadocian_Landscape_%286332468919%29.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>caria</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Caria_map_Asia_Minor.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/6/64/Caria_map_Asia_Minor.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/6/64/Caria_map_Asia_Minor.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>commagene</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Roman_East_50_CE_Commagene_highlighted-en.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Roman_East_50_CE_Commagene_highlighted-en.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/c3/Roman_East_50_CE_Commagene_highlighted-en.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paphlagonia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Map_Anatolia_ancient_regions-en.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/7/74/Map_Anatolia_ancient_regions-en.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/7/74/Map_Anatolia_ancient_regions-en.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lamia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>corupedium</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Plain_of_Corupedium.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/e6/Plain_of_Corupedium.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/e6/Plain_of_Corupedium.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>carrhae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cynoscephalae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gabiene</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mantineia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>megalopolis</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>nicopolis</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dimallum</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">island</div>    <div class="definitionNL"><b>Definition</b>: A landmass, smaller than a continent, that is surrounded by water.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: νησί (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Island&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/, /land/, /island/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location land&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cyprus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Republic_of_Cyprus_%28orthographic_projection%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a3/Republic_of_Cyprus_%28orthographic_projection%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a3/Republic_of_Cyprus_%28orthographic_projection%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paxos</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sicily</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>corsica</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/The_Mountainous_Spine_of_Corsica.jpeg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/8/85/The_Mountainous_Spine_of_Corsica.jpeg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/8/85/The_Mountainous_Spine_of_Corsica.jpeg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sardinia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Sardinia_in_Italy.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/5/54/Sardinia_in_Italy.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/5/54/Sardinia_in_Italy.svg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">land</div>    <div class="definitionNL"><b>Definition</b>: The solid surface of the Earth, including all the natural features and resources that exist upon it. It encompasses various types of terrain, ecosystems, and geological formations.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: χερσαία τοποθεσία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Location land&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/, /land/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 34</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>armenia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Arsacid_%28Arshakouni%29_Armenia%2C_63-299_A.D..png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/4/40/Arsacid_%28Arshakouni%29_Armenia%2C_63-299_A.D..png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/4/40/Arsacid_%28Arshakouni%29_Armenia%2C_63-299_A.D..png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>kingdom of bactria</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/BactriaMap.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/14/BactriaMap.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/14/BactriaMap.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pontus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/PonticKingdom.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/b/bc/PonticKingdom.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/b/bc/PonticKingdom.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>plataea</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Plataea_battlefield.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/6/69/Plataea_battlefield.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/6/69/Plataea_battlefield.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>thermopylae</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thermopylae_ancient_coastline_large.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/cf/Thermopylae_shoreline_changes_map.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/cf/Thermopylae_shoreline_changes_map.png</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thermopylae_ancient_coastline_large.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/e1/Thermopylae_ancient_coastline_large.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>delphi</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Delphi%2C_Greece_-_panoramio.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/d/d5/Delphi%2C_Greece_-_panoramio.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/d/d5/Delphi%2C_Greece_-_panoramio.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crannon</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Ancient_Krannon_from_north.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Ancient_Krannon_from_north.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/b/b2/Ancient_Krannon_from_north.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ipsus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaza</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>syria</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Palmyra_03.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/c1/Palmyra_03.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/c1/Palmyra_03.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>judea</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Judea_1_by_David_Shankbone.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/0/0c/Judea_1_by_David_Shankbone.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/0/0c/Judea_1_by_David_Shankbone.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ecbatana</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Hegmataneh.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Hegmataneh.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/f0/Hegmataneh.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>peloponnese</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Location_map_of_Peloponnese_%28Greece%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/f2/Location_map_of_Peloponnese_%28Greece%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/f2/Location_map_of_Peloponnese_%28Greece%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>italy</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/1839_Monin_Map_of_Ancienne_Italy_Atlas_Universel_de_G%C3%A9ographie_Ancienne_and_Moderne.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/7/75/1839_Monin_Map_of_Ancienne_Italy_Atlas_Universel_de_G%C3%A9ographie_Ancienne_and_Moderne.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/7/75/1839_Monin_Map_of_Ancienne_Italy_Atlas_Universel_de_G%C3%A9ographie_Ancienne_and_Moderne.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>illyria</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Illyrians_in_the_1st-2nd_centuries_CE.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/4/45/Illyrians_in_the_1st-2nd_centuries_CE.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/4/45/Illyrians_in_the_1st-2nd_centuries_CE.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phoenicia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Phoenicia_map-en.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/c5/Phoenicia_map-en.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/c5/Phoenicia_map-en.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>panium</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>northwest greece</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>kingdom of dardania</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>kingdom of macedonia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Map_Macedonia_336_BC-en.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/3/33/Map_Macedonia_336_BC-en.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/3/33/Map_Macedonia_336_BC-en.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>thessaly</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Thessaly.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/f6/Thessaly.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/f6/Thessaly.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>egypt</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Ancient_Egypt_map-en.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/17/Ancient_Egypt_map-en.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/17/Ancient_Egypt_map-en.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pydna</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>rhodes</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>stratonikeia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/The_theatre%2C_erected_in_the_Hellenistic_period_in_the_north_slope_of_the_south_hill%2C_its_capacity_was_approximately_10%2C000_spectators%2C_Caria%2C_Turkey_%2820688140081%29.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/8/89/The_theatre%2C_erected_in_the_Hellenistic_period_in_the_north_slope_of_the_south_hill%2C_its_capacity_was_approximately_10%2C000_spectators%2C_Caria%2C_Turkey_%2820688140081%29.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/8/89/The_theatre%2C_erected_in_the_Hellenistic_period_in_the_north_slope_of_the_south_hill%2C_its_capacity_was_approximately_10%2C000_spectators%2C_Caria%2C_Turkey_%2820688140081%29.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>anatolia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Map_of_the_geographic_region_of_Anatolia.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/2/2b/Map_of_the_geographic_region_of_Anatolia.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/2/2b/Map_of_the_geographic_region_of_Anatolia.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>asia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>asia minor</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>greece</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/EU-Greece_%28orthographic_projection%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/EU-Greece_%28orthographic_projection%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/f7/EU-Greece_%28orthographic_projection%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cyzicus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Cyzicus_amphitheatre_15.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/9/96/Cyzicus_amphitheatre_15.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/9/96/Cyzicus_amphitheatre_15.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mesopotamia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/N-Mesopotamia_and_Syria_english.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/ed/N-Mesopotamia_and_Syria_english.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/ed/N-Mesopotamia_and_Syria_english.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>spain</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/EU-Spain_%28orthographic_projection%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/ca/EU-Spain_%28orthographic_projection%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/ca/EU-Spain_%28orthographic_projection%29.svg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>magnesia</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">location</div>    <div class="definitionNL"><b>Definition</b>: A specific place or position on the Earth&apos;s surface, defined by its geographical coordinates, address, or other identifying characteristics.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: τοποθεσία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Location&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div>    <div class="concept"><b>Comment</b>: The location of an event can take place on land or sea. A land location can be a city or an island, whereas a marine location can be an open sea. </div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>iran</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Iran_%28orthographic_projection%29.svg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a8/Iran_%28orthographic_projection%29.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a8/Iran_%28orthographic_projection%29.svg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">sea </div>    <div class="definitionNL"><b>Definition</b>: A large body of salt water partially or fully enclosed by land.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: θαλάσσια τοποθεσία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Location sea&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /location/, /sea/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isLocationOf</i></u>: &lt;Event&gt;, &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aegean sea</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Aegean_Sea_map.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/fe/Aegean_Sea_map.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/fe/Aegean_Sea_map.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ionian sea</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ionian_sea_islands%2C_pic1.JPG" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/6/6e/Ionian_sea_islands%2C_pic1.JPG" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/6/6e/Ionian_sea_islands%2C_pic1.JPG</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hellespont</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Dardanelles_map2.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a5/Dardanelles_map2.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a5/Dardanelles_map2.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>actium</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mediterranean sea</strong></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

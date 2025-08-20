@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "ALyrA_ontoterminology" (en)</div>
+<div class="title2">Category: "ancient location"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 25, 2024 - Time: 10:11:20 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">ancient location</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">ancient location</div>    <div class="definitionNL"><b>Definition</b>: In the current ontoterminology Ancient Location objects concern the places where the Archaic Lyric Poets were born or lived, while they are inserted with coordinates from the pleiades gazetteer of ancient places (https://pleiades.stoa.org/places).</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: αρχαία τοποθεσία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Ancient Location&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /ancient location/</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>residentedBy</i></u>: &lt;Archaic Lyric Composer&gt;</div><div class="definitionFormal"> <u><i>isBirthPlaceOf</i></u>: &lt;Archaic Lyric Composer&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 24</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>abdera</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0006:entry=abdera" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0006:entry=abdera</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DA%3Aentry+group%3D1%3Aentry%3Dabdera-geo" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DA%3Aentry+group%3D1%3Aentry%3Dabdera-geo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/14" target="_blank" rel="noopener">http://www.trismegistos.org/place/14</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/410250PAbd" target="_blank" rel="noopener">https://topostext.org/place/410250PAbd</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/501323" target="_blank" rel="noopener">https://pleiades.stoa.org/places/501323</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aegypt</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/49" target="_blank" rel="noopener">https://www.trismegistos.org/place/49</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Ancient_Egypt" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Ancient_Egypt</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/981503" target="_blank" rel="noopener">https://pleiades.stoa.org/places/981503</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>akragas</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/22270" target="_blank" rel="noopener">http://www.trismegistos.org/place/22270</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q13678" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q13678</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/2525764/agrigento.html" target="_blank" rel="noopener">http://www.geonames.org/2525764/agrigento.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Agrigento" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Agrigento</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/373136PAkr" target="_blank" rel="noopener">https://topostext.org/place/373136PAkr</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/462086" target="_blank" rel="noopener">https://pleiades.stoa.org/places/462086</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>amorgos</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/3592" target="_blank" rel="noopener">https://www.trismegistos.org/place/3592</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://de.wikisource.org/wiki/RE:Amorgos" target="_blank" rel="noopener">https://de.wikisource.org/wiki/RE:Amorgos</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/368259IAmo" target="_blank" rel="noopener">https://topostext.org/place/368259IAmo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599484" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599484</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>athens</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/264371/athens.html" target="_blank" rel="noopener">http://www.geonames.org/264371/athens.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/364" target="_blank" rel="noopener">http://www.trismegistos.org/place/364</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q1524" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q1524</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Athens" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Athens</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/380237PAth" target="_blank" rel="noopener">https://topostext.org/place/380237PAth</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/579885" target="_blank" rel="noopener">https://pleiades.stoa.org/places/579885</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>boeotia</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/446" target="_blank" rel="noopener">https://www.trismegistos.org/place/446</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/384233RBoi" target="_blank" rel="noopener">https://topostext.org/place/384233RBoi</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Boeotia" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Boeotia</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/540689" target="_blank" rel="noopener">https://pleiades.stoa.org/places/540689</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>colophon</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aalphabetic+letter%3DC%3Aentry+group%3D8%3Aentry%3Dcolophon" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aalphabetic+letter%3DC%3Aentry+group%3D8%3Aentry%3Dcolophon</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Colophon_(city)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Colophon_(city)</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/9794266/colophon-greek-bath.html" target="_blank" rel="noopener">http://www.geonames.org/9794266/colophon-greek-bath.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/1142" target="_blank" rel="noopener">http://www.trismegistos.org/place/1142</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599577" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599577</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ephesus</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/379273PEph" target="_blank" rel="noopener">https://topostext.org/place/379273PEph</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DE%3Aentry+group%3D4%3Aentry%3Dephesus-geo" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DE%3Aentry+group%3D4%3Aentry%3Dephesus-geo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Ephesus" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Ephesus</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q47611" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q47611</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q64699469" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q64699469</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599612" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599612</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>himera</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/33123" target="_blank" rel="noopener">https://www.trismegistos.org/place/33123</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q1111219" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q1111219</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Himera" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Himera</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/380138PHim" target="_blank" rel="noopener">https://topostext.org/place/380138PHim</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/462244" target="_blank" rel="noopener">https://pleiades.stoa.org/places/462244</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>keos</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/1032" target="_blank" rel="noopener">http://www.trismegistos.org/place/1032</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/376243IKeo" target="_blank" rel="noopener">https://topostext.org/place/376243IKeo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Kea_(island)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Kea_(island)</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/570348" target="_blank" rel="noopener">https://pleiades.stoa.org/places/570348</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>klazomenai</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/384268PKla" target="_blank" rel="noopener">https://topostext.org/place/384268PKla</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Klazomenai" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Klazomenai</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550651" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550651</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550650" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550650</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lesbos</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/1242" target="_blank" rel="noopener">http://www.trismegistos.org/place/1242</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/" target="_blank" rel="noopener">https://www.wikidata.org/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/392261ILes" target="_blank" rel="noopener">https://topostext.org/place/392261ILes</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Lesbos" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Lesbos</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550696" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550696</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>megara</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Megaris" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Megaris</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DM%3Aentry+group%3D8%3Aentry%3Dmegara-geo02" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DM%3Aentry+group%3D8%3Aentry%3Dmegara-geo02</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Megara" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Megara</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/380233PMeg" target="_blank" rel="noopener">https://topostext.org/place/380233PMeg</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/570468" target="_blank" rel="noopener">https://pleiades.stoa.org/places/570468</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>miletus</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/9534929/miletos.html" target="_blank" rel="noopener">http://www.geonames.org/9534929/miletos.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q169460" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q169460</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/1375" target="_blank" rel="noopener">http://www.trismegistos.org/place/1375</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/9534929/miletos.html" target="_blank" rel="noopener">http://www.geonames.org/9534929/miletos.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Miletus" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Miletus</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599799" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599799</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>paros</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Paros" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Paros</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.geonames.org/255720/nisi-paros.html" target="_blank" rel="noopener">https://www.geonames.org/255720/nisi-paros.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/1613" target="_blank" rel="noopener">https://www.trismegistos.org/place/1613</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q201272" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q201272</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599868" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599868</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>rhegium</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/381156PRhe" target="_blank" rel="noopener">https://topostext.org/place/381156PRhe</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Reggio_Calabria" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Reggio_Calabria</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/452416" target="_blank" rel="noopener">https://pleiades.stoa.org/places/452416</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>samos</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/377269PSam" target="_blank" rel="noopener">https://topostext.org/place/377269PSam</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q156882" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q156882</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/2081" target="_blank" rel="noopener">http://www.trismegistos.org/place/2081</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/599926" target="_blank" rel="noopener">https://pleiades.stoa.org/places/599926</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sardis</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/2090" target="_blank" rel="noopener">https://www.trismegistos.org/place/2090</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/9986360/sardes.html" target="_blank" rel="noopener">http://www.geonames.org/9986360/sardes.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DS%3Aentry+group%3D5%3Aentry%3Dsardes-geo" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DS%3Aentry+group%3D5%3Aentry%3Dsardes-geo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/385280PSar" target="_blank" rel="noopener">https://topostext.org/place/385280PSar</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Sardis" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sardis</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550867" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550867</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sicilia</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/2132" target="_blank" rel="noopener">https://www.trismegistos.org/place/2132</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q4951156" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q4951156</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/" target="_blank" rel="noopener">http://www.geonames.org/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DS%3Aentry+group%3D12%3Aentry%3Dsicilia-geo" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0064%3Aalphabetic+letter%3DS%3Aentry+group%3D12%3Aentry%3Dsicilia-geo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Sicily" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sicily</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/462492" target="_blank" rel="noopener">https://pleiades.stoa.org/places/462492</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>smyrna</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aalphabetic+letter%3DS%3Aentry+group%3D8%3Aentry%3Dsmyrna" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0006%3Aalphabetic+letter%3DS%3Aentry+group%3D8%3Aentry%3Dsmyrna</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/%C4%B0zmir" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/%C4%B0zmir</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/41382" target="_blank" rel="noopener">https://www.trismegistos.org/place/41382</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550771" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550771</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sparta</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/371224PSpa" target="_blank" rel="noopener">https://topostext.org/place/371224PSpa</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Sparta" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Sparta</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.geonames.org/253394/sparta.html" target="_blank" rel="noopener">https://www.geonames.org/253394/sparta.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q5690" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q5690</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/2181" target="_blank" rel="noopener">http://www.trismegistos.org/place/2181</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/570685" target="_blank" rel="noopener">https://pleiades.stoa.org/places/570685</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>syrakousai</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Syracuse,_Sicily" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Syracuse,_Sicily</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.geonames.org/2523083/siracusa.html" target="_blank" rel="noopener">http://www.geonames.org/2523083/siracusa.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/2210" target="_blank" rel="noopener">http://www.trismegistos.org/place/2210</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.wikidata.org/wiki/Q13670" target="_blank" rel="noopener">https://www.wikidata.org/wiki/Q13670</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/462503" target="_blank" rel="noopener">https://pleiades.stoa.org/places/462503</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>teos</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.trismegistos.org/place/2314" target="_blank" rel="noopener">http://www.trismegistos.org/place/2314</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/382268PTeo" target="_blank" rel="noopener">https://topostext.org/place/382268PTeo</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Teos" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Teos</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/550913" target="_blank" rel="noopener">https://pleiades.stoa.org/places/550913</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>thasos_settlement</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.trismegistos.org/place/2346" target="_blank" rel="noopener">https://www.trismegistos.org/place/2346</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.geonames.org/6633834/thasos.html" target="_blank" rel="noopener">https://www.geonames.org/6633834/thasos.html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0006" target="_blank" rel="noopener">http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0006</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://topostext.org/place/408247PTha" target="_blank" rel="noopener">https://topostext.org/place/408247PTha</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://pleiades.stoa.org/places/501634" target="_blank" rel="noopener">https://pleiades.stoa.org/places/501634</a></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

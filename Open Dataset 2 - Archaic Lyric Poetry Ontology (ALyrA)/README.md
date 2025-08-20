@@ -77,4 +77,4 @@ This dataset was built with **Tedi ontoTerminology Editor**, a software platform
 ## Citation
 
 If you use this dataset, please cite:  
-> Giannadakis, R., & Papadopoulou, M. (2024). *Archaic Lyric Agora (ALyrA) – Ontoterminology of Archaic Lyric Poets – version 1.0* (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13371967
+> Giannadakis, R., & Papadopoulou, M. (2024). *Archaic Lyric Agora (ALyrA) – Ontoterminology of Archaic Lyric Poets – version 1.0* (1.0) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.13371967](https://doi.org/10.5281/zenodo.13371967)

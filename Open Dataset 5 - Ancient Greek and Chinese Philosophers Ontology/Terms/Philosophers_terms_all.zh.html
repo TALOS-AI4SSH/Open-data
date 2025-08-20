@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Philosophers" (zh)</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:26:16 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">中国哲学家</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">中国哲学家</div>    <div class="textMediumMargin"><b>Status</b>: none</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: ancient chinese philosopher (preferred)</div>    <div class="textMediumMarginBlue">- el: αρχαίος Κινέζος φιλόσοφος (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Ancient-Chinese-Philosopher&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /person/, /philosopher/, /ancient chinese/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Philosopher&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>stayedIn</i></u>: &lt;Place&gt;</div><div class="definitionFormal"> <u><i>pupilOf</i></u>: &lt;Person&gt;</div><div class="definitionFormal"> <u><i>teacherOf</i></u>: &lt;Person&gt;</div><div class="definitionFormal"> <u><i>authorOf</i></u>: &lt;Philosophical-Work&gt;</div><div class="definitionFormal"> <u><i>centuryOfLiving</i></u>: &lt;Period&gt;</div><div class="definitionFormal"> <u><i>memberOfPhilosophicalSchool</i></u>: &lt;School-of-Philosophy&gt;</div><div class="definitionFormal"> <u><i>mentionedBy</i></u>: &lt;Philosophical-Work&gt;</div><div class="definitionFormal"> <u><i>representativeOf</i></u>: &lt;School-of-Philosophy&gt;</div><div class="definitionFormal"> <u><i>hasInfluenced</i></u>: &lt;Person&gt;</div><div class="definitionFormal"> <u><i>influencedBy</i></u>: &lt;Person&gt;</div><div class="definitionFormal"> <u><i>deathPlace</i></u>: &lt;Place&gt;</div><div class="definitionFormal"> <u><i>birthPlace</i></u>: &lt;Place&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 21</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>confucius</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Confucius.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/fb/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Confucius.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/fb/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Confucius.jpg</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://dbpedia.org/page/Confucius" target="_blank" rel="noopener">https://dbpedia.org/page/Confucius</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gongsun long</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Gongsun-Long-portrait-artist-Taipei-Taiwan-National.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Gongsun-Long-portrait-artist-Taipei-Taiwan-National.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/b/b0/Gongsun-Long-portrait-artist-Taipei-Taiwan-National.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>zhuangzi - person</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>zou yan</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hui shi</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Zhuangzi_fishes.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/ec/Zhuangzi_fishes.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/ec/Zhuangzi_fishes.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>huai-nan-zi</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hanfeizi</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>guan zhong</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Qihuangongguanzhong2.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/0/01/Qihuangongguanzhong2.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/0/01/Qihuangongguanzhong2.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>guo xiang</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mencius</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Meng_Ke_%28%E5%AD%9F%E8%BB%BB%29.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Meng_Ke_%28%E5%AD%9F%E8%BB%BB%29.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/7/7d/Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Meng_Ke_%28%E5%AD%9F%E8%BB%BB%29.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>jia yi</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Jia_Yi.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/ec/Jia_Yi.png" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/ec/Jia_Yi.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>shang yang</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Statue_of_Shang_Yang.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/2/28/Statue_of_Shang_Yang.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/2/28/Statue_of_Shang_Yang.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaozi</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dong zhongshu</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>he yan</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Commentaries_of_the_Analects_of_Confucius.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/0/0f/Commentaries_of_the_Analects_of_Confucius.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/0/0f/Commentaries_of_the_Analects_of_Confucius.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hsi k’ang</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laozi</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhang_Lu-Laozi_Riding_an_Ox.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/fd/Laozi.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/fd/Laozi.jpg</a></div>    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhang_Lu-Laozi_Riding_an_Ox.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/e8/Zhang_Lu-Laozi_Riding_an_Ox.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>xunzi - person</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Portrait_of_Xun_Zi.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/5/56/Portrait_of_Xun_Zi.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/5/56/Portrait_of_Xun_Zi.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lie yukou</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Album_of_18_Daoist_Paintings_-_7.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/8/88/Album_of_18_Daoist_Paintings_-_7.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/8/88/Album_of_18_Daoist_Paintings_-_7.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>liezi - person</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aspasius</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://books.google.gr/books/about/Aspasius.html?id=ua8fAAAAQBAJ&amp;redir_esc=y" target="_blank" rel="noopener">https://books.google.gr/books/about/Aspasius.html?id=ua8fAAAAQBAJ&redir_esc=y</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.degruyter.com/document/doi/10.1515/9783110810196.1/html" target="_blank" rel="noopener">https://www.degruyter.com/document/doi/10.1515/9783110810196.1/html</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Aspasius_(disambiguation)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Aspasius_(disambiguation)</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Aspasius" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Aspasius</a></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

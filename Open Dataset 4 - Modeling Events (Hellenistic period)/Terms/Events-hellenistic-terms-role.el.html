@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "EventOntoHellenistic" (el)</div>
+<div class="title2">Category: "ιδιότητα/ρόλος"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 25, 2024 - Time: 11:42:42 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">αυτοκράτορας</option>
+                <option value="1">βασιλιάς-βασίλισσα</option>
+                <option value="2">δούλος</option>
+                <option value="3">ιδιότητα/ρόλος</option>
+                <option value="4">ιερέας</option>
+                <option value="5">κυβερνήτης</option>
+                <option value="6">πρίγκηπας-πριγκήπισσα</option>
+                <option value="7">σατράπης</option>
+                <option value="8">στρατηγός</option>
+                <option value="9">τύραννος</option>
+                <option value="10">ύπατος</option>
+                <option value="11">φαραώ</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">αυτοκράτορας</div>    <div class="definitionNL"><b>Definition</b>: Ιδιότητα/ρόλος κυβερνήτης μιας αυτοκρατορίας.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: emperor (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Emperor&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /ruler of an empire/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaius octavius roman emperor</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">βασιλιάς-βασίλισσα</div>    <div class="definitionNL"><b>Definition</b>: Ιδιότητα/ρόλος κυβερνήτης-τρια ενός ανεξάρτητου κράτους ή συνόλου γαιών.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: king-queen (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;King-Queen&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /the male or female ruler of an independent state or sets of land/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 115</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lysimachos king of thrace, macedonia, part of asia minor</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander balas ruler of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antigonus II gonatas king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antigonus III doson king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus IV epiphanes king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus III the great king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus I soter king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus II theos king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus hierax king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus V eupator king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus VI king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus VII euergetes king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus VIII grypus king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius I poliorcetes king of asia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius I poliorcetes king of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius I poliorcetes ruler of the hellenic league</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius the fair king of cyrene</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius II aitolicus king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip V king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>perseus king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pyrrhus king of epirus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pyrrhus king of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip iii arrhidaeus king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius I soter king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius II nicator king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenes I king of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenes II soter king of perganum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>attalus I soter king of perganum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>attalus II philadelphus king of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>attalus III king of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>arsionoe II queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleomenis III king of sparta</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra I syra queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra II queen of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra thea queen of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice I queen of syria</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phraates II king of the parthian empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy ceraunus king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy I soter king of ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy II philadephus king of ptolemaic egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy III king of ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy IV philopator king of ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy V epiphanes king of ptolemaic egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy VI philometor king of ptolemaic egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy VIII king of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy VII king of ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus I nicator king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus II callinicus king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus III soter king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus IV king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>seleucus V king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenis III king of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mithidrates I king of the parthian empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>philetaerus king of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antigonus I monopthalmus king of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>berenice II queen of cerene</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>berenice II queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>apame queen consort of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aeacides king of epirus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>stratonice of syria queen consort of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice III queen consort of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice IV queen consort of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice V queen consort of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice V queen consort of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>rhodogune queen of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>tryphaena queen consort of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra selene queen of syria</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra selene queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>apollonis of cyzicus queen of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>stratonice of cappadocia quee of pergamum</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antipater I king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip III arrhidaeus king of persia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eurydice II queen consort of Macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>berenice I queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eurydice queen of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>arsinoe III queen of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>areus I king of sparta</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>agis IV king of sparta</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bato king of dardanian kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>amynander king of athamania</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>nabis king of sparta</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>prusias I cholus king of bithynia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cotys IV king of the odrysian kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>andriscus king of macedonia under roman rule</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>jonathan leader of the maccabees</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>judas maccabeus leader of the maccabees</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>simon thassi leader of the maccabees</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>diodutus tryphon king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mithidrates vi king of pontus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice VI queen of pontus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mithidrates V euergetes king of pontus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>laodice queen of pontus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy VIII king of cyrene and cyprus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy apion king of cyrene</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy X king of cyprus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy X king of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>berenice III queen of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy ix soter king of ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>tigranes ii king of armenia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip ii king of the seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip i philadelphus king of seleucid empire</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy xi alexander ii king of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>nicomedes iv philopator king of bithynia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus xiii king of seleucid kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy xii king of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra v queen of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pharnaces ii king of pontus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iv king of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iv king of persia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iii king of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iii king of persia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip ii king of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>olympias queen of macedon</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>teuta queen of the ardiaean kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius king of ardiaean kingdom</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">δούλος</div>    <div class="definitionNL"><b>Definition</b>: Άνθρωπος αναγκασμένος να λογοδοτεί και να υπακούει έναν άλλον άνθρωπο, του οποίου θεωρείται ιδιοκτησία.<br></div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: slave (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Slave&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /a person forced to word for and obey another person and is considered their property /</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ιδιότητα/ρόλος</div>    <div class="definitionNL"><b>Definition</b>: Λειτουργία ή καθήκοντα που αναλαμβάνει ένα άτομο μέσα σε μια πολιτική, στρατιωτική, κοινωνική ή επαγγελματική δομή.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: role (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Role&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/</div>    <div class="concept"><b>Comment</b>: The role of the human agent, for example if he is a king or a general. </div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>satrap of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ruler of southern greece</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ιερέας</div>    <div class="definitionNL"><b>Definition</b>: Ιδιότητα/ρόλος που εξουσιοδοτεί αυτόν που τον έχει να πραγματοποιεί τις ιερές τελετουργίες μιας θρησκείας ή λατρείας.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: priest (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Priest&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /authorized in performing the sacred rites of a religion or cult/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>judas maccabeus high priest of jerusalem</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>jason the high priest of the temple of jerusalem</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>jonathan high priest of jerusalem</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>simon thassi high priest of judae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>john hypercanus high priest of judae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaius julius caesar pontifex maximus</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">κυβερνήτης</div>    <div class="definitionNL"><b>Definition</b>: Στο πλαίσιο της παρούσας οντοορολογίας είναι η Ιδιότητα/ρόλος του ηγέτη ή διοικητή συγκεκριμένης περιοχής.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: governor (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Governor&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /an official govenrning a region/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>governor of athens</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cassander ruler of southern greece</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus junius brutus roman governor</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">πρίγκηπας-πριγκήπισσα</div>    <div class="definitionNL"><b>Definition</b>: Γιός - κόρη μονάρχη.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: prince-princess (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Prince-Princess&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /the son or daughter of a monarch/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius the fair prince of macedonia</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>john hypercanus prince of judae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>roxana bactrian princess</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">σατράπης</div>    <div class="definitionNL"><b>Definition</b>: Αξιωματούχος που διόριζε ο Πέρσης βασιλιάς για να διοικεί τις επαρχίες (σατραπείες) της Περσικής αυτοκρατορίας.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: satrap (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Satrap&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /provinsial governor in the persian empire/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenes satrap of cappadocia and paphlagonia</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">στρατηγός</div>    <div class="definitionNL"><b>Definition</b>: Στρατικός αξιωματούχος, διοικητής του στρατού.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: general (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;General&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /an army officer/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 40</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antigonus I monopthalmus macedonian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiochus macedonian general under phillip II</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antipater macedonian/thessalian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cassander macedonian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>flavius josephus jewish general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>craterus general of alexander the great</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>leosthenis athenian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lysimachos general of alexander the great</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ptolemy I soter macedonian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aratus of sicyon general of the achean league</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>chremonides athenian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hannibal general of the carthagian army</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>scopas aetolian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>titus quinctius flamininus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>philopoemen general of the achean league</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucuis aemilius paullus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>publius cornelius scipio nasica roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lysias general and regent of antiochus V</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius mummius achaicus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>diodutus tryphon general under alexander balas</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus antonius roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius cornelius sulla felix roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius licinius murena roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius licinus lucullus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pompey roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaius valerius triarius roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus licinius crassus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>surena parthian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaius julius caesar roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gnaeus domitius calvinus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gaius octavius roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>neoptolemus macedonian general under alexander the great</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenes greek general under alexander the great</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iii hegemon of the hellenic league</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip ii hegemon of the hellenic league</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius postumius albinus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gnaeus fulvius centumalus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hamilcar barca carthagian general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus atilius regulus roman general</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>scipio africanus roman general</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">τύραννος</div>    <div class="definitionNL"><b>Definition</b>: Απόλυτος άρχοντας που καταλαμβάνει την εξουσία με βίαια ή με παράνομα μέσα. Καταπιεστικός κυβερνήτης.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: tyrant (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Tyrant&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /an oppressive ruler/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pyrrhus tyrant of syracuse</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aristion tyrant of athens</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>machanidas tyrant of sparta</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ύπατος</div>    <div class="definitionNL"><b>Definition</b>: Ιδιότητα/ρόλος ενός από τους δύο ετησίως επιλεγμένους στρατηγούς που κυβερνούσαν από κοινού την ρωμαϊκή δημοκρατία.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: consul (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Consul&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /one of the two annually elected chiefs who ruled jointly the roman republic/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 7</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus perpena roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>manius acilius roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus antonius roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pompey roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>marcus junius brutus roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gnaeus fulvius centumalus roman consul</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius aemilius paullus roman consul</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">φαραώ</div>    <div class="definitionNL"><b>Definition</b>: Τίτλος των ηγεμόνων της αρχαίας Aιγύπτου, Στο πλαίσιο της παρούσας οντοορολογίας κατηγοριοποιείται ως {ιδιότητα/ρόλος του κυβερνήτη της Αιγύπτου}.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: pharaoh (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Pharaoh&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /role/, /the ruler of egypt/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Role&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra III queen of egypt/pharaoh</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>phillip III arrhidaeus pharaoh of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cleopatra vii queen of the ptolemaic kingdom</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iv king pharaoh of egypt</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander iii pharaoh of egypt</strong></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

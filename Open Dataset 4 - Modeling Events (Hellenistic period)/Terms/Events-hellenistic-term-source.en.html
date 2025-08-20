@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "EventOntoHellenistic" (en)</div>
+<div class="title2">Category: "source"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 25, 2024 - Time: 11:41:31 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">artefact</option>
+                <option value="1">author</option>
+                <option value="2">biographer</option>
+                <option value="3">coin</option>
+                <option value="4">geographer</option>
+                <option value="5">greek historian</option>
+                <option value="6">historian</option>
+                <option value="7">historiographer</option>
+                <option value="8">inscription</option>
+                <option value="9">jewish historian</option>
+                <option value="10">monument</option>
+                <option value="11">orator</option>
+                <option value="12">papyrus</option>
+                <option value="13">philosopher</option>
+                <option value="14">politician</option>
+                <option value="15">primary source</option>
+                <option value="16">roman historian</option>
+                <option value="17">secondary source</option>
+                <option value="18">source</option>
+                <option value="19">text</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">artefact</div>    <div class="definitionNL"><b>Definition</b>: An artefact (or artifact) refers to an object made by a human being, typically one of cultural or historical interest,</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: τεχνούργημα (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Artifact&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /a material source/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">author</div>    <div class="definitionNL"><b>Definition</b>: Someone who writes books and conveys ideas, images and information through the written word.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: συγγραφέας (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Author&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 4</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>historian</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>politician</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>philosopher</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>geographer</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">biographer</div>    <div class="definitionNL"><b>Definition</b>: Author studies and writes about the life of other people.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: βιογράφος (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Biographer&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies and writes about the life of other people/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cornelios nepos</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cornelio_Nepote.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cornelio_Nepote.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a3/Cornelio_Nepote.jpg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">coin</div>    <div class="definitionNL"><b>Definition</b>: A small, flat, round piece of metal used as money. Coins are also valuable archaeological finds because they can provide important insights into the history, culture, economics, and politics of the societies that produced them.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: νόμισμα (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Coin&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /a material source/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">geographer</div>    <div class="definitionNL"><b>Definition</b>: A scholar who studies the Earth&apos;s physical, biological, and human environments, as well as the interactions between them.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: γεωγράφος (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Geographer&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies the natural environment and how it is restributed/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>strabo</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Strabo.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/e/ed/Strabo.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/e/ed/Strabo.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pausanias</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">greek historian</div>    <div class="definitionNL"><b>Definition</b>: A historian who studies, analyzes, and interprets the history of ancient Greece, its people, culture, political systems, and events.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: έλληνας ιστορικός (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Greek Historian&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies about events and periods of history/, /greek/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Historian&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 4</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>polybius</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>plutarch</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Head_of_a_philosopher_-_Archaeological_Museum_of_Delphi.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/f/fc/Head_of_a_philosopher_-_Archaeological_Museum_of_Delphi.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/f/fc/Head_of_a_philosopher_-_Archaeological_Museum_of_Delphi.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>appian</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Appian_%28Latin%29%2C_Florence%2C_BML%2C_Plut._68.19.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Appian_%28Latin%29%2C_Florence%2C_BML%2C_Plut._68.19.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/d/d9/Appian_%28Latin%29%2C_Florence%2C_BML%2C_Plut._68.19.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>arrian of nicomedia</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Arrian7.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Arrian7.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/c/c3/Arrian7.jpg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">historian</div>    <div class="definitionNL"><b>Definition</b>: A scholar who studies, researches, interprets, and writes about the past. Historians analyze and contextualize historical events, people, cultures, and processes to deepen our understanding of human experiences and societal changes over time. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: ιστορικός (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Historian&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies about events and periods of history/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>diodorus siculus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Diodoro_siculo_-_storico_di_Agira.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/1d/Diodoro_siculo_-_storico_di_Agira.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/1d/Diodoro_siculo_-_storico_di_Agira.jpg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">historiographer</div>    <div class="definitionNL"><b>Definition</b>: Someone who writes history. In particular, someone who ho focuses on the study of the history of historical writing, the methods used by historians, and the evolution of historical interpretations over time.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: ιστοριογράφος (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Historiographer&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies how historical events have been written/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">inscription</div>    <div class="definitionNL"><b>Definition</b>: A form of writing that is engraved, etched or otherwise permanently marked on a durable surface such as stone, metal, wood or clay. Inscriptions are often created to memorialize, document or transmit information in a enduring way. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: επιγραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Inscription&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /a written source on stone/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">jewish historian</div>    <div class="definitionNL"><b>Definition</b>: A scholar who specializes in the study of Jewish history, culture, and heritage, exploring the experiences, achievements, and challenges of the Jewish people throughout the ages. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: εβραίος ιστορικός (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Jewish Historian&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies about events and periods of history/, /jewish/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Historian&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>flavius josephus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff/lossy-page1-800px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff/lossy-page1-800px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff/lossy-page1-800px-Joseph%2C_son_of_Gorian%2C_called_Flavius_Josephus_%28NYPL_Hades-255854-430875%29_%28cropped%29.tiff.jpg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">monument</div>    <div class="definitionNL"><b>Definition</b>: A structure or statue created to commemorate a person, event, or significant historical moment.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: μνημείο  (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Monument&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /a structure in memory of event or person/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">orator</div>    <div class="definitionNL"><b>Definition</b>: A person who is skilled in public speaking, particularly someone who delivers speeches in a formal or influential manner. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: ρήτορας (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Orator&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /has skills in speaking in public/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>athenian orator</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hyperidis orator</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">papyrus</div>    <div class="definitionNL"><b>Definition</b>: A type of material that was used in ancient times as a writing surface, similar to paper. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: πάπυρος  (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Papyrus&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /a written source on papyrus/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">philosopher</div>    <div class="definitionNL"><b>Definition</b>: A scholar who studies fundamental questions about the human existence and knowledge.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: φιλόσοφος (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Philosopher&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies fundamental questions about the human existence and knowledge/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>aristion philosopher</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">politician</div>    <div class="definitionNL"><b>Definition</b>: Someone who is actively involved in the governance of a country, state, or community, </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: πολιτικός  (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Politician&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /is involved in politics/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Author&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dinocrates messinian politician</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">primary source</div>    <div class="definitionNL"><b>Definition</b>: Original document or object created during the time of a historical event. They provide firsthand evidence and direct insights into the past.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: πρωτογενής πηγή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Primary&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /original documents and objects created at the same time of the historical event/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Text&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>refersToEvent</i></u>: &lt;Event&gt;</div><div class="definitionFormal"> <u><i>hasAuthor</i></u>: &lt;Author&gt;</div>    <div class="concept"><b>Comment</b>: A source is thought to be primary when it is direct evidence of an event because it was created by people that were there at the time of the event.</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 26</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>agis</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antiquities of the jews</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>antony</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bibliotheca historica</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>life of cleomenes</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>demetrius</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>description of greece</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>geographica</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>historiae romanae</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>histories</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>life of crassus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>life of lucullus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>life of pyrrhus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>the history</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>the life of titus flamininus</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>history of rome</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>the life of alexander</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>syrian wars</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>de bello alexandrino</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>commentaries on the civil war</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>the mithidratic wars</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>caesar</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>anabasis</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eumenes</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>life of eumenes</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gallic war</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">roman historian</div>    <div class="definitionNL"><b>Definition</b>: Someone who studies, analyzes, and interprets the history of ancient Rome, its people, culture, political systems, and events.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: ρωμαίος ιστορικός (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Roman Historian&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /writer of source/, /studies about events and periods of history/, /roman/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Historian&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>isAuthorOf</i></u>: &lt;Text&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cornelius tacitus</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Wien-_Parlament-Tacitus.jpg/800px-Wien-_Parlament-Tacitus.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Wien-_Parlament-Tacitus.jpg/800px-Wien-_Parlament-Tacitus.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Wien-_Parlament-Tacitus.jpg/800px-Wien-_Parlament-Tacitus.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lucius cassius dio</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Dio_Cassius.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/1/12/Dio_Cassius.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/1/12/Dio_Cassius.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>titus livius</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Titus-Livius-Austrian-Parliament-Building.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/d/d6/Titus-Livius-Austrian-Parliament-Building.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/d/d6/Titus-Livius-Austrian-Parliament-Building.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pseudo-caesar</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>c julius caesar</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">secondary source</div>    <div class="definitionNL"><b>Definition</b>: A written work that analyzes, interprets, or comments on primary sources or historical events.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: δευτερογενής πηγή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Secondary &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/, /gives information about a primary source/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Text&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>refersToEvent</i></u>: &lt;Event&gt;</div><div class="definitionFormal"> <u><i>hasAuthor</i></u>: &lt;Author&gt;</div>    <div class="concept"><b>Comment</b>: A source is thought to be secondary when it constitutes a document that refers to an event that it has been referred first in an another source before.</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">source</div>    <div class="definitionNL"><b>Definition</b>: Any material or information that provides evidence or insights about past events, people, cultures, or societies. Sources are crucial for understanding and interpreting the past. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: πηγή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Source&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/</div>    <div class="concept"><b>Comment</b>: This concept constitutes the kind, the type and the writer or a maker of the source that an event is reported in.</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">text</div>    <div class="definitionNL"><b>Definition</b>: A piece of written material, typically consisting of words, sentences, and paragraphs, that conveys information, ideas, or stories.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: κείμενο (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Text&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /source/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Source&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>refersToEvent</i></u>: &lt;Event&gt;</div><div class="definitionFormal"> <u><i>hasAuthor</i></u>: &lt;Author&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>alexander</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>the wars of the jews</strong></div></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>
