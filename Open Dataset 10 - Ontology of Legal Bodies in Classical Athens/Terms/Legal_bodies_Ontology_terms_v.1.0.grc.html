@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Athenian-Legal-Bodies" (grc)</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 30, 2024 - Time: 11:36:14 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">ἄρχοντες</option>
+                <option value="1">ἄρχων</option>
+                <option value="2">βασιλεὺς</option>
+                <option value="3">Βουλὴ</option>
+                <option value="4">βουλὴ ἐξ Ἀρείου πάγου</option>
+                <option value="5">βουλὴ οἱ πεντακόσιοι</option>
+                <option value="6">δικαστήριον</option>
+                <option value="7">ἐκκλησία</option>
+                <option value="8">ἐπώνυμος ἄρχων</option>
+                <option value="9">ἐφέται</option>
+                <option value="10">θεσμοθέται</option>
+                <option value="11">οἱ ἕνδεκα‎</option>
+                <option value="12">πολέμαρχος</option>
+                <option value="13">πρυτάνεις</option>
+                <option value="14">στρατηγοί</option>
+                <option value="15">τετταράκοντα</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">ἄρχοντες</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων chosen by lot, held by 10 people, serves a one year term, hold preliminary hearings and assign cases.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 23.28: "εἰσφέρειν δ᾽ ἐς τοὺς ἄρχοντας, ὧν ἕκαστοι δικασταί εἰσι, τῷ βουλομένῳ. τὴν δ᾽ ἡλιαίαν διαγιγνώσκειν."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Archons (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official chosen by lot held by 10 people serves a one year term&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /chosen by lot/, /held by 10 people/, /serves a one year term/, /hold preliminary hearings and assign cases/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ἄρχων</div>    <div class="definitionNL"><b>Definition</b>: An official who supervises legal proceedings.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Magistrate (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">βασιλεὺς</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων chosen by lot, serves a one year term, supervises religious suits such as impiety indictments and homicide suits, held by one person.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Lys. 6.4: " ἐὰν νυνὶ Ἀνδοκίδης ἀθῷος ἀπαλλαγῇ δι᾽ ὑμᾶς ἐκ τοῦδε τοῦ ἀγῶνος καὶ ἔλθῃ κληρωσόμενος τῶν ἐννέα ἀρχόντων καὶ λάχῃ βασιλεύς, ἄλλο τι ἢ ὑπὲρ ὑμῶν καὶ θυσίας θύσει καὶ εὐχὰς εὔξεται κατὰ τὰ πάτρια"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Basileus (preferred)</div>    <div class="textMediumMarginBlue">- en: King (alternative)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official chosen by lot serves a one year term supervises religious suits such as impiety indictments and homicide suits&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /chosen by lot/, /serves a one year term/, /supervises religious suits such as impiety indictments and homicide suits/, /held by one person/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">Βουλὴ</div>    <div class="definitionNL"><b>Definition</b>: A group which judges legal proceedings.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 22.5: " νόμος ἐστί, φησίν, ἐὰν ἀξίως ἡ βουλὴ δοκῇ βουλεῦσαι δωρειᾶς, διδόναι τὸν δῆμον τὴν δωρειὰν αὐτῇ."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Council (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">βουλὴ ἐξ Ἀρείου πάγου</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ becomes a member after archonship, serves for the remainder of life, judges suits for intentional homicide intentional wounding and destruction of sacred olive trees, made up of all former archons.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 18.133: "καὶ εἰ μὴ ἡ βουλὴ ἡ ἐξ Ἀρείου πάγου τὸ πρᾶγμ᾽ αἰσθομένη καὶ τὴν ὑμετέραν ἄγνοιαν ἐν οὐ δέοντι συμβεβηκυῖαν ἰδοῦσα ἐπεζήτησε τὸν ἄνθρωπον καὶ συλλαβοῦσ᾽ ἐπανήγαγεν ὡς ὑμᾶς, ἐξήρπαστ᾽ ἂν ὁ τοιοῦτος καὶ τὸ δίκην δοῦναι διαδὺς ἐξεπέπεμπτ᾽ ἂν ὑπὸ τοῦ σεμνολόγου τουτουί:." </div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Council of the Areopagus (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group becomes a member after archonship serves for the remainder of life judges suits for intentional homicide intentional wounding and destruction of sacred olive trees made up of all former archons&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /becomes a member after archonship/, /serves for the remainder of life/, /judges suits for intentional homicide intentional wounding and destruction of sacred olive trees/, /made up of all former archons/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">βουλὴ οἱ πεντακόσιοι</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ chosen by lot, has 500 members, serves a one year term, deliberates over agenda for Assembly and examines appointed magistrates.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Aeschin. 3.2: "ἐβουλόμην μὲν οὖν, ὦ ἄνδρες Ἀθηναῖοι, καὶ τὴν βουλὴν τοὺς πεντακοσίους καὶ τὰς ἐκκλησίας ὑπὸ τῶν ἐφεστηκότων ὀρθῶς διοικεῖσθαι"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Council of 500 (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group chosen by lot has 500 members serves a one year term deliberates over agenda for Assembly and examines appointed magistrates&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /chosen by lot/, /has 500 members/, /serves a one year term/, /deliberates over agenda for Assembly and examines appointed magistrates/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">δικαστήριον</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ chosen by lot, has a size that varies based on case, serves a one year term, judge the majority of legal proceedings.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 21.221: "αὐτίκα δὴ μάλα, ἐπειδὰν ἀναστῇ τὸ δικαστήριον, εἷς ἕκαστος ὑμῶν"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Law courts (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group chosen by lot has a size that varies based on case serves a one year term judge the majority of legal proceedings&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /chosen by lot/, /has a size that varies based on case/, /serves a one year term/, /judge the majority of legal proceedings/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ἐκκλησία</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ deliberates over political issues, made up of all adult male citizens, no formal selection, no term length.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 25.9:  καὶ τὰ μὲν ἄλλ᾽ ἐάσω: ἀλλ᾽ εἰς τὰς ἐκκλησίας ἀναβαίνουσιν, ἐν αἷς ὑμεῖς γνώμης ἀπόδειξιν, οὐ πονηρίας τοῖς λέγουσι προτίθετε, τόλμαν καὶ κραυγὴν καὶ ψευδεῖς αἰτίας καὶ συκοφαντίαν καὶ ἀναισχυντίαν καὶ πάντα τὰ τοιαῦτα συνεσκευασμένοι, ὧν οὐκ ἂν εὕροι τις ἐναντιώτερα τῷ βουλεύεσθαι, νομίζω δ᾽ οὐδ᾽ ἂν αἰσχίω."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Assembly (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group deliberates over political issues made up of all adult male citizens no formal selection no term length&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /deliberates over political issues/, /made up of all adult male citizens/, /no formal selection/, /no term length/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ἐπώνυμος ἄρχων</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων chosen by lot, serves a one year term, supervises family lawsuits for citizens, held by one person.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 21.9: "ἐν δὲ ταύτῃ ἐπειδὰν χρηματίσωσιν οἱ πρόεδροι περὶ ὧν διῴκηκεν ὁ ἄρχων, χρηματίζειν καὶ περὶ ὧν ἄν τις ἠδικηκὼς ᾖ περὶ τὴν ἑορτὴν ἢ παρανενομηκώς"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Eponymous Archon (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official chosen by lot serves a one year term supervises family lawsuits for citizens&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /chosen by lot/, /serves a one year term/, /supervises family lawsuits for citizens/, /held by one person/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">ἐφέται</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ chosen by lot, has 51 members, serves a one year term, judges unintentional and justifiable homicide cases.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 23.37: "ἐὰν δέ τις τὸν ἀνδροφόνον κτείνῃ ἢ αἴτιος ᾖ φόνου, ἀπεχόμενον ἀγορᾶς ἐφορίας καὶ ἄθλων καὶ ἱερῶν Ἀμφικτυονικῶν, ὥσπερ τὸν Ἀθηναῖον κτείναντα, ἐν τοῖς αὐτοῖς ἐνέχεσθαι, διαγιγνώσκειν δὲ τοὺς ἐφέτας."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Ephetai (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group chosen by lot has 51 members serves a one year term judges unintentional and justifiable homicide cases&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /chosen by lot/, /has 51 members/, /serves a one year term/, /judges unintentional and justifiable homicide cases/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">θεσμοθέται</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων chosen by lot, held by 6 people, serves a one year term, supervises lawsuits against other officials such as impeachments, indictments for illegal proposals, and scrutinies.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Isoc. 20.2: " ἔπειτα τῶν μὲν ἄλλων ἐγκλημάτων αὐτῷ τῷ παθόντι μόνον ὁ δράσας ὑπόδικός ἐστιν: περὶ δὲ τῆς ὕβρεως, ὡς κοινοῦ τοῦ πράγματος ὄντος, ἔξεστι τῷ βουλομένῳ τῶν πολιτῶν γραψαμένῳ πρὸς τοὺς θεσμοθέτας εἰσελθεῖν εἰς ὑμᾶς."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Law-Givers (alternative)</div>    <div class="textMediumMarginBlue">- en: Thesmothetai (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official chosen by lot held by 6 people serves a one year term supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /chosen by lot/, /held by 6 people/, /serves a one year term/, /supervises lawsuits against other officials such as impeachments indictments for illegal proposals and scrutinies/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">οἱ ἕνδεκα‎</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων held by 11 people, chosen by lot, serves a one year term, supervises arrests imprisonments and executions.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Isaeus 4.28: " οὗτος γάρ, ὅτ᾽ ἐπεδήμει ἐνθάδε, πρῶτον μὲν εἰς τὸ δεσμωτήριον ὡς κλέπτης ὢν ἐπ᾽ αὐτοφώρῳ ἀπήχθη, τότε δὲ ἀφεθεὶς μεθ᾽ ἑτέρων τινῶν ὑπὸ τῶν ἕνδεκα"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Eleven (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official held by 11 people chosen by lot serves a one year term supervises arrests imprisonments and executions&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /held by 11 people/, /chosen by lot/, /serves a one year term/, /supervises arrests imprisonments and executions/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">πολέμαρχος</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων chosen by lot, serves a one year term, supervises private actions and family law for metics, held by one person.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 59.40: "ἀφαιρουμένου δὲ τοῦ Στεφάνου κατὰ τὸν νόμον εἰς ἐλευθερίαν, κατηγγύησεν αὐτὴν πρὸς τῷ πολεμάρχῳ."</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Polemarch (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official chosen by lot serves a one year term supervises private actions and family law for metics&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /chosen by lot/, /serves a one year term/, /supervises private actions and family law for metics/, /held by one person/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">πρυτάνεις</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ has 50 members, serves for one tenth of a year, made up of council members in an order determined by lot, convenes the Council and Assembly.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Aeschin. 2.60: " προγράψαι τοὺς πρυτάνεις ἐκκλησίας δύο κατὰ τὸν νόμον, ἐν δὲ ταύταις βουλεύσασθαι περὶ τῆς εἰρήνης Ἀθηναίους"</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Prytaneis (preferred)</div>    <div class="textMediumMarginBlue">- en: Presidents (alternative)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group has 50 members serves for one tenth of a year made up of council members in an order determined by lot convenes the Council and Assembly&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /has 50 members/, /serves for one tenth of a year/, /made up of council members in an order determined by lot/, /convenes the Council and Assembly/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">στρατηγοί</div>    <div class="definitionNL"><b>Definition</b>: ἄρχων elected from each tribe, held by 10 people, serves a one year term, supervises military related legal proceedings.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Dem. 4.25: " τὰς προφάσεις ἀφελεῖν καὶ τοῦ στρατηγοῦ καὶ τῶν στρατιωτῶν, μισθὸν πορίσαντας καὶ στρατιώτας οἰκείους ὥσπερ ἐπόπτας τῶν στρατηγουμένων παρακαταστήσαντας." </div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Generals (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Official elected from each tribe held by 10 people serves a one year term supervises military related legal proceedings&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /supervises legal proceedings/, /elected from each tribe/, /held by 10 people/, /serves a one year term/, /supervises military related legal proceedings/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Official&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">τετταράκοντα</div>    <div class="definitionNL"><b>Definition</b>: Βουλὴ chosen by lot, has 40 members, serves a one year term, judges private lawsuits over up to 10 drachmas.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div>    <div class="textMediumMargin"><b>Context(s)</b>: </div>    <div class="textItalicSmallMargin"><b>1)</b> Isoc. 15.237: "ἐν γὰρ ταῖς σανίσι ταῖς ὑπὸ τῶν ἀρχόντων ἐκτιθεμέναις ἀναγκαῖόν ἐστιν, ἐν μὲν ταῖς ὑπὸ τῶν θεσμοθετῶν ἀμφοτέρους ἐνεῖναι, τούς τε τὴν πόλιν ἀδικοῦντας καὶ τοὺς συκοφαντοῦντας, ἐν δὲ ταῖς τῶν ἕνδεκα τούς τε κακουργοῦντας καὶ τοὺς τούτοις ἐφεστῶτας, ἐν δὲ ταῖς τῶν τετταράκοντα τούς τ᾽ ἐν τοῖς ἰδίοις πράγμασιν ἀδικοῦντας καὶ τοὺς μὴ δικαίως ἐγκαλοῦντας" </div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- en: Forty (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Group chosen by lot has 40 members serves a one year term judges private lawsuits over up to 10 drachmas&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /judges legal proceedings/, /chosen by lot/, /has 40 members/, /serves a one year term/, /judges private lawsuits over up to 10 drachmas/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Group&gt;</div></div></div><div class="otherEntry"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

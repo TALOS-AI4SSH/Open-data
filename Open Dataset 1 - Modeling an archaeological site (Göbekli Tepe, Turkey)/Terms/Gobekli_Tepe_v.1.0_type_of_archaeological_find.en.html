@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Göbekli-Tepe" (en)</div>
+<div class="title2">Category: "type of archaeological finds"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:52:00 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">animal relief</option>
+                <option value="1">anthropomorphic being relief</option>
+                <option value="2">central t-shaped pillars</option>
+                <option value="3">lateral t-shaped pillars</option>
+                <option value="4">relief</option>
+                <option value="5">symbol relief</option>
+                <option value="6">t-shaped pillars</option>
+                <option value="7">type of archaeological finds</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">animal relief</div>    <div class="definitionNL"><b>Definition</b>: A type of relief sculpture where the sculpted elements depict animals.  In this form of art, the animal shapes and details are carved or modeled to project from the background, creating a three-dimensional effect while still being attached to the underlying plane. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Animal Relief&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /relief/, /animal/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Relief&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 77</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gazelle</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hare</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hyena</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lion</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>net</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>predator</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ram</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wildcat</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild_boar</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>vulture</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>spider</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>scorpion</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>reptile</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bear relief of pillar 11</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bird relief of pillar 38</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bird relief of pillar 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crane relief of pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crane relief of snake pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crane relief of pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crane relief of pillar 36</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>duck relief of pillar 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>duck relief of pillar 18</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>duck relief of pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>vulture relief of fragment of pillar 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>vulture relief of pillar 43</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium relief of snake pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium relief of pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium relief of pillar 31</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium relief of pillar 38</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium relief of pillar 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bull relief of snake pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bull relief of pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bull relief of pillar 35</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>gazelle relief of pillar 43</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hare relief of pillar 27</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>predator relief of pillar 27</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>predator relief of pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of snake pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 10</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 24</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 9</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fox relief of pillar 37</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hyena relief of fragment of pillar 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lion relief of lion pillar building pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lion relief of lion pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wildcat relief of pillar of enclosure h</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ram relief of snake pillar building pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ram relief of pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>reptile relief of pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>reptile relief of pillar 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of snake pillar building pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of snake pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of pillar 30</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of pillar 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake relief of pillar 6</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>scorpion relief of pillar 43</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 28</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 23</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 25</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 26</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 27</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 36</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>wild boar relief of pillar 38</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>female human being of slab of pillar in enlosure D</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bear</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bird</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bucranium</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>bull</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>crane</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>duck</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">anthropomorphic being relief</div>    <div class="definitionNL"><b>Definition</b>: Human relief is a type of relief sculpture in which the figures represent humans or human-like beings. In this artistic form, the human shapes and details are carved or modeled to stand out from a flat background, creating a three-dimensional effect while remaining connected to the surface plane.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Anthropomorphic Being Relief&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /relief/, /anthropomorhic being/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Relief&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 5</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>female human being</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>human parts</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>male human being</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>male human being relief of pillar 18</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>male human being relief of pillar 31</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">central t-shaped pillars</div>    <div class="definitionNL"><b>Definition</b>: T-shaped pillars are a distinctive architectural feature characteristic of several Neolithic sites, most notably Göbekli Tepe in southeastern Turkey. These pillars are so named because they have a T-shaped cross-section, with the horizontal part of the T typically resting on smaller supports or directly on the ground.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Central T-Shaped Pillars&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /pillar/, /central t-pillar/</div><div class="definitionFormal"><b>a kind of</b>: &lt;T-Shaped Pillars&gt;</div>    <div class="concept"><b>Comment</b>: A pillar in T-shaped form, larger than the lateral T-shaped pillars, always has reliefs, in the center of the enclosure, made of limestone.</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 12</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar enclosure h</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 9</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 37</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0014-1000-1491-20180220155557.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0014-1000-1491-20180220155557.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0014-1000-1491-20180220155557.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 35</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 31</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0004-1000-1496-20180220153534.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0004-1000-1496-20180220153534.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0004-1000-1496-20180220153534.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 10</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 18</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0012-1000-1504-20180220155325.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0012-1000-1504-20180220155325.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0012-1000-1504-20180220155325.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXXVI</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXXV</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lion pillar building pillar 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake pillar building pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake pillar buildingpillar 2</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">lateral t-shaped pillars</div>    <div class="definitionNL"><b>Definition</b>: T-shaped pillars pillar, lateral t-pillar.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Lateral T-Shaped Pillars&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /pillar/, /lateral t-pillar/</div><div class="definitionFormal"><b>a kind of</b>: &lt;T-Shaped Pillars&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 41</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>slab of pillar</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 8</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 6</strong></div>    <img src="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg" target="_blank" rel="noopener">https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 7</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 5</strong></div>    <img src="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg" target="_blank" rel="noopener">https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/07-irmgard-wagner-gt99_p06_0004.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 47</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 46</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 44</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 45</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 43</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0011-1000-1492-20180220155200.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0011-1000-1492-20180220155200.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0011-1000-1492-20180220155200.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 40</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 4</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 38</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 36</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 33</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 30</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 29</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 28</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 27</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 26</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 25</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 24</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 23</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 22</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 2</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Gobekli_Tepe_2.jpg/800px-Gobekli_Tepe_2.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Gobekli_Tepe_2.jpg/800px-Gobekli_Tepe_2.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Gobekli_Tepe_2.jpg/800px-Gobekli_Tepe_2.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 16</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 15</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 14</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 13</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 12</strong></div>    <img src="https://archive.archaeology.org/0811/abstracts/jpegs/turkey4.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://archive.archaeology.org/0811/abstracts/jpegs/turkey4.jpg" target="_blank" rel="noopener">https://archive.archaeology.org/0811/abstracts/jpegs/turkey4.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 11</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXIV</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXV</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXVI</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXXVIII</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXXVII</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar XXXIV</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pillar 56</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>fragment of pillar 12</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">relief</div>    <div class="definitionNL"><b>Definition</b>: Relief in sculpture is a technique where figures or designs are raised from a flat surface, creating a 3D effect. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Relief&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /relief/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Type Of Archaeological Finds&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">symbol relief</div>    <div class="definitionNL"><b>Definition</b>: A type of relief sculpture where the sculpted elements depict various symbols.  </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Symbol Relief&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /relief/, /symbol/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Relief&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 7</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>h-shaped symbol</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>u-shaped symbol</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>net relief of pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>net relief of snake pillar building pillar 1</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>symbol h relief of pillar 28</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>symbol h relief of pillar 30</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>symbol u relief of pillar 28</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">t-shaped pillars</div>    <div class="definitionNL"><b>Definition</b>: Type of archaeological finds .</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;T-Shaped Pillars&gt;</div><div class="definitionFormal"><b>a kind of</b>: &lt;Type Of Archaeological Finds&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">type of archaeological finds</div>    <div class="definitionNL"><b>Definition</b>: The various categories of artifacts, features, or other items uncovered during an excavation. </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Type Of Archaeological Finds&gt;</div></div></div><div class="otherEntry"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

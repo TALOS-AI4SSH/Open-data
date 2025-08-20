@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Göbekli-Tepe" (en)</div>
+<div class="title2">Category: "location"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:49:31 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">building with rectangular rooms</option>
+                <option value="1">enclosure</option>
+                <option value="2">layer</option>
+                <option value="3">location</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">building with rectangular rooms</div>    <div class="definitionNL"><b>Definition</b>: Building with rectangular rooms found in Layer dated in the Pre-Pottery Neolithic B period.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Buildings with Rectangular Rooms&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /ppnb/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Layer&gt;</div>    <div class="concept"><b>Comment</b>: Buildings with rectangular rooms which belong to Layer II.</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 2</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>lion pillar building (löwenpfeilergebäude)</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>snake pillar building (schlangenpfeilergebäude)</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">enclosure</div>    <div class="definitionNL"><b>Definition</b>: A defined area or boundary within a site, often marked by physical features such as walls, ditches, or fences. In the case of the archaological site of Göbekli Tepe, Turkey, they are  dated in the 10th millennium BCE, Pre-pottery Neolithic A period (PPNA). </div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Enclosure&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /ppna/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Layer&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>belongsToLayer</i></u>: &lt;Layer&gt;</div><div class="definitionFormal"> <u><i>hasPillar</i></u>: &lt;T-Shaped Pillars&gt;</div>    <div class="concept"><b>Comment</b>: The site has 9 named enclosures with circular shape, which belong to Layer III.</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 9</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure A</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0007-1000-669-20180220154058.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0007-1000-669-20180220154058.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0007-1000-669-20180220154058.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure B</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0008-1000-652-20180220154204.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0008-1000-652-20180220154204.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0008-1000-652-20180220154204.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure C</strong></div>    <img src="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/04-klaus-schmidt-gt09_anlc_n03-09.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/04-klaus-schmidt-gt09_anlc_n03-09.jpg" target="_blank" rel="noopener">https://www.dainst.blog/the-tepe-telegrams/wp-content/uploads/sites/8/2016/11/04-klaus-schmidt-gt09_anlc_n03-09.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure D</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0010-1000-668-20180220154419.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0010-1000-668-20180220154419.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0010-1000-668-20180220154419.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure E</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0013-1000-1543-20180220155415.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0013-1000-1543-20180220155415.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0013-1000-1543-20180220155415.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure F</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0015-1000-563-20180220155656.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0015-1000-563-20180220155656.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0015-1000-563-20180220155656.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure H</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0017-1000-665-20180220155851.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0017-1000-665-20180220155851.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0017-1000-665-20180220155851.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure I</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>enclosure G</strong></div>    <img src="https://whc.unesco.org/uploads/thumbs/site_1572_0016-1000-1479-20180220155754.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://whc.unesco.org/uploads/thumbs/site_1572_0016-1000-1479-20180220155754.jpg" target="_blank" rel="noopener">https://whc.unesco.org/uploads/thumbs/site_1572_0016-1000-1479-20180220155754.jpg</a></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">layer</div>    <div class="definitionNL"><b>Definition</b>: In archaeology, a layer (also known as a stratum) refers to a distinct level or deposit of soil, sediment, or cultural material found within an excavation site. Each layer typically represents a different period of time or phase of activity, and the sequence of layers can provide valuable chronological and contextual information about past human activities and environmental changes. Archaeologists analyze these layers to understand the stratigraphy of the site and to reconstruct the historical and cultural development over time.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Layer&gt;</div><div class="definitionFormal"><b>a kind of</b>: &lt;Location&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 3</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>layer I</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>layer II</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>layer III</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">location</div>    <div class="definitionNL"><b>Definition</b>: The exact area or position within an excavation site where a particular stratum or artifact is discovered.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Location&gt;</div></div></div><div class="otherEntry"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

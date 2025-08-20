@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Oratory" (en)</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 30, 2024 - Time: 11:48:07 PM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">assessable lawsuit</option>
+                <option value="1">battery suit</option>
+                <option value="2">counter-indictment</option>
+                <option value="3">defamation suit</option>
+                <option value="4">denunciation</option>
+                <option value="5">denunciation of malefactors</option>
+                <option value="6">false witness suit</option>
+                <option value="7">impeachment for maltreatment</option>
+                <option value="8">impeachment for treason</option>
+                <option value="9">indictment</option>
+                <option value="10">indictment for accepting bribes</option>
+                <option value="11">indictment for avoiding military service</option>
+                <option value="12">indictment for confiscation</option>
+                <option value="13">indictment for false assertion of citizenship</option>
+                <option value="14">indictment for hubris</option>
+                <option value="15">indictment for illegal proposals</option>
+                <option value="16">indictment for impiety</option>
+                <option value="17">indictment for prostitution</option>
+                <option value="18">indictment for removal of sacred olive tree</option>
+                <option value="19">indictment for seduction</option>
+                <option value="20">intentional homicide suit</option>
+                <option value="21">intentional wounding suit</option>
+                <option value="22">lawsuit</option>
+                <option value="23">lawsuit for adjudication</option>
+                <option value="24">non-assessable lawsuit</option>
+                <option value="25">presentation</option>
+                <option value="26">private lawsuits</option>
+                <option value="27">public lawsuits</option>
+                <option value="28">review</option>
+                <option value="29">scrutiny</option>
+                <option value="30">suit for a dowry</option>
+                <option value="31">suit for acts of violence</option>
+                <option value="32">suit for damages</option>
+                <option value="33">suit for ejectment</option>
+                <option value="34">suit for maintenance</option>
+                <option value="35">suit for theft</option>
+                <option value="36">suit over a guardianship</option>
+                <option value="37">summary arrest</option>
+                <option value="38">unintentional homicide suit</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">assessable lawsuit</div>    <div class="definitionNL"><b>Definition</b>: Lawsuit with assessable penalty.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκη τιμητή (preferred)</div>    <div class="textMediumMarginBlue">- grc: ἀγών τιμητός (alternative)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Legal proceeding with an assessable penalty&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">battery suit</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for starting a physical fight without justification, proceeded over by the Forty and tried before the dikasterion. If convicted, defendant receives the assessable penalty of a fine.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: αἰκίας δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for battery &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /the Forty/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /for starting a physical fight without justification/, /fine/, /assessable penalty/, /initiated by submitting a charge in writing/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">counter-indictment</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding initiated by submitting a charge in writing to block an illegal prosecution, tried before the dikasterion.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: παραγραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding against an illegal prosecution &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /dikasterion/, /to block an illegal prosecution/, /prosecutor issues oral summons at the Assembly/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">defamation suit</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for illegal defamatory speech, proceeded over by the Forty and tried before the dikasterion. If convicted, defendant receives the non-assessable penalty of a fine.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: κακηγορίας δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for illegal defamatory speech &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /the Forty/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /for illegal defamatory speech/, /fine/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">denunciation</div>    <div class="definitionNL"><b>Definition</b>: Public lawsuits inititated by denouncing an offender to a magistrate who carries out the arrest</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἔνδειξις (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated by denouncing an offender&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /inititated by denouncing an offender to a magistrate who carries out the arrest/, /the Eleven/, /dikasterion/, /arrest/, /penalty of 1000 drachmas/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">denunciation of malefactors</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding initiated by a denouncement before a magistrate for crimes against others. If convicted, defendant is sentenced to the non-assessable penalty of death</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἔνδειξις τῶν κακούργων (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated by denouncing an offender for antisocial behavior &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /inititated by denouncing an offender to a magistrate who carries out the arrest/, /the Eleven/, /dikasterion/, /arrest/, /penalty of 1000 drachmas/, /non-assessable penalty/, /for crimes against others/, /death/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated by denouncing an offender&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">false witness suit</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for providing false witness testimony, tried before the dikasterion.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ψευδομαρτυριῶν δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for providing false witness testimony &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /dikasterion/, /for providing false witness testimony/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">impeachment for maltreatment</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding for maltreatment of parents, orphans, and heiresses, proceeded over by the Eponymous Archon and tried before the dikasterion. If convicted, defendant receives an assesable penalty ranging from a fine to a death sentence. There is no penalty for prosecutors who fail to get one-fifth of the votes.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: εἰσαγγελία κάκωσις (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding for maltreatment&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /eponymous Archon/, /dikasterion/, /for maltreatment of parents orphans and heiresses/, /assessable penalty/, /penal assessment/, /no penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">impeachment for treason</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding for major offenses against the state. Can be proceeded over by the Assembly or the Council of 500, and can be tried before the Council or the Assembly or the dikasterion. If convicted, defendant receives the non-assesable penalty of death and confiscation. There is no penalty for prosecutors who fail to get one-fifth of the votes.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: εἰσαγγελία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding against official for offenses against the state&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /council or Assembly or dikasterion/, /the Assembly or the Council of 500/, /prosecutor issues oral summons at the Assembly/, /for major offenses against the state/, /death and confiscation/, /non-assessable penalty/, /no penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment</div>    <div class="definitionNL"><b>Definition</b>: Public lawsuits initiated by submitting a charge in writing</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing   &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for accepting bribes</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for accepting bribes, proceeded over by the Thesmothetae and tried before the dikasterion. If convicted, defendant receives the assessable penalty of death or a fine ten times the bribe.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δωροδοκίας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for accepting bribes &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /thesmothetae/, /dikasterion/, /for accepting bribes/, /death or fine ten times the bribe/, /assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for avoiding military service</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for avoiding military service, proceeded over by the Strategoi and tried before the dikasterion. If convicted, defendant receives the non-assessable penalty of disenfranchisement.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἀστρατείας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for avoiding military service&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /strategoi/, /dikasterion/, /for avoiding military service/, /disenfranchisement/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for confiscation</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for withholding property from the state, proceeded over by the Eleven, and tried by the dikasterion. If convicted, the defendant pays an assessable fine and the prosecutor gets one third of the contested property.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἀπογραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for debts to the state &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /assessable penalty/, /for withholding property from the state/, /the Eleven/, /dikasterion/, /fine and prosecutor gets one third of property/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for false assertion of citizenship</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for exercising citizenship rights as a noncitizen, proceeded over by the Thesmothetae and tried by the dikasterion. If convicted, defendant receives the non-assessable penalty of enslavement.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ξενίας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for citizenship violations&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /thesmothetae/, /dikasterion/, /for exercising citizenship rights as a noncitizen/, /enslavement/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for hubris</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for crimes of hubris, proceeded over by the Thesmothetae and tried by the dikasterion. If convicted, defendant receives an assessable penalty.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ὕβρεως γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing against crimes against humanity &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /thesmothetae/, /dikasterion/, /penal assessment/, /assessable penalty/, /for crimes of hubris/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for illegal proposals</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for proposing or enacting an illegal law, proceeded over by the Assembly and tried by the dikasterion. If convicted, defendant receives the assessable penalty of the annulment of their law and disenfranchisement if convicted three times.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: παρανόμων γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing against the proposal or enactment of an illegal law &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /the Assembly/, /dikasterion/, /for proposing or enacting an illegal law/, /annulment of law/, /assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for impiety</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for impiety, proceeded over by the Basileus and tried before the dikasterion. If convicted, defendant receives the non-assessable penalty of death.<br></div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἀσεβείας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for impiety &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /for impiety/, /basileus/, /dikasterion/, /non-assessable penalty/, /death/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for prostitution</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for exercising citizenship rights having engaged in prostitution, proceeded over by the Thesmothetae and tried by the dikasterion. If convicted, defendant receives the non-assessable penalty of death.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἑταιρήσεως γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for prostitution &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /thesmothetae/, /dikasterion/, /for exercising citizenship rights having engaged in prostitution/, /death/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for removal of sacred olive tree</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for the destruction of sacred olive trees, proceeded over by the Basileus and tried by the Council of the Areopagus. If convicted, defendant receives the non-assessable penalty of exile and confiscation of property.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἀσεβείας τοῦ σηκοῦ γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing for destruction of sacred olive trees &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /basileus/, /council of the Areopagus/, /for destruction of sacred olive trees/, /non-assessable penalty/, /exile and confiscation/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">indictment for seduction</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for illicit consensual sex with a woman, proceeded over by the Thesmothetae and tried by the dikasterion. If convicted, defendant receives an assessable penalty.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: μοιχείας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing against illegal consensual sex &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /thesmothetae/, /dikasterion/, /for illicit consensual sex with a woman/, /assessable penalty/, /penal assessment/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">intentional homicide suit</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for intentional homicide, initiated with a proclamation at funeral of victim, proceeded over by the Basileus and tried before the Council of the Areopagus. If convicted, the defendant receives the non-assessable penalty of death and confiscation.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: φόνος ἑκούσιος δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for intentional homicide&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated with a proclamation at funeral of victim/, /basileus/, /council of the Areopagus/, /proclamation at funeral of victim/, /for intentional homicide/, /death and confiscation/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">intentional wounding suit</div>    <div class="definitionNL"><b>Definition</b>: A public indictment for intentional wounding with a weapon, tried by the Council of the Areopagus. If convicted, defendant receives the non-assessable penalty of exile and confiscation of property.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: τραύματος ἐκ προνοίας γραφή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated in writing against intentional wounding with a weapon &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by submitting a charge in writing/, /prosecutor issues oral summons at the Assembly/, /penalty of 1000 drachmas/, /council of the Areopagus/, /for intentional wounding with a weapon/, /exile and confiscation/, /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding initiated in writing   &gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">lawsuit</div>    <div class="definitionNL"><b>Definition</b>: A legal proceeding in the classical Athenian court system.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">lawsuit for adjudication</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding initiated by competing claims for inheritance with no defendant or prosecutor, proceeded over by the Eponymous Archon and tried by the dikasterion. If prosecutor fails to receive one-fifth of the votes, he faces a fine of one-sixth the contested sum.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: διαδικασία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for competing inheritance claims &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by competing claims for inheritance/, /eponymous Archon/, /dikasterion/, /proclamation in the Assembly/, /for inheritance dispute/, /penalty of one sixth of the sum at issue/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">non-assessable lawsuit</div>    <div class="definitionNL"><b>Definition</b>: A legal proceeding with a non-assessable penalty.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκη ἀτίμητη (preferred)</div>    <div class="textMediumMarginBlue">- grc: ἀγών ἀτίμητος (alternative)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Legal proceeding with a fixed penalty&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /non-assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">presentation</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding initiated by a vote before the Assembly to condemn the offender with a formal sanction.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: προβολή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceedings to present an offender for formal sanctions &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by a vote before the Assembly to condemn or acquit the offender /, /the Assembly/, /prosecutor issues oral summons at the Assembly/, /formal sanction/, /penalty of 1000 drachmas/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">private lawsuits</div>    <div class="definitionNL"><b>Definition</b>: A legal proceeding brought forward by the injured party or a guardian.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκαι ἴδιαι (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">public lawsuits</div>    <div class="definitionNL"><b>Definition</b>:  A legal proceeding brought forward by any adult male citizen who wishes.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκαι δημόσιαι (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">review</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding initiated after a magistrates term for theft of sacred or public property, proceeded over by the Thesmothetae and tried before the dikasterion. If convicted, defendant receives the assessable penalty of tenfold damages.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: εὔθυναι (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated at the end of the term of a magistrate &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated after a magistrates term/, /thesmothetae/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /for theft of sacred or public property/, /tenfold damages/, /assessable penalty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">scrutiny</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding initiated before a magistrate&apos;s term and proceeded over by the Thesmothetae.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δοκιμασία (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated before a magistrate begins term in office &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated before a magistrates term/, /thesmothetae/, /prosecutor issues oral summons at the Assembly/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for a dowry</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding to claim full amount of a dowry, proceeded over by the Eponymous Archon and tried before the dikasterion. If convicted, defendant recives the assessable pentalty of a fine. If prosecutor fails to get one-fifth of the votes, he faces the penalty of one-sixth of the sum at issue.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκη προικός (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for return of a dowry &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /eponymous Archon/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /fine/, /assessable penalty/, /penalty of one sixth of the sum at issue/, /to claim full amount of a dowry/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for acts of violence</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for violent acts such as rape, proceeded over by the Forty and tried by the dikasterion. If convicted, defendant receives the assessable penalty of a fine.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: βιαίων δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding against forceful acts of violence&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /for violent acts such as rape/, /fine/, /assessable penalty/, /the Forty/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for damages</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for causing financial loss, proceeded over by the Forty and tried by the dikasterion. If convicted, defendant receives the non-assessable penalty of death. If convicted, defendant receives the assessable penalty of a fine. If prosecutor fails to receive one-fifth of the votes, he faces a fine of one-sixth the sum in question.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: βλάβης δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for wrongful financial loss&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated by submitting a charge in writing/, /the Forty/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /for causing financial loss/, /fine/, /assessable penalty/, /penalty of one sixth of the sum at issue/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for ejectment</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for physically obstructing someone from their inheritance, proceeded over by the Eponymous Archon and tried before the dikasterion. If convicted, defendant receives the assessable penalty of restoring the property to the heir and paying its value to the state. If prosecutor fails to get one-fifth of the votes, he faces the penalty of one-sixth of the sum at issue.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἐξούλης δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding against obstructing an heir &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /eponymous Archon/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /initiated by submitting a charge in writing/, /assessable penalty/, /for physically obstructing someone from their inheritance/, /penalty of one sixth of the sum at issue/, /restore property and pay cash value to state/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for maintenance</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding to claim interest owed on a dowry, proceeded over by the Eponymous Archon and tried before the dikasterion. If convicted, defendant receives the assessable penalty of a fine. If prosecutor fails to get one-fifth of the votes, he faces the penalty of one-sixth of the sum at issue.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: σίτου δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for interest on dowry &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /to claim interest owed on a dowry/, /fine/, /assessable penalty/, /penalty of one sixth of the sum at issue/, /eponymous Archon/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit for theft</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for theft of private property, proceeded over by the Thesmothetae and tried by the dikasterion. If convicted, defendant receives the assessable penalty of double damages. If prosecutor fails to get one-fifth of the votes, he faces the penalty of one-sixth of the sum at issue.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: κλοπῆς δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding against theft&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /thesmothetae/, /dikasterion/, /for theft of private property/, /double damages/, /assessable penalty/, /penalty of one sixth of the sum at issue/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">suit over a guardianship</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding against guardian witholding property from ward, proceeded over by the Eponymous Archon and tried before the dikasterion. If convicted, defendant receives the assessable penalty of a fine. If prosecutor fails to get one-fifth of the votes, he faces the penalty of one-sixth of the sum at issue.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: δίκη ἐπιτροπῆς (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding against guardian withholding property from ward &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /eponymous Archon/, /dikasterion/, /prosecutor issues oral summons at the Assembly/, /against guardian witholding property from ward/, /fine/, /assessable penalty/, /penalty of one sixth of the sum at issue/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">summary arrest</div>    <div class="definitionNL"><b>Definition</b>: A public legal proceeding initiated by arresting an offender and bringing them before a magistrate, overseen by the Eleven and tried before the dikasterion. If convicted, defendant receives the non-assessable penalty of death. If prosecutor fails to receive one-fifth of the votes, he faces a one thousand drachma penalty.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: ἀπαγωγή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Public legal proceeding initiated by an arrest &gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by anyone who wishes/, /initiated by arresting an offender and bringing to a magistrate  /, /the Eleven/, /dikasterion/, /arrest/, /non-assessable penalty/, /penalty of 1000 drachmas/, /death/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Public legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">unintentional homicide suit</div>    <div class="definitionNL"><b>Definition</b>: A private legal proceeding for unintentional homicide, initiated with a proclamation at funeral of victim, proceeded over by the Basileus and tried before the 51 Ephetai. If convicted, the defendant receives the non-assessable penalty of exile.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- grc: φόνος ἀκούσιος δίκη (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;Private legal proceeding for unintentional homicide&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /brought forward by the injured party or a guardian/, /initiated with a proclamation at funeral of victim/, /basileus/, /51 ephetai/, /proclamation at funeral of victim/, /non-assessable penalty/, /for unintentional homicide/, /exile/</div><div class="definitionFormal"><b>a kind of</b>: &lt;Private legal proceeding&gt;</div></div></div><div class="otherEntry"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

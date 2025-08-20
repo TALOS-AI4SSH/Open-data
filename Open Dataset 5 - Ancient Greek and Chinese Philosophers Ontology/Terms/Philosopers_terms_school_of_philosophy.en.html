@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Term Dictionary on "Philosophers" (en)</div>
+<div class="title2">Category: "school of philosophy"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:34:30 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">school of ancient chinese philosophy</option>
+                <option value="1">school of ancient greek philosophy</option>
+                <option value="2">school of philosophy</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">school of ancient chinese philosophy</div>    <div class="definitionNL"><b>Definition</b>: School of philosophy ancient chinese.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: σχολή αρχαίας κινεζικής φιλοσοφίας (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;School-of-Ancient-Chinese-Philosophy&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /school of philosophy/, /ancient chinese/</div><div class="definitionFormal"><b>a kind of</b>: &lt;School-of-Philosophy&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>hasMember</i></u>: &lt;Philosopher&gt;</div><div class="definitionFormal"> <u><i>representedBy</i></u>: &lt;Philosopher&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 7</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>school of names</strong></div>    <img src="http://ontologia.fr/Images/KELKIP/Birth_Places_of_Chinese_Philosophers.png" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="http://ontologia.fr/Images/KELKIP/Birth_Places_of_Chinese_Philosophers.png" target="_blank" rel="noopener">http://ontologia.fr/Images/KELKIP/Birth_Places_of_Chinese_Philosophers.png</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>hundred schools of thought</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mozi</strong></div>    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84_%D0%9C%D0%BE-%D0%A6%D0%B7%D1%8B.jpg" alt="unsupported format"style="width=175px;height:175px;">    <div class= "externalLinkIndividual">foaf:depiction <a href="https://upload.wikimedia.org/wikipedia/commons/a/a4/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84_%D0%9C%D0%BE-%D0%A6%D0%B7%D1%8B.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/a/a4/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84_%D0%9C%D0%BE-%D0%A6%D0%B7%D1%8B.jpg</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>confucian school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>mohist school</strong></div>    <div class= "externalLinkIndividual">rdfs:label <a href="mohism" target="_blank" rel="noopener">mohism</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>daoist school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>legalist school</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">school of ancient greek philosophy</div>    <div class="definitionNL"><b>Definition</b>: School of philosophy ancient greek.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: σχολή αρχαίας ελληνικής φιλοσοφίας (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;School-of-Ancient-Greek-Philosophy&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /school of philosophy/, /ancient greek/</div><div class="definitionFormal"><b>a kind of</b>: &lt;School-of-Philosophy&gt;</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>hasMember</i></u>: &lt;Philosopher&gt;</div><div class="definitionFormal"> <u><i>representedBy</i></u>: &lt;Philosopher&gt;</div></div></div><div class="otherEntry"></div>    <div class="objectEntry"><div class="titleBlack"><strong>Objects of this type: 20</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>peripatetic school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100317855" target="_blank" rel="noopener">https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100317855</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/biography/Aristotle/The-Lyceum#ref408181" target="_blank" rel="noopener">https://www.britannica.com/biography/Aristotle/The-Lyceum#ref408181</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/topic/Peripatetic" target="_blank" rel="noopener">https://www.britannica.com/topic/Peripatetic</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://oxfordre.com/classics/display/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-4870" target="_blank" rel="noopener">https://oxfordre.com/classics/display/10.1093/acrefore/9780199381135.001.0001/acrefore-9780199381135-e-4870</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Peripatetic_school" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Peripatetic_school</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>presocratic school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>megarian school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>sophist school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/sophists/" target="_blank" rel="noopener">https://iep.utm.edu/sophists/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/topic/Sophist-philosophy" target="_blank" rel="noopener">https://www.britannica.com/topic/Sophist-philosophy</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/sophists/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/sophists/</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>stoic_school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/ENTRIES/stoicism/" target="_blank" rel="noopener">https://plato.stanford.edu/ENTRIES/stoicism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/stoicism/" target="_blank" rel="noopener">https://iep.utm.edu/stoicism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/topic/Stoicism" target="_blank" rel="noopener">https://www.britannica.com/topic/Stoicism</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>platonist school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/platonism/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/platonism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Platonism" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Platonism</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cynicism</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/cynics/" target="_blank" rel="noopener">https://iep.utm.edu/cynics/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://xtf.lib.virginia.edu/xtf/view?docId=DicHist/uvaBook/tei/DicHist1.xml;chunk.id=dv1-75" target="_blank" rel="noopener">https://xtf.lib.virginia.edu/xtf/view?docId=DicHist/uvaBook/tei/DicHist1.xml;chunk.id=dv1-75</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Cynic_School_of_Philosophy" target="_blank" rel="noopener">https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Cynic_School_of_Philosophy</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Cynicism_(philosophy)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Cynicism_(philosophy)</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>atomist school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/topic/atomism" target="_blank" rel="noopener">https://www.britannica.com/topic/atomism</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/ancient-greek-philosophy/" target="_blank" rel="noopener">https://iep.utm.edu/ancient-greek-philosophy/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/democritus/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/democritus/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.etymonline.com/word/atom" target="_blank" rel="noopener">https://www.etymonline.com/word/atom</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0057:entry=a)/tomos" target="_blank" rel="noopener">https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0057:entry=a)/tomos</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>epicurean school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/Lives_of_the_Eminent_Philosophers/Book_X" target="_blank" rel="noopener">https://en.wikisource.org/wiki/Lives_of_the_Eminent_Philosophers/Book_X</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://epicurus.net/" target="_blank" rel="noopener">https://epicurus.net/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://web.archive.org/web/20040404213456/http://epicurus.info/" target="_blank" rel="noopener">https://web.archive.org/web/20040404213456/http://epicurus.info/</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>academic_skepticism_school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/skepticism-ancient/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/skepticism-ancient/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/ancient-greek-skepticism/" target="_blank" rel="noopener">https://iep.utm.edu/ancient-greek-skepticism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Academic_skepticism" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Academic_skepticism</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/ancient-greek-philosophy/" target="_blank" rel="noopener">https://iep.utm.edu/ancient-greek-philosophy/</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pythagorean school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>pyrrhonian skeptics school</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>neopythagorean school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/pythagoreanism/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/pythagoreanism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Neopythagoreanism" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Neopythagoreanism</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>eleatic school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Eleatic_School" target="_blank" rel="noopener">https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Eleatic_School</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/parmenides/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/parmenides/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/zeno-elea/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/zeno-elea/</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>neoplatonist school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://plato.stanford.edu/entries/neoplatonism/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/neoplatonism/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/neoplato/" target="_blank" rel="noopener">https://iep.utm.edu/neoplato/</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>school_of_elis</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Elis,_Philosophical_School_of" target="_blank" rel="noopener">https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Elis,_Philosophical_School_of</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikipedia.org/wiki/Eretrian_school" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Eretrian_school</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>cyrenaic_school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Cyrenaics" target="_blank" rel="noopener">https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Cyrenaics</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="http://lucianofsamosata.info/wiki/doku.php?id=cyrenaics:cyrenaics" target="_blank" rel="noopener">http://lucianofsamosata.info/wiki/doku.php?id=cyrenaics:cyrenaics</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://iep.utm.edu/cyrenaics/" target="_blank" rel="noopener">https://iep.utm.edu/cyrenaics/</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Cyrenaic_School_of_Philosophy" target="_blank" rel="noopener">https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Cyrenaic_School_of_Philosophy</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>middle_platonism</strong></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>ionian_school</strong></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://dbpedia.org/page/Ionian_School_(philosophy)" target="_blank" rel="noopener">https://dbpedia.org/page/Ionian_School_(philosophy)</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.newworldencyclopedia.org/entry/Ionian_school" target="_blank" rel="noopener">https://www.newworldencyclopedia.org/entry/Ionian_school</a></div>    <div class= "externalLinkIndividual">rdfs:seeAlso <a href="https://www.britannica.com/topic/Ionian-school" target="_blank" rel="noopener">https://www.britannica.com/topic/Ionian-school</a></div></div><div class="objectEntry">    <div class="textMediumMargin"><strong>dialectical_school</strong></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">school of philosophy</div>    <div class="definitionNL"><b>Definition</b>:  school of philosophy.</div>    <div class="textMediumMargin"><b>Status</b>: preferred</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: φιλοσοφική σχολή (preferred)</div></div><div class="conceptEntry">    <div class="concept"><b>Concept</b>: &lt;School-of-Philosophy&gt;</div>    <div class="definitionFormal"><b>essential characteristic(s)</b>:  /school of philosophy/</div><div class="definitionFormal"><b>relation(s): </b> </div><div class="definitionFormal"> <u><i>hasMember</i></u>: &lt;Philosopher&gt;</div><div class="definitionFormal"> <u><i>representedBy</i></u>: &lt;Philosopher&gt;</div></div></div><div class="otherEntry"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>

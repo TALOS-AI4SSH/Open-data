@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Tedi HTML viewer</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body { 
+            font-family: Arial, Georgia, Times, serif;
+            color:black;
+            background-color: white
+        }
+        .terminologyEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #CBEFFF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .conceptEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #D8FFEC;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .objectEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        .otherEntry{
+            margin-bottom: 5px;
+            margin-left: 2px;
+            background-color: white;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            border: thick;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+        }
+        select option {
+            margin-bottom: 5px;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        select  {
+            margin-bottom: 5px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+        .title1{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 175%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .title2{
+            color:#8B0000;
+            text-align:center;
+            font-weight: bold;
+            font-size: 125%;
+            margin-bottom: 5px;
+            background-color: #EFEFEF;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.1) inset;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 8px;
+            padding: 5px 5px;
+        }
+        .textMedium{
+            color:black;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .textMediumMargin{
+            color:black;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textMediumMarginBlue{
+            color:blue;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .textItalicSmallMargin{
+            color:black;
+            font-style: italic;
+            font-size: 80%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallBlack{
+            color:black;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleItalicSmallGreen{
+            color:green;
+            font-style: italic;
+            font-size: 85%;
+            margin-left: 10px;
+            margin-bottom: 2px;
+        }
+        .subTitleGreen{
+            color:green;
+            font-size: 100%;
+            margin-left: 5px;
+            margin-bottom: 2px;
+        }
+        .term{
+            color:blue;
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 115%;
+            margin-bottom: 5px;
+        }
+        .titleBlack{
+            color:black;
+            margin-left: 5px;
+            font-size: 100%;
+            margin-bottom: 5px;
+        }
+        .definitionNL{
+            color:blue;
+            margin-left: 10px;
+            font-size: 95%;
+            margin-bottom: 2px;
+        }
+        .note{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .context{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .equivalent{
+            color:black;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .concept{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+        .externalLink{
+            color:green;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bott5m: 2px;
+        }
+        .externalLinkTerm{
+            color:blue;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 80%;
+            margin-bottom: 2px;
+        }
+        .externalLinkIndividual{
+            color:black;
+            margin-left: 10px;
+            font-style: italic;
+            font-size: 90%;
+            margin-bottom: 2px;
+        }
+        .attributeIndividual{
+            color:black;
+            margin-left: 10px;
+            font-size: 90%;
+            margin-bottom: 2px;
+        }
+        .definitionFormal{
+            color:green;
+            margin-left: 10px;
+            font-size: 85%;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="title1">Proper Name Dictionary on "Philosophers" (en)</div>
+<div class="title2">Category: "period"</div>
+<div class="textMedium">TEDI Version: 3.7 - Date: August 26, 2024 - Time: 1:29:18 AM - <a href="http://ontoterminology.com/tedi" target="_blank" rel="noopener"><b>www.ontoterminology.com/tedi</b></a></div>
+<br/>
+<table style="width:100%" border="0">
+    <tr>
+        <td style="width:20%" valign="top">
+            <table><tr><td><div class="textMedium">search:</div></td><td><input type="search" id="searchBox" style="width:100%; font-size:85%"/></td></tr></table>
+            <select id="idTerm" style="width:100%; font-size:85%" size="25">
+                <option value="0">1st century BCE</option>
+                <option value="1">1st century CE</option>
+                <option value="2">2nd century BCE</option>
+                <option value="3">2nd century CE</option>
+                <option value="4">3rd century BCE</option>
+                <option value="5">3rd century CE</option>
+                <option value="6">4th century BCE</option>
+                <option value="7">4th century CE</option>
+                <option value="8">5th century BCE</option>
+                <option value="9">6th century BCE</option>
+                <option value="10">7th century BCE</option>
+                <option value="11">Pre-Qin Period</option>
+            </select>
+        </td>
+        <td style="width:80%" valign="top">
+            <div id="display"></div>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+var dictionnaire = [
+    ['<div class="terminologyEntry">    <div class="term">1st century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 99 BCE to 1 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 1ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 1st_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-99&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-1&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Aenedidemus of Cnossus, Lucius Cornelius Alexander Polyhistor, Aeschines of Neapolis, Anaxilaus of Larissa, Andronicus of Rhodes, Antiochus of Ascalon, Antipater of Tyre, Apellicon of Teos, Apollonius of Tyre, Aristo of Alexandria, Aristus of Ascalon, Arius Didymus, Asclepiodotus Tacticus, Aspasius, Athenaeus of Seleucia, Athenodorus Cananites, Athenodorus Cordylion, Boethus of Sidon- Peripatetic, Catius Ιnsuber, Charmadas, Cratippus of Mitylene, Damocles of Messene, Demetrius (Peripatetic), Demetrius Lacon, Demetrius of Bithynia, Demetrius of Byzantium, Dercyllides, Dicaeus of Tarsus, Diodotus the Stoic, Diodotus of Sidon, Diogenes of Oenoanda, Dion of Alexandria, Euclides of Nicomedia, Eucratidas of Rhodes, Eudorus of Alexandria, Hecaton of Rhodes, Heliodorus of Mallus, Heraclitus of Tyre, Herodotus of Tarsus, Hipparchus of Soli, Irenaeus of Miletus, Jason of Athens, Jason of Nysa, Lesbonax, Lysimachus (follower of Antiochus), Meleager of Gadara, Menecrates, Metrodorus of Lampsacus, Metrodorus of Stratonicea, Mnaseas of Tyre, Mnesarchus of Athens, Patro the Epicurean, Phaedrus the Epicurean, Phanias, Philo Judaeus, Philo of Larissa, Philodemus of Gadara, Posidonius of Rhodes, Potamo of Alexandria, Sarpedon, Stratocles of Rhodes, Strabo of Amaseia, Xenarchus of Seleucia, Zeno of Sidon</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">1st century CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 1 CE to 99 CE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 1ος αιώνας μ.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 1st_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;1&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;99&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Athenodorus Cananites, Carneius of Megara, Chaeremon of Alexandria, Apollonius of Tyana, Damis (student of Apollonius of Tyana), Dardanus of Athens, Demetrius of Sunium, Demonax of Cyprus, Agathobulus of Alexandria, Demetrius of Corinth, Diogenes of Oenoanda, Dionysius of Alexandria, Dionysius of Miletus, Dionysius of Rhodes, Epictetus, Eudemus of Pergamum, Euphrates the Stoic, Glaucon, Agias, Heliodorus (Stoic), Heliodorus (Epicurean), Isagoras of Thessaly, Lesbonax, Menephylus, Moderatus of Gades, Nicomachus of Gerasa, Onasander, Philo Judaeus, Plutarch of Chaeronea, Strabo of Amaseia, Theon of Smyrna</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">2nd century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 199 BCE to 100 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 2ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 2nd_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-199&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-100&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Agathocles of Tyre, Albucius Titus, Lucius Cornelius Alexander Polyhistor, Alexander of Aphrodisias, Aeschines of Neapolis, Androcydes (Pythagorean), Antiochus of Ascalon, Antipater of Tarsus, Apellicon of Teos, Apollodorus the Epicurean, Apollodorus of Seleucia, Archedemus of Tarsus, Aristobulus of Alexandria, Aristocreon, Aristo of Alexandria, Aristo of Ceos, Aristophanes of Byzantium, Athenodorus Cordylion, Biton of Soli, Boethus of Marathon, Boethus of Paros, Boethus of Sidon- Stoic, Carneades of Cyrene, Charmadas, Chrysermus of Alexandria, Clitomachus of Carthage, Crates of Athens, Crates of Mallus, Crates of Tarsus, Critolaus of Phaselis, Damocles of Messene, Damon of Cyrene, Damophanes, Dardanus of Athens, Demetrius Lacon, Demetrius of Alexandria (Platonist), Demetrius of Bithynia, Demetrius of Phocaea, Dercyllides, Dicaeus of Tarsus, Diodorus of Alexandria, Diodorus of Tyre, Diogenes of Nicomedia, Diogenes of Seleucia (Epicurean), Diogenes of Tarsus, Dionysius (Platonist), Dionysius of Colophon, Dionysius of Cyrene, Eubulus (2nd BCE), Eucratidas of Rhodes, Eudromus, Eupeithes of Paphos, Evander of Athens, Gorgus of Sparta, Hagnon of Tarsus, Hecaton of Rhodes, Heraclitus of Tyre, Herminus, Herodicus, Irenaeus of Miletus, Jason of Athens, Jason of Paros, Marcus Aurelius, Melanthius of Rhodes, Meleager of Gadara, Menecrates, Mentor of Bithynia, Metrodorus of Apamea, Metrodorus of Stratonicea, Mnasagoras, Mnaseas of Tyre, Mnesarchus of Athens, Nearchus of Tarentum, Nestor of Tarsus, Nicander of Bithynia, Nicostratus of Alexandria, Pamphilus of Magnesia, Panaetius of Rhodes, Paramonus of Tarsus, Phaedrus the Epicurean, Philo of Larissa, Philonides, Phormio of Ephesus, Plato of Rhodes, Posidonius of Rhodes, Ptolemy of Cyrene, Sarpedon, Sosigenes, Sotion of Alexandria, Stratocles of Rhodes, Stratippus, Tauriscus, Telecles of Phocaea, Zeno of Alexandria, Zeno of Sidon, Zeno of Tarsus, Zenodotus the Stoic</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">2nd century CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 100 CE to 199 CE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 2ος αιώνας μ.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 2nd_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;100&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;199&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Aristotle of Mytilene, Artemidorus Ephesius, Basilides, Carpocrates of Alexandria, Clement of Alexandria, Cronius, Cynulcus, Damis (Epicurean), Demophilus, Demetrius of Sunium, Demonax of Cyprus, Agathobulus of Alexandria, Dion of Heraclea, Dionysius of Miletus, Epictetus, Euphrates the Stoic, Claudius Galenus, Glaucon, Agias, Harpocration of Argos, Atticus, Heliodorus (Epicurean), Heraclides Aurelius, Herminus, Hierocles, Honoratus, Isagoras of Thessaly, Lepidus of Amastris, Maximus of Tyre, Menephylus, Nicomachus of Gerasa, Nicostratus of Athens, Numenius of Apamea, Oenomaus of Gadara, Origen of Alexandria, Pancrates, Pantaenus, Peregrinus Proteus, Philiscus, Lucius Flavius Philostratus, Plutarch of Chaeronea, Sextus Empiricus, Sextus of Chaeronea, Theagenes of Patras, Ammonius Saccas</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">3rd century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 299 BCE to 200 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 3ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 3rd_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-299&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-200&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Aegimius of Elis, Aenesias of Megalopolis, Alexinus of Elis, Alexander of Aphrodisias, Anniceris of Cyrene, Arcesilaus of Pitane, Aristocreon, Aristo of Ceos, Ariston of Chios, Aristophanes of Byzantium, Aristotle of Cyrene, Aristotle the Dialectician, Asclepiades of Phlius, Athenodorus of Soli, Bates of Lampsacus, Bion of Borysthenes, Bolus of Mendes, Calliphon, Carneades of Cyrene, Carneiscus, Cercidas of Megalopolis, Chamaelion of Heraclea, Chremonides of Athens, Chrysippus of Soli, Cleanthes of Assus, Clearchus of Soli, Colotes of Lampsacus, Crantor of Soli, Crates of Thebes, Ctesibius of Chalcis, Damippus, Deinarchus of Corinth, Deinias, Demaratus, Demetria, Demetrius of Phocaea, Demophanes of Megalopolis, Demosthenes of Megalopolis, Demotimus, Diocles, Diodorus (Epicurean), Diodorus (Stoic), Diodorus Cronus, Diogenes of Babylon, Dionysius of Heraclea, Ecdelus, Echecles of Ephesus, Epicrates of Heraclea, Epicurus, Epitimides of Cyrene, Erymneus, Eudamus, Eudromus, Eumenes of Aspendus, Euphantus of Olynthus, Eurylochus, Euxitheus, Gorgylus, Hecataeus of Abdera, Hedeia, Hegesias of Cyrene, Heraclides (3rd BCE), Herillus of Carthage, Hermagoras, Hermarch, Hermippus of Smyrna, Hieronymus of Rhodes, Hestiaeus of Miletus, Hipparchia of Maronea, Hipparchus (pupil of Theophrastus), Hippoclides, Hippothales of Athens, Idomeneus of Lampsacus, Lacydes of Cyrene, Leontion, Leontius of Cyrene, Leontius of Lampsacus, Lyco of Troas, Lysimachus (pupil of Theophrastus), Mammarion, Menedemus of Eretria, Menedemus of Lampsacus, Menestratus, Menippus of Gadara, Metrocles of Maronea, Metrodorus of Lampsacus (Epicurean), Mnesigenes, Moschion of Mallus, Myrmex, Nearchus of Tarentum, Nicippus, Noetus, Nymphis, Olympichus, Orion, Paeonius, Panaretus, Paseas of Cyrene, Pasicles of Thebes, Persaeus of Citium, Philo of Athens, Philo the Dialectician, Philonides of Thebes, Phormio of Ephesus, Phrasidemus, Polemo of Athens, Polyaenus of Lampsacus, Polystratus the Epicurean, Polystratus of Athens, Praxiphanes, Ptolemy the Black, Pyrrho of Elis, Pyrrho of Phlius, Pythocles, Pythodorus (3rd century BCE), Simmias of Syracuse, Sphaerus of Borysthenes, Stilpo of Megara, Strato of Lampsacus, Telecles of Phocaea, Teles of Megara, Theodorus of Cyrene, Theombrotus, Theophrastus, Timon of Phlius, Zeno of Citium, Zeno of Tarsus, Zoilus of Amphipolis, Clitarchus</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">3rd century CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 200 CE to 299 CE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 3ος αιώνας μ.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 3rd_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;200&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;299&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Clement of Alexandria, Cynulcus, Demetrius of Alexandria, Demetrius of Alexandria (Cynic), Eubulus (3rd CE), Evagoras, Harpocration of Argos, Heliodorus of Alexandria, Hierius, Hyllus of Soli, Iamblichus of Chalcis, Maximus of Nicaea, Medius, Nicagoras, Origen of Alexandria, Lucius Flavius Philostratus, Plotinus, Porphyry, Ptolemy, Sextus Empiricus, Theodorus of Asine, Ammonius Saccas</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">4th century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 399 BCE to 300 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 4ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 4th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-399&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-300&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Adeimantus of Collytus, Adrastus of Philippi, Aegimius of Elis, Aenesias of Megalopolis, Aesara of Lucania, Aeschines of Sphettus, Alcippus of Eresus, Alexinus of Elis, Anaxarchus of Abdera, Anchipylus of Elis, Androsthenes of Aegina, Anniceris of Cyrene, Antipater of Cyrene, Antisthenes, Apollodorus of Phalerum, Apollonius Cronus, Arcesilaus of Pitane, Archytas of Tarentum, Aresas of Lucania, Arete of Cyrene, Arignote of Croton, Aristippus Metrodidactus, Aristippus of Cyrene, Ariston of Chios, Aristotle, Aristotle of Cyrene, Aristoxenus of Tarentum, Asclepiades of Phlius, Axiothea of Phlius, Bates of Lampsacus, Bion of Borysthenes, Callias of Alopece, Carneiscus, Cebes of Thebes, Chaeron of Pellene, Chamaelion of Heraclea, Cleanthes of Assus, Clearchus of Heraclea, Clearchus of Soli, Clinias of Scambonidae, Cleinias of Tarentum, Clinomachus of Thurii, Colotes of Lampsacus, Coriscus of Scepsis, Erastus of Scepsis, Crantor of Soli, Crates of Thebes, Cratylus (philosopher), Ctesibius of Chalcis, Ctesippus of Paeania, Damas, Damon of Syracuse, Deinarchus of Corinth, Demaratus, Demetria, Demetrius of Amphipolis, Demetrius of Phaleron, Democritus, Demotimus, Delius of Ephesus, Dicaearchus of Messana, Diocleides (Megarian philosopher), Diocles, Diocles of Phlius, Diodorus Cronus, Diodorus of Aspendus, Diogenes of Babylon, Diogenes of Sinope, Dion of Syracuse, Dionysius of Chalcedon, Dionysius of Heraclea, Echecles of Ephesus, Cleomenes, Echecrates of Phlius, Echecrateia of Phlius, Ecphantus, Epicharides of Tarentum, Epicurus, Epigenes, Epitimides of Cyrene, Eubulides of Miletus, Eucairius, Euclid of Megara, Eudemus of Rhodes, Eudoxus of Cnidus, Eumenes of Aspendus, Euphantus of Olynthus, Eurylochus, Eurytus of Tarentum, Euxitheus, Evaeon of Lampsacus, Gartydas of Croton, Glaucon of Collytus, Gorgias of Leontini, Hecataeus of Abdera, Hedeia, Hegesias of Cyrene, Hegesias of Sinope, Heracleodorus (4th BCE), Heraclides of Aenus, Hermarch, Hermodorus, Hestiaeus of Perinthus, Hestiaeus of Tarentum, Hicetas, Hipparchia of Maronea, Hipparchus (pupil of Theophrastus), Hipparchus of Stagira, Hippoclides, Hippothales of Athens, Hyperides of Athens, Ichthyas, Idomeneus of Lampsacus, Isocrates, Lamiscus of Tarentum, Lasthenia, Leon of Byzantium, Leonides, Leontion, Leontius of Lampsacus, Lycophron, Lysimachus (pupil of Theophrastus), Mammarion, Megillus, Menaechmus, Menecrates of Elea, Menedemus of Eretria, Menedemus of Pyrrha, Menelaus, Menestratus, Menexenus, Menoeceus, Metrocles of Maronea, Metrodorus of Chios, Metrodorus of Lampsacus (Epicurean), Myrmex, Nausiphanes of Teos, Nessus of Chios, Nicippus, Occelo of Lucania, Occelus of Lucania, Occilus of Lucania, Olympiades, Onesicritus of Astypalea, Orion, Paeonius, Pamphilus, Pasicles of Rhodes, Pasicles of Thebes, Phaedo of Elis, Phaenias of Eresus, Philip of Opus, Philiscus of Aegina, Philistius, Philo of Athens, Philo the Dialectician, Philonides of Thebes, Phrasidemus, Plato, Pleistanus of Elis, Polemarchus, Polemo of Athens, Polyaenus of Lampsacus, Posidonius of Alexandria, Praxiphanes, Pyrrho of Elis, Pythocles, Simmias of Syracuse, Simmias of Thebes, Speusippus, Stilpo of Megara, Strato of Lampsacus, Theaetetus of Sunium, Theages of Anagyrous, Theodorus of Cyrene (mentioned by Plato), Theodorus of Cyrene, Theombrotus, Theophrastus, Thrasyllus the Cynic, Thrasymachus of Corinth, Timolaus of Cyzicus, Timon of Phlius, Xenocrates of Chalcedon, Zeno of Citium, Zoilus of Amphipolis, Boutherus of Cyzicus, Clitarchus, Timycha of Sparta</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">4th century CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 300 CE to 399 CE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 4ος αιώνας μ.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 4th_century_CE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;300&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;399&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Demetrius of Alexandria, Demetrius of Alexandria (Cynic), Evagoras, Hierius, Iamblichus of Chalcis, Maximus of Nicaea, Nicagoras, Paterius, Ptolemy, Theodorus of Asine</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">5th century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 499 BCE to 400 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 5ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 5th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-499&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-400&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Acmonidas of Tarentum, Acusiladas of Tarentum, Adeimantus of Collytus, Aeneas of Metapontum, Aesara of Lucania, Aeschines of Sphettus, Alcmaeon of Croton, Anaxagoras of Clazomenae, Antisthenes, Apollodorus of Phalerum, Archelaus of Athens, Archytas of Tarentum, Aresas of Lucania, Arignote of Croton, Aristaeus of Croton, Aristippus of Cyrene, Brotinus of Metapontum, Callias of Alopece, Callicles of Acharnae, Cebes of Thebes, Chaerephon of Sphettus, Charmadas, Charondas of Catana, Clinias of Scambonidae, Cleinias of Tarentum, Cratylus (philosopher), Critias (philosopher), Crito of Alopece, Ctesippus of Paeania, Cylon of Croton, Damon of Cyrene, Deinarchus of Paros, Deinocrates of Tarentum, Democritus, Dexitheus of Paros, Diagoras of Melos, Dicaearchus of Tarentum, Diocles of Magnesia, Diocles of Phlius, Diogenes of Apollonia, Diotima of Mantinea, Cleomenes, Echecrates of Phlius, Echecrateia of Phlius, Echecrates of Tarentum, Ecphantus, Empedocles of Akragas, Epigenes, Epiphron of Metapontum, Eratus of Croton, Euclid of Megara, Eudoxus of Cnidus, Euryphamus of Syracuse, Eurytus of Tarentum, Euthydemus of Chios, Evaeon of Lampsacus, Gartydas of Croton, Glaucon of Collytus, Glycinus of Metapontum, Gorgias of Leontini, Gythius of Locri, Habroteleia, Habroteles of Tarentum, Hecataeus of Miletus, Heraclitus of Ephesus, Hermogenes of Alopece, Hestiaeus of Tarentum, Hicetas, Hipparchides of Rhegium, Hippasus of Metapontum, Hippias of Elis, Hippodamus of Miletus, Hippomedon of Asine, Hippon, Hipposthenes of Croton, Hippostratus of Croton, Iccus of Tarentum, Ichthyas, Ion of Chios, Lacrates of Metapontum, Lacritus of Metapontum, Lacydas of Metapontum, Laphaon of Metapontum, Leucippus, Lycophron, Megillus, Megistias of Metapontum, Melissus of Samos, Menexenus, Menon of Croton, Meton of Paros, Metrodorus, Milon of Croton, Mimnomachus of Tarentum, Mnemarchus, Mnesibulus of Rhegium, Nessus of Chios, Onatas of Croton, Parmenides of Elea, Parmiscus of Metapontum, Phaedo of Elis, Phanto of Phlius, Philolaus, Plato, Prodicus, Protagoras of Abdera, Pythodorus (5th century BCE), Simmias of Thebes, Socrates, Speusippus, Telauges of Samos, Theaetetus of Sunium, Theages of Anagyrous, Theodorus of Cyrene (mentioned by Plato), Thrasymachus of Chalcedon, Timaeus of Locri, Xeniades of Corinth, Xenophanes of Colophon, Zeno of Elea, Agelas of Croton, Agesarchus of Metapontum, Agesidamus of Metapontum, Ageas of Croton, Agylus of Croton, Aietius of Paros, Aigon of Croton, Alcias of Metapontum, Alcimachus of Paros, Alopecus of Metapontum, Anthes of Carthage, Antimedon of Croton, Arceas of Tarentum, Archemachus of Tarentum, Archippus of Samos, Archippus of Tarentum, Aresandrus of Lucania, Aristangelus of Cyrene, Aristeas of Metapontum, Aristides of Rhegium, Aristippus of Tarentum, Aristocleidas of Tarentum, Aristocrates of Rhegium, Aristomenes of Metapontum, Asteas of Tarentum, Astylus of Metapontum, Autocharidas of Laconia, Bouthus of Croton, Bryas of Croton, Bryas of Tarentum, Dymas of Croton, Haemon of Croton, Syllus of Croton, Cleophron of Croton, Cleosthenes of Croton, Damocles of Croton, Euandrus of Croton, Leophron of Croton, Myllias of Croton, Itaneus of Croton, Episylus of Croton, Rhodippus of Croton, Timaeus of Croton, Phyciadas of Croton, Antimenes of Metapontum, Cheilas of Metapontum, Damarmenus of Metapontum, Damotages of Metapontum, Eiriscus of Metapontum, Euphemus of Metapontum, Euandrus of Metapontum, Euryphemus of Metapontum, Eurytus of Metapontum, Haniochus of Metapontum, Leocydes of Metapontum, Leon of Metapontum, Melesias of Metapontum, Orestades of Metapontum, Procles of Metapontum, Xenophanes of Metapontum, Xenocades of Metapontum, Pyrrhon of Metapontum, Rhexibius of Metapontum, Thrasymedes of Metapontum, Thraseas of Metapontum, Theodorus of Tarentum, Lycon of Tarentum, Polemarchus of Tarentum, Caenias of Tarentum, Cleon of Tarentum, Eurymedon of Tarentum, Cleinagoras of Tarentum, Zopyrus of Tarentum, Euthynus of Tarentum, Philonides of Tarentum, Phrontidas of Tarentum, Lysis of Tarentum, Lysibios of Tarentum, Paction of Tarentum, Peisicrates of Tarentum, Clearatus of Tarentum, Leonteus of Tarentum, Phrynichus of Tarentum, Simichias of Tarentum, Peisirrhodus of Tarentum, Helandrus of Tarentum, Dicas of Tarentum, Carophantidas of Tarentum, Philtys of Croton, Cratesicleia of Sparta, Theano</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">6th century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 599 BCE to 500 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 6ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 6th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-599&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-500&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Abaris the Hyperborean, Alcmaeon of Croton, Anacharsis the Scythian, Anaximander of Miletus, Anaximenes of Miletus, Aristaeus of Croton, Brotinus of Metapontum, Calliphon of Croton, Charondas of Catana, Chilon of Sparta, Cylon of Croton, Deinarchus of Paros, Euryphamus of Syracuse, Hecataeus of Miletus, Heraclitus of Ephesus, Hippasus of Metapontum, Iccus of Tarentum, Ichthyas, Menon of Croton, Meton of Paros, Milon of Croton, Parmiscus of Metapontum, Pherecydes of Syros, Pythagoras of Samos, Telauges of Samos, Thales of Miletus, Xeniades of Corinth, Xenophanes of Colophon, Cheilonis, Theano</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">7th century BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient greek period</font></div>    <div class="textMediumMargin"><b>Comment</b>: The period from 699 BCE to 600 BCE.</div></div><div class="terminologyEntry">    <div class="textMediumMarginBlue"><b>Equivalent(s)</b>: </div>    <div class="textMediumMarginBlue">- el: 7ος αιώνας π.Χ.</div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: 7th_century_BCE</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Greek-Period&gt;</font></div>    <div class="textMediumMargin">    <div class="objectEntry">    <div class="attributeIndividual"> <u>startsIn</u>: &apos;-699&apos;</div>    <div class="attributeIndividual"> <u>endsIn</u>: &apos;-600&apos;</div></div>    <div class="objectEntry">    <div class="attributeIndividual"> <u>isCenturyOf</u>: Anaximander of Miletus, Dios, Thales of Miletus</div></div></div></div>'],
+    ['<div class="terminologyEntry">    <div class="term">Pre-Qin Period</div>    <div class="textMediumMargin"><b>is a</b>: <font color="blue">ancient chinese period</font></div></div><div class="objectEntry">    <div class="objectEntry"><b>Denoted object</b>: pre-qin period</div>    <div class="textMediumMargin"><b>is a</b>: <font color="green">&lt;Ancient-Chinese-Period&gt;</font></div>    <div class="textMediumMargin"></div></div>'],
+];
+function show_selected() {
+    var selector = document.getElementById('idTerm');
+    var champ = dictionnaire[selector[selector.selectedIndex].value][0];
+    document.getElementById('display').innerHTML = champ;
+}
+document.getElementById('idTerm').addEventListener('change', show_selected);
+
+searchBox = document.querySelector("#searchBox");
+entries = document.querySelector("#idTerm");
+var when = "keyup"; //You can change this to keydown, keypress or change
+
+searchBox.addEventListener("keyup", function (e) {
+    var text = e.target.value;
+    var options = entries.options;
+    for (var i = 0; i < options.length; i++) {
+        var option = options[i];
+        var optionText = option.text;
+        var lowerOptionText = optionText.toLowerCase();
+        var lowerText = text.toLowerCase();
+        var regex = new RegExp("^" + text, "i");
+        var match = optionText.match(regex);
+        var contains = lowerOptionText.indexOf(lowerText) != -1;
+        if (match || contains) {
+            option.selected = true;
+            show_selected();
+            return;
+        }
+        searchBox.selectedIndex = 0;
+    }
+});
+
+</script>
+</body>
+</html>
