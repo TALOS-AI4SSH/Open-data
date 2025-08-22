@@ -1,5 +1,9 @@
 # TALOS Open Data Repository
 
+Available languages: [English](README.md) | [Ελληνικά](README.el.md)
+
+---
+
 This repository provides a curated collection of **open datasets and ontologies** developed within the **TALOS AI4SSH project** (University of Crete, ERA Chair).  
 These resources support **Digital Humanities**, **Computational Philology**, and **Semantic Web research**, with a focus on modeling, annotating, and analyzing **ancient and modern Greek textual, historical, and cultural data**.
 
